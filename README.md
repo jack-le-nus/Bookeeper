@@ -14,4 +14,8 @@ There’re 4 things you need to read and understand before start:
 * Unit test all the functions in Model classes
 * Pass all acceptance test cases: https://docs.google.com/spreadsheets/d/1L2L3DOxEQNPewRkRhvdKTaYoyxUH_BVV2y5RAUg3YgQ/edit#gid=1857237395
 
+# Utilities:
+
+* Themer and Theme: to avoid duplicate code styling the same controls, remember to create themer before styling the control. Ex: textFieldThemer.applyTheme(view: password, theme: TextFieldTheme())
+* ViewControllerExtension: place for all the common functions of viewcontroller
 
