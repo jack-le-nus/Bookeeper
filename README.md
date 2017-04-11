@@ -21,3 +21,4 @@ There’re 4 things you need to read and understand before start:
 * Themer and Theme: to avoid duplicate code styling the same controls, remember to create themer before styling the control. Ex: textFieldThemer.applyTheme(view: password, theme: TextFieldTheme())
 * ViewControllerExtension: place for all the common functions of viewcontroller
 
+(Remember to add notes if you create any new utility used by others)
