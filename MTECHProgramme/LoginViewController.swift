@@ -67,7 +67,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         if !login.isUserOrPasswordEmpty(userID: userID.text, password: password.text) {
             showSpinner(view: self.view)
             
-            login.createUser(userID: userID.text!, password: password.text!, onComplete: { (error) in
+            FIRAuth.auth()?.createUser(withEmail: userID.text!, password: password.text!, completion: { (user, error) in
                 
                 self.hideSpinner()
                 

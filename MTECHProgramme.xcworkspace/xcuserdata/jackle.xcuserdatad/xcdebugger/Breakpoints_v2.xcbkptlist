@@ -344,11 +344,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MTECHProgramme/LoginViewController.swift"
-            timestampString = "513591454.794885"
+            timestampString = "513593692.400863"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "login(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -360,11 +360,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MTECHProgramme/LoginViewController.swift"
-            timestampString = "513591454.794885"
+            timestampString = "513593692.400863"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "login(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -424,11 +424,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MTECHProgramme/LoginViewController.swift"
-            timestampString = "513591454.794885"
+            timestampString = "513593692.400863"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "login(_:)"
             landmarkType = "7">
             <Locations>
@@ -520,44 +520,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MTECHProgramme/LoginViewController.swift"
-            timestampString = "513591454.794885"
+            timestampString = "513593692.400863"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "login(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MTECHProgramme/LoginModel.swift"
-            timestampString = "513578679.71416"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "createUser(userID:password:onComplete:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MTECHProgramme/LoginModel.swift"
-            timestampString = "513578679.71416"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "createUser(userID:password:onComplete:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -575,6 +543,198 @@
             endingLineNumber = "13"
             landmarkName = "Themer"
             landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MTECHProgrammeTests/LoginModelTests.swift"
+            timestampString = "513594716.907652"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "testIsUserOrPasswordEmpty()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MTECHProgrammeTests.LoginModelTests.testIsUserOrPasswordEmpty () -&gt; ()"
+                  moduleName = "MTECHProgrammeTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jackle/Documents/Materials/Mobile/Project/BookeeperProject/Bookeeper/MTECHProgrammeTests/LoginModelTests.swift"
+                  timestampString = "513594823.199843"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "170">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MTECHProgrammeTests.LoginModelTests.(testIsUserOrPasswordEmpty () -&gt; ()).(implicit closure #2)"
+                  moduleName = "MTECHProgrammeTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jackle/Documents/Materials/Mobile/Project/BookeeperProject/Bookeeper/MTECHProgrammeTests/LoginModelTests.swift"
+                  timestampString = "513594823.201541"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MTECHProgrammeTests/LoginModelTests.swift"
+            timestampString = "513594716.907652"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "testIsUserOrPasswordEmpty()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MTECHProgrammeTests.LoginModelTests.testIsUserOrPasswordEmpty () -&gt; ()"
+                  moduleName = "MTECHProgrammeTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jackle/Documents/Materials/Mobile/Project/BookeeperProject/Bookeeper/MTECHProgrammeTests/LoginModelTests.swift"
+                  timestampString = "513594823.204121"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "15">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MTECHProgrammeTests.LoginModelTests.(testIsUserOrPasswordEmpty () -&gt; ()).(implicit closure #1)"
+                  moduleName = "MTECHProgrammeTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jackle/Documents/Materials/Mobile/Project/BookeeperProject/Bookeeper/MTECHProgrammeTests/LoginModelTests.swift"
+                  timestampString = "513594823.206424"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MTECHProgrammeTests/LoginModelTests.swift"
+            timestampString = "513594767.349217"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "testIsUserOrPasswordEmpty()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MTECHProgrammeTests.LoginModelTests.testIsUserOrPasswordEmpty () -&gt; ()"
+                  moduleName = "MTECHProgrammeTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jackle/Documents/Materials/Mobile/Project/BookeeperProject/Bookeeper/MTECHProgrammeTests/LoginModelTests.swift"
+                  timestampString = "513594823.20901"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "332">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MTECHProgrammeTests.LoginModelTests.(testIsUserOrPasswordEmpty () -&gt; ()).(implicit closure #3)"
+                  moduleName = "MTECHProgrammeTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jackle/Documents/Materials/Mobile/Project/BookeeperProject/Bookeeper/MTECHProgrammeTests/LoginModelTests.swift"
+                  timestampString = "513594823.210831"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MTECHProgrammeTests/LoginModelTests.swift"
+            timestampString = "513594771.636965"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "testIsUserOrPasswordEmpty()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MTECHProgrammeTests.LoginModelTests.testIsUserOrPasswordEmpty () -&gt; ()"
+                  moduleName = "MTECHProgrammeTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jackle/Documents/Materials/Mobile/Project/BookeeperProject/Bookeeper/MTECHProgrammeTests/LoginModelTests.swift"
+                  timestampString = "513594823.213089"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "512">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MTECHProgrammeTests.LoginModelTests.(testIsUserOrPasswordEmpty () -&gt; ()).(implicit closure #4)"
+                  moduleName = "MTECHProgrammeTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jackle/Documents/Materials/Mobile/Project/BookeeperProject/Bookeeper/MTECHProgrammeTests/LoginModelTests.swift"
+                  timestampString = "513594823.215067"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "19">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

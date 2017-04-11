@@ -21,6 +21,7 @@
 		BC51D53F1E92AECC000D9249 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC51D53C1E92AECC000D9249 /* LoginViewController.xib */; };
 		BC51D54A1E92AF4E000D9249 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC51D5491E92AF4E000D9249 /* MessageUI.framework */; };
 		BCB85A091E934BE3007BC078 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCB85A081E934BE2007BC078 /* UIKit.framework */; };
+		BCD4577B1E9CD1BC00F4F844 /* LoginModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCD4577A1E9CD1BC00F4F844 /* LoginModelTests.swift */; };
 		BCEE2EB41E9C76D300D469FD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCEE2EB31E9C76D300D469FD /* GoogleService-Info.plist */; };
 		BCEE2EB61E9C7C2000D469FD /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEE2EB51E9C7C2000D469FD /* ViewControllerExtension.swift */; };
 		BCEE2EB81E9C83B500D469FD /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEE2EB71E9C83B500D469FD /* LoadingView.swift */; };
@@ -72,6 +73,7 @@
 		BC51D53C1E92AECC000D9249 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		BC51D5491E92AF4E000D9249 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		BCB85A081E934BE2007BC078 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BCD4577A1E9CD1BC00F4F844 /* LoginModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginModelTests.swift; sourceTree = "<group>"; };
 		BCEE2EB31E9C76D300D469FD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BCEE2EB51E9C7C2000D469FD /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		BCEE2EB71E9C83B500D469FD /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			children = (
 				BC51D5211E92A078000D9249 /* MTECHProgrammeTests.swift */,
 				BC51D5231E92A078000D9249 /* Info.plist */,
+				BCD4577A1E9CD1BC00F4F844 /* LoginModelTests.swift */,
 			);
 			path = MTECHProgrammeTests;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC51D5221E92A078000D9249 /* MTECHProgrammeTests.swift in Sources */,
+				BCD4577B1E9CD1BC00F4F844 /* LoginModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

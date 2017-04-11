@@ -13,11 +13,4 @@ class LoginModel {
     func isUserOrPasswordEmpty(userID:String?, password:String?) ->Bool{
         return (userID ?? "").isEmpty || (password ?? "").isEmpty
     }
-    
-    func createUser(userID: String, password: String, onComplete: @escaping (NSError?)->Void){
-        FIRAuth.auth()?.createUser(withEmail: userID, password: password, completion: { (user, error) in
-            onComplete(error as? NSError)
-            return
-        })
-    }
 }

@@ -1,4 +1,6 @@
 PODS:
+  - Firebase (3.15.0):
+    - Firebase/Core (= 3.15.0)
   - Firebase/Auth (3.15.0):
     - Firebase/Core
     - FirebaseAuth (= 3.1.1)
@@ -30,6 +32,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.9)
 
 DEPENDENCIES:
+  - Firebase
   - Firebase/Auth
   - Firebase/Core
   - FlatUIKit
@@ -44,6 +47,6 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
 
-PODFILE CHECKSUM: bb1e976c569cd74f5a3fb62d9fb47f55443ffd33
+PODFILE CHECKSUM: 0ed8dd1e29bff230cb5b264e77a5625a99ade2da
 
 COCOAPODS: 1.2.0
