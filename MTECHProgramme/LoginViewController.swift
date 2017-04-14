@@ -17,6 +17,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var userID: FUITextField!
     @IBOutlet weak var password: FUITextField!
     
+    
+    
     override var nibName: String?
     {
         get
