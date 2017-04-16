@@ -64,30 +64,30 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         userID.resignFirstResponder()
         password.resignFirstResponder()
         
-        let login:LoginModel = LoginModel()
+//        let login:LoginModel = LoginModel()
+//        
+//        if !login.isUserOrPasswordEmpty(userID: userID.text, password: password.text) {
+//            showSpinner(view: self.view)
+//            
+//            FIRAuth.auth()?.createUser(withEmail: userID.text!, password: password.text!, completion: { (user, error) in
+//                
+//                self.hideSpinner()
+//                
+//                if let error = error {
+//                    self.alert(content: error.localizedDescription)
+//                    return
+//                }
+//                else {
+//                    self.alert(content: AppMessage.LoginSuccess.rawValue, onCancel: {
+//                        action -> Void in
         
-        if !login.isUserOrPasswordEmpty(userID: userID.text, password: password.text) {
-            showSpinner(view: self.view)
-            
-            FIRAuth.auth()?.createUser(withEmail: userID.text!, password: password.text!, completion: { (user, error) in
-                
-                self.hideSpinner()
-                
-                if let error = error {
-                    self.alert(content: error.localizedDescription)
-                    return
-                }
-                else {
-                    self.alert(content: AppMessage.LoginSuccess.rawValue, onCancel: {
-                        action -> Void in
-                        
                         self.performSegue(withIdentifier: "showTab", sender: nil)
-                    })
-                }
-            })
-        } else {
-            self.alert(content: AppMessage.UserOrPasswordEmpty.rawValue)
-        }
+//                    })
+//                }
+//            })
+//        } else {
+//            self.alert(content: AppMessage.UserOrPasswordEmpty.rawValue)
+//        }
         
     }
 
