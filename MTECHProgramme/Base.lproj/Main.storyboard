@@ -31,10 +31,10 @@
             </objects>
             <point key="canvasLocation" x="-893" y="-2"/>
         </scene>
-        <!--View Controller-->
+        <!--Book List View Controller-->
         <scene sceneID="gd6-CH-Ubq">
             <objects>
-                <viewController id="9Hq-XW-cHk" sceneMemberID="viewController">
+                <viewController id="9Hq-XW-cHk" customClass="BookListViewController" customModule="MTECHProgramme" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c8A-Rv-Wdb"/>
                         <viewControllerLayoutGuide type="bottom" id="s4d-QF-Ljn"/>
