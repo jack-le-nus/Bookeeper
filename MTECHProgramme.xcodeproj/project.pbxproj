@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -325,11 +325,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
-				ORGANIZATIONNAME = "Jack Le";
+				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					BC51D5061E92A077000D9249 = {
 						CreatedOnToolsVersion = 8.3;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					BC51D51C1E92A078000D9249 = {
 						CreatedOnToolsVersion = 8.3;
@@ -344,7 +344,7 @@
 				};
 			};
 			buildConfigurationList = BC51D5021E92A077000D9249 /* Build configuration list for PBXProject "MTECHProgramme" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -700,9 +700,13 @@
 			baseConfigurationReference = E67FC9214E633560873B686F /* Pods-MTECHProgramme.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MTECHProgramme/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = sg.edu.nus.iss.wlad.MTECHProgramme;
+				PRODUCT_BUNDLE_IDENTIFIER = "PRODUCT-BUNDLE-IDENTIFIER";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -713,9 +717,13 @@
 			baseConfigurationReference = 266588B814F62C691C054B47 /* Pods-MTECHProgramme.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = MTECHProgramme/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = sg.edu.nus.iss.wlad.MTECHProgramme;
+				PRODUCT_BUNDLE_IDENTIFIER = "PRODUCT-BUNDLE-IDENTIFIER";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -728,6 +736,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MTECHProgrammeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sg.edu.nus.iss.wlad.MTECHProgrammeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -743,6 +752,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MTECHProgrammeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sg.edu.nus.iss.wlad.MTECHProgrammeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -757,6 +767,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = MTECHProgrammeUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sg.edu.nus.iss.wlad.MTECHProgrammeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -771,6 +782,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = MTECHProgrammeUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sg.edu.nus.iss.wlad.MTECHProgrammeUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
