@@ -43,11 +43,11 @@ extension UIViewController {
     }
     
     func showSpinner(view: UIView) {
-        LoadingView.shared.show(view: view)
+        LoadingView.sharedInstance.show(view: view)
     }
     
     func hideSpinner() {
-        LoadingView.shared.hide()
+        LoadingView.sharedInstance.hide()
     }
     
 }

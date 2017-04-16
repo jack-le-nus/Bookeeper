@@ -20,7 +20,7 @@
 
 @import Foundation;
 
-@class FIRDatabaseReference, FIRDatabaseQuery, FIRDataSnapshot;
+@class FUIArray;
 @protocol FUICollectionDelegate;
 
 NS_ASSUME_NONNULL_BEGIN

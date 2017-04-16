@@ -23,4 +23,5 @@ target 'MTECHProgramme' do
   pod 'Firebase/Auth'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'SDWebImage', '~>3.8'
 end

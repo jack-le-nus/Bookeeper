@@ -8,9 +8,10 @@
 
 import UIKit
 import FlatUIKit
-import FirebaseDatabase
 import Firebase
 import FirebaseDatabaseUI
+import FirebaseDatabase
+import SDWebImage
 
 class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayout {
    
@@ -40,7 +41,7 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         
         self.ref = FIRDatabase.database().reference()
         
-        self.bookCollectionView.register(BookCollectionViewCell.self, forCellWithReuseIdentifier: "BookCell")
+        self.bookCollectionView.register(UINib(nibName: "BookCell", bundle: nil), forCellWithReuseIdentifier: "BookCell")
         self.bookCollectionView.delegate = self
         
         let layout = self.bookCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
@@ -48,10 +49,14 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         layout.minimumLineSpacing = 4
         
         self.dataSource = self.bookCollectionView?.bind(to: self.ref.child("Book")) { bookCollectionView, indexPath, snap in
-            let cell = bookCollectionView.dequeueReusableCell(withReuseIdentifier: "BookCell", for: indexPath) as! BookCollectionViewCell
+            let cell = bookCollectionView.dequeueReusableCell(withReuseIdentifier: "BookCell", for: indexPath) as! BookCell
+            let postDict = snap.value as? [String : AnyObject] ?? [:]
             cell.contentView.backgroundColor = UIColor.alizarin()
             cell.contentView.layer.borderWidth=1
-            cell.imageView.image = UIImage(named: "dithering")
+            cell.lblName.text = postDict["name"] as? String ?? ""
+            cell.lblDescription.text = postDict["description"] as? String ?? ""
+            cell.imgBook.contentMode = UIViewContentMode.scaleAspectFit
+            cell.imgBook.sd_setImage(with: URL(string: postDict["imageUrl"] as? String ?? ""))
             return cell
         }
         
@@ -81,14 +86,5 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     // MARK: UICollectionViewDelegateFlowLayout
     func collectionView(_ collectionView: UICollectionView, layout
         collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let heightPadding: CGFloat = 16
-        
-        let width = self.view.frame.size.width
-//        let blob = self.collectionViewDataSource.snapshot(at: indexPath.item)
-//        let text = Chat(snapshot: blob)!.text
-//        
-//        let rect = ChatCollectionViewCell.boundingRectForText(text, maxWidth: width)
-        
-//        let height = CGFloat(ceil(Double(rect.size.height))) + heightPadding
-        return CGSize(width: width, height: 100)
+        return CGSize(width: self.view.frame.size.width, height: collectionView.frame.height)
     }}

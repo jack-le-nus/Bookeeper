@@ -20,7 +20,7 @@
 
 @import UIKit;
 
-#import <FirebaseDatabaseUI/FUICollection.h>
+#import "FUIDataSource.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -30,43 +30,28 @@ NS_ASSUME_NONNULL_BEGIN
  * FUITableViewDataSource provides a class that conforms to the
  * UITableViewDataSource protocol which allows UITableViews to implement
  * FUITableViewDataSource in order to provide a UITableView synchronized
- * to a Firebase reference or query. 
+ * to a Firebase reference or query.
  */
-@interface FUITableViewDataSource : NSObject <UITableViewDataSource>
+@interface FUITableViewDataSource : FUIDataSource<UITableViewDataSource>
 
 /**
  * The UITableView instance that operations (inserts, removals, moves, etc.) are
- * performed against. This collection view must be receiving data from
- * this data source otherwise data inconsistency crashes will occur.
+ * performed against.
  */
-@property (nonatomic, readwrite, weak, nullable) UITableView *tableView;
+@property (nonatomic, readonly, weak) UITableView *tableView;
 
 /**
- * The number of items in the data source.
+ * The callback used by the data source to populate the table view.
  */
-@property (nonatomic, readonly) NSUInteger count;
-
-/**
- * The snapshots in the data source.
- */
-@property (nonatomic, readonly) NSArray<FIRDataSnapshot *> *items;
-
-/**
- * A closure that should be invoked when the query encounters a fatal error.
- * After this is invoked, the query is no longer valid and the data source should
- * be recreated.
- */
-@property (nonatomic, copy, readwrite) void (^queryErrorHandler)(NSError *);
-
-/**
- * Returns the snapshot at the given index. Throws an exception if the index is out of bounds.
- */
-- (FIRDataSnapshot *)snapshotAtIndex:(NSInteger)index;
+@property(strong, nonatomic, readonly) UITableViewCell *(^populateCell)
+  (UITableView *tableView, NSIndexPath *indexPath, FIRDataSnapshot *snap);
 
 /**
  * Initialize an instance of FUITableViewDataSource.
  * @param collection An FUICollection used by the data source to pull data
  *   from Firebase Database.
+ * @param tableView An instance of a UITableView to bind to. This view is
+ *   not retained by the data source.
  * @param populateCell A closure used by the data source to create/reuse
  *   table view cells and populate their content. This closure is retained
  *   by the data source, so if you capture self in the closure and also claim ownership
@@ -74,6 +59,7 @@ NS_ASSUME_NONNULL_BEGIN
  * @return An instance of FUITableViewDataSource.
  */
 - (instancetype)initWithCollection:(id<FUICollection>)collection
+                              view:(UITableView *)tableView
                       populateCell:(UITableViewCell *(^)(UITableView *tableView,
                                                          NSIndexPath *indexPath,
                                                          FIRDataSnapshot *object))populateCell NS_DESIGNATED_INITIALIZER;
@@ -83,6 +69,8 @@ NS_ASSUME_NONNULL_BEGIN
  * Initialize an instance of FUITableViewDataSource with contents ordered
  * by the query.
  * @param query A Firebase query to bind the data source to.
+ * @param tableView An instance of a UITableView to bind to. This view is
+ *   not retained by the data source.
  * @param populateCell A closure used by the data source to create/reuse
  *   table view cells and populate their content. This closure is retained
  *   by the data source, so if you capture self in the closure and also claim ownership
@@ -90,23 +78,12 @@ NS_ASSUME_NONNULL_BEGIN
  * @return An instance of FUITableViewDataSource.
  */
 - (instancetype)initWithQuery:(FIRDatabaseQuery *)query
+                         view:(UITableView *)tableView
                  populateCell:(UITableViewCell *(^)(UITableView *tableView,
                                                     NSIndexPath *indexPath,
                                                     FIRDataSnapshot *object))populateCell;
 
-- (instancetype)init NS_UNAVAILABLE;
-
-/**
- * Attaches the data source to a table view and begins sending updates immediately.
- * @param view An instance of UITableView that the data source should push
- *   updates to.
- */
-- (void)bindToView:(UITableView *)view;
-
-/**
- * Detaches the data source from a view and stops sending any updates.
- */
-- (void)unbind;
+- (instancetype)initWithCollection:(id<FUICollection>)collection NS_UNAVAILABLE;
 
 @end
 
