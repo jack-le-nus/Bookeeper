@@ -42,6 +42,10 @@ extension UIViewController {
         alertView.show()
     }
     
+    func applyTheme() {
+//        self.view.backgroundColor = UIColor(fromHexCode: "#ECF3F4")
+    }
+    
     func showSpinner(view: UIView) {
         LoadingView.sharedInstance.show(view: view)
     }
