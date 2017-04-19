@@ -14,12 +14,7 @@ public class LoadingView{
     var overlayView = UIView()
     var activityIndicator = UIActivityIndicatorView()
     
-    class var shared: LoadingView {
-        struct Static {
-            static let instance: LoadingView = LoadingView()
-        }
-        return Static.instance
-    }
+    static let sharedInstance = LoadingView()
     
     public func show(view: UIView) {
         

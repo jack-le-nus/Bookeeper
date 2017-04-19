@@ -52,17 +52,33 @@
                     </view>
                     <navigationItem key="navigationItem" id="GaC-SN-Mh9"/>
                     <connections>
-                        <segue destination="9Hq-XW-cHk" kind="show" identifier="showTab" id="CCz-1C-Zdl"/>
+                        <segue destination="zvF-Vc-bFk" kind="show" identifier="showTab" id="ApD-58-YYv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WkE-tH-lf3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-893" y="-2"/>
         </scene>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="AUC-QG-9ck">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KbY-0t-Njo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="zvF-Vc-bFk" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sHG-dO-wv4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9Hq-XW-cHk" kind="relationship" relationship="rootViewController" id="8vJ-Ks-h8b"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-71" y="-2"/>
+        </scene>
+        <!--Book List View Controller-->
         <scene sceneID="gd6-CH-Ubq">
             <objects>
-                <viewController id="9Hq-XW-cHk" sceneMemberID="viewController">
+                <viewController id="9Hq-XW-cHk" customClass="BookListViewController" customModule="MTECHProgramme" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c8A-Rv-Wdb"/>
                         <viewControllerLayoutGuide type="bottom" id="s4d-QF-Ljn"/>
@@ -82,10 +98,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="iCA-ud-Ljk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mHO-SL-yYB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-103.2" y="-10.344827586206897"/>
+            <point key="canvasLocation" x="767" y="-2"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="cgp-yA-XDg">

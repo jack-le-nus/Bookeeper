@@ -17,6 +17,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var userID: FUITextField!
     @IBOutlet weak var password: FUITextField!
     
+    
+    
     override var nibName: String?
     {
         get
@@ -96,14 +98,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 else {
                     self.alert(content: AppMessage.LoginSuccess.rawValue, onCancel: {
                         action -> Void in
-        
+
                         self.performSegue(withIdentifier: "showTab", sender: nil)
-                    })
-                }
-            })
-        } else {
-            self.alert(content: AppMessage.UserOrPasswordEmpty.rawValue)
-        }
+//                    })
+//                }
+//            })
+//        } else {
+//            self.alert(content: AppMessage.UserOrPasswordEmpty.rawValue)
+//        }
         
     }
 

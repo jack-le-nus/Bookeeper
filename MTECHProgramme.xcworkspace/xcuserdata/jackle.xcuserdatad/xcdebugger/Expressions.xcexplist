@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "BookListViewController.collectionView(UICollectionView, layout : UICollectionViewLayout, sizeForItemAt : IndexPath) -&gt; CGSize:BookListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "collectionViewLayout.collectionViewContentSize&#10;collectionViewLayout.collectionViewContentSize.height">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BookListViewController.(viewDidLoad() -&gt; ()).(closure #3):BookListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "snapshot.childrenCount">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BookListViewController.(viewDidLoad() -&gt; ()).(closure #1):BookListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "postDict[&quot;imageUrl&quot;] as? String ?? &quot;&quot;">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BookListViewController.loadBooks() -&gt; ():BookListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.books.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BookListViewController.viewDidLoad() -&gt; ():BookListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.bookCollectionView.bounds.size&#10;">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
