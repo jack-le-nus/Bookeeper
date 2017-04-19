@@ -21,4 +21,8 @@ target 'MTECHProgramme' do
   pod 'FlatUIKit'
   pod 'Firebase/Auth'
   pod 'Firebase/Core'
-end
+  pod 'Firebase/Storage'
+  pod 'Firebase/Database'
+  pod 'Firebase/RemoteConfig'
+  pod 'FirebaseUI'
+ end
