@@ -44,7 +44,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="p7l-Gd-b1F">
-                    <rect key="frame" x="168" y="95" width="39" height="37"/>
+                    <rect key="frame" x="168" y="75" width="39" height="37"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="37" id="Zna-Gf-E6D"/>
                         <constraint firstAttribute="width" constant="39" id="rL2-W9-qVM"/>
@@ -58,7 +58,7 @@
                 <constraint firstAttribute="bottom" secondItem="bee-SX-gBB" secondAttribute="bottom" id="L97-c9-Zyj"/>
                 <constraint firstAttribute="trailing" secondItem="bee-SX-gBB" secondAttribute="trailing" id="LxA-AB-HtK"/>
                 <constraint firstItem="KW9-Ei-iVj" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="65" id="Otu-4N-IS5"/>
-                <constraint firstItem="p7l-Gd-b1F" firstAttribute="top" secondItem="KW9-Ei-iVj" secondAttribute="top" constant="30" id="P9x-Ke-FGt"/>
+                <constraint firstItem="p7l-Gd-b1F" firstAttribute="top" secondItem="KW9-Ei-iVj" secondAttribute="top" constant="10" id="P9x-Ke-FGt"/>
                 <constraint firstItem="bee-SX-gBB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PJC-4T-kb9"/>
                 <constraint firstItem="bee-SX-gBB" firstAttribute="top" secondItem="KW9-Ei-iVj" secondAttribute="bottom" constant="10" id="cFi-EL-uWe"/>
                 <constraint firstItem="p7l-Gd-b1F" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cra-k6-diQ"/>

@@ -104,13 +104,10 @@ Copyright 2017 Google
 
 Copyright 2017 Google
 
-<<<<<<< HEAD
 ## FirebaseRemoteConfig
 
 Copyright 2017 Google
 
-=======
->>>>>>> Book-list-page
 ## FirebaseStorage
 
 Copyright 2017 Google
@@ -967,7 +964,6 @@ Copyright 2017 Google
    limitations under the License.
 
 
-<<<<<<< HEAD
 ## Protobuf
 
 This license applies to all parts of Protocol Buffers except the following:
@@ -1014,8 +1010,6 @@ standalone and requires a support library to be linked with it.  This
 support library is itself covered by the above license.
 
 
-=======
->>>>>>> Book-list-page
 ## SDWebImage
 
 Copyright (c) 2016 Olivier Poitrey rs@dailymotion.com

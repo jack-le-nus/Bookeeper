@@ -66,7 +66,7 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         layout1.minimumLineSpacing = 10
         layout1.minimumInteritemSpacing = 10
         
-        let refFeaturedQuery : FIRDatabaseQuery = self.ref.child("Book").queryOrdered(byChild: "isFeatured").queryEqual(toValue: true)
+        let refFeaturedQuery : FIRDatabaseQuery = self.ref.child("Book").queryOrdered(byChild: "isFeatured").queryEqual(toValue: "true")
         
         self.featuredDataSource = self.bookCollectionView?.bind(to: refFeaturedQuery) { bookCollectionView, indexPath, snap in
             let cell = bookCollectionView.dequeueReusableCell(withReuseIdentifier: "BookCell", for: indexPath) as! BookCell
@@ -93,7 +93,7 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
             return cell
         }
         
-        self.ref.child("Book").queryOrdered(byChild: "isFeatured").queryEqual(toValue: "true")
+        self.ref.child("Book").queryOrdered(byChild: "isFeatured").queryEqual(toValue: true)
             .observe(.childAdded, with: { snapshot in
                 self.pageControl.numberOfPages = Int(snapshot.childrenCount)
             })
@@ -107,6 +107,10 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     
     func getUid() -> String {
         return (FIRAuth.auth()?.currentUser?.uid)!
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "showBookDetail", sender: collectionView)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

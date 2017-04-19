@@ -181,7 +181,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 			<key>License</key>
 			<string>Copyright</string>
 			<key>Title</key>
-<<<<<<< HEAD
 			<string>FirebaseRemoteConfig</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
@@ -192,8 +191,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 			<key>License</key>
 			<string>Copyright</string>
 			<key>Title</key>
-=======
->>>>>>> Book-list-page
 			<string>FirebaseStorage</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
@@ -1088,7 +1085,6 @@ THE SOFTWARE.</string>
 		</dict>
 		<dict>
 			<key>FooterText</key>
-<<<<<<< HEAD
 			<string>This license applies to all parts of Protocol Buffers except the following:
 
   - Atomicops support for generic gcc, located in
@@ -1141,8 +1137,6 @@ support library is itself covered by the above license.
 		</dict>
 		<dict>
 			<key>FooterText</key>
-=======
->>>>>>> Book-list-page
 			<string>Copyright (c) 2016 Olivier Poitrey rs@dailymotion.com
  
 Permission is hereby granted, free of charge, to any person obtaining a copy
