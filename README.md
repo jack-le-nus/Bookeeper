@@ -10,7 +10,7 @@ There’re 4 things you need to read and understand before start:
 
 # Work flow and definition of done:
 
-* UI must be exact like wireframe: https://drive.google.com/open?id=0B5aB1Kl7IHQ0WWJpeUZzTWNVWm8
+* UI must be exact like wireframe: https://drive.google.com/open?id=0B5aB1Kl7IHQ0V3NPMmJMdi1qUnM
 * Color code: https://drive.google.com/open?id=0B5aB1Kl7IHQ0UklUZVZmV3IwNDg
 * Font: Default font of iOS (San francisco) https://developer.apple.com/fonts/
 * Code Review by another developer (Pull Request)
