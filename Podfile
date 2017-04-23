@@ -4,7 +4,7 @@
 target 'MTECHProgramme' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
-
+  
   # Pods for MTECHProgramme
 
   target 'MTECHProgrammeTests' do
@@ -21,8 +21,11 @@ target 'MTECHProgramme' do
   pod 'FlatUIKit'
   pod 'Firebase/Auth'
   pod 'Firebase/Core'
+  pod ‘Firebase/Crash’
   pod 'Firebase/Storage'
   pod 'Firebase/Database'
+  pod ‘Firebase/Invites’
   pod 'Firebase/RemoteConfig'
   pod 'FirebaseUI'
- end
+ 
+end
