@@ -13,7 +13,8 @@ import FirebaseDatabaseUI
 import FirebaseDatabase
 import SDWebImage
 
-class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource
+{
    
     var ref: FIRDatabaseReference!
     var _refHandle: FIRDatabaseHandle!
@@ -24,7 +25,16 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     
     @IBOutlet weak var bookCollectionView: UICollectionView!
     @IBOutlet weak var generalBookCollectionView: UICollectionView!
-
+    
+    //Added by Medha
+    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
+    var isMenuVisible = true
+    var menuNameArray:Array = [String]()
+    
+    
     override var nibName: String?
     {
         get
@@ -34,7 +44,7 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         }
     }
     
-    override required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
     }
@@ -42,7 +52,7 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     override func viewDidLoad() {
         super.viewDidLoad()
         self.applyTheme()
-        
+        leadingConstraint.constant = -245
         self.ref = FIRDatabase.database().reference()
         
         self.bookCollectionView.register(UINib(nibName: "BookCell", bundle: nil), forCellWithReuseIdentifier: "BookCell")
@@ -99,6 +109,19 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
             })
         
         self.title = "Books"
+        
+        //Added by Medha to implement Navigation Drawer
+        
+        menuNameArray = ["Profile","My Books","Borrowed Books","About Us", "Log Out"]
+        userImage.contentMode = UIViewContentMode.scaleAspectFit
+        userImage.layer.borderWidth = 2
+        userImage.layer.borderColor = UIColor.green.cgColor
+        userImage.layer.cornerRadius = userImage.frame.height/2
+        userImage.layer.masksToBounds = false
+        userImage.clipsToBounds = true
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.register(UINib(nibName: "SideMenuTableViewCell", bundle: nil), forCellReuseIdentifier: "SideMenuTableViewCell")
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -134,6 +157,46 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets.zero
+    }
+    
+    //Added by Medha
+    @IBAction func onProfileClick(_ sender: UIButton)
+    {
+        self.performSegue(withIdentifier: "openProfileView", sender: nil)
+        leadingConstraint.constant = -245
+        isMenuVisible = !isMenuVisible
+    }
+    
+    @IBAction func onMenuClick(_ sender: Any)
+    {
+        if (isMenuVisible)
+        {
+            leadingConstraint.constant = 0
+        }
+        else{
+            leadingConstraint.constant = -245
+        }
+        isMenuVisible = !isMenuVisible
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return menuNameArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+       let cell = tableView.dequeueReusableCell(withIdentifier: "SideMenuTableViewCell", for: indexPath) as! SideMenuTableViewCell
+        cell.menu.text = menuNameArray[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
+        let cell:SideMenuTableViewCell = tableView.cellForRow(at: indexPath) as! SideMenuTableViewCell
+        if cell.menu.text! == "Profile"
+        {
+            self.performSegue(withIdentifier: "openProfileView", sender: nil)
+        }        
     }
 }
 

@@ -44,5 +44,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>location always usage</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>location in use</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Need Library access for uploading Images</string>
 </dict>
 </plist>
