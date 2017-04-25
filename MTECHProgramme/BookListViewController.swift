@@ -34,7 +34,6 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     var isMenuVisible = true
     var menuNameArray:Array = [String]()
     
-    
     override var nibName: String?
     {
         get
@@ -111,8 +110,23 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         self.title = "Books"
         
         //Added by Medha to implement Navigation Drawer
+        menuNameArray = ["Profile","My Books","Borrowed Books","Log Out"]
+        let userRef = ref.child("User").child("1")
+        userRef.observeSingleEvent(of: .value, with: { snapshot in
+        let values =  snapshot.value as? [String:AnyObject] ?? [:]
+        //Retrieval of user image from db
+        if snapshot.hasChild("imageUrl")
+        {
+           let url = values["imageUrl"] as? String ?? ""
+            FIRStorage.storage().reference(forURL: url).data(withMaxSize: 10 * 1024 * 1024, completion: { (data,error) in
+                    DispatchQueue.main.async() { Void in
+                        let image = UIImage(data: data!)
+                        self.userImage.image = image!
+                    }
+                })
+            }
+        })
         
-        menuNameArray = ["Profile","My Books","Borrowed Books","About Us", "Log Out"]
         userImage.contentMode = UIViewContentMode.scaleAspectFit
         userImage.layer.borderWidth = 2
         userImage.layer.borderColor = UIColor.green.cgColor
@@ -125,8 +139,8 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
-    }
+        super.viewWillAppear(true)
+            }
     
     func getUid() -> String {
         return (FIRAuth.auth()?.currentUser?.uid)!
@@ -159,7 +173,7 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         return UIEdgeInsets.zero
     }
     
-    //Added by Medha
+    //Added by Medha to open user profile view
     @IBAction func onProfileClick(_ sender: UIButton)
     {
         self.performSegue(withIdentifier: "openProfileView", sender: nil)
@@ -167,6 +181,7 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         isMenuVisible = !isMenuVisible
     }
     
+    //to open menu
     @IBAction func onMenuClick(_ sender: Any)
     {
         if (isMenuVisible)
