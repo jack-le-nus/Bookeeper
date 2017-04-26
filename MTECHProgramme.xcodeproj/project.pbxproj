@@ -17,6 +17,11 @@
 		76B222831EA9F808003E2196 /* MapAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B222821EA9F808003E2196 /* MapAddressViewController.swift */; };
 		76B222851EAA0149003E2196 /* LocationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B222841EAA0149003E2196 /* LocationSearchTableViewController.swift */; };
 		93EAEE0B842FB46BF7D18AB9 /* Pods_MTECHProgrammeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98E9CC37AC8951F9B298EF1 /* Pods_MTECHProgrammeTests.framework */; };
+		9E016A4A1EAF3EE50025BEF3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E016A491EAF3EE50025BEF3 /* Constants.swift */; };
+		9E016A4D1EAFA4370025BEF3 /* BorrowedBookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E016A4B1EAFA4360025BEF3 /* BorrowedBookListViewController.swift */; };
+		9E016A4E1EAFA4370025BEF3 /* BorrowedBookListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E016A4C1EAFA4360025BEF3 /* BorrowedBookListViewController.xib */; };
+		9E830B671EADE6D5000F2712 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E830B651EADE6D5000F2712 /* CreateAccountViewController.swift */; };
+		9E830B681EADE6D5000F2712 /* CreateAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E830B661EADE6D5000F2712 /* CreateAccountViewController.xib */; };
 		BC1973181EA0ACA7009D410B /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1973161EA0ACA7009D410B /* BookListViewController.swift */; };
 		BC1973191EA0ACA7009D410B /* BookListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC1973171EA0ACA7009D410B /* BookListViewController.xib */; };
 		BC51D50B1E92A077000D9249 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC51D50A1E92A077000D9249 /* AppDelegate.swift */; };
@@ -74,6 +79,11 @@
 		76B222821EA9F808003E2196 /* MapAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAddressViewController.swift; sourceTree = "<group>"; };
 		76B222841EAA0149003E2196 /* LocationSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchTableViewController.swift; sourceTree = "<group>"; };
 		926E61E3741649F9115B710F /* Pods-MTECHProgrammeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTECHProgrammeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MTECHProgrammeTests/Pods-MTECHProgrammeTests.release.xcconfig"; sourceTree = "<group>"; };
+		9E016A491EAF3EE50025BEF3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9E016A4B1EAFA4360025BEF3 /* BorrowedBookListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorrowedBookListViewController.swift; sourceTree = "<group>"; };
+		9E016A4C1EAFA4360025BEF3 /* BorrowedBookListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BorrowedBookListViewController.xib; sourceTree = "<group>"; };
+		9E830B651EADE6D5000F2712 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
+		9E830B661EADE6D5000F2712 /* CreateAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateAccountViewController.xib; sourceTree = "<group>"; };
 		BC1973161EA0ACA7009D410B /* BookListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
 		BC1973171EA0ACA7009D410B /* BookListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookListViewController.xib; sourceTree = "<group>"; };
 		BC51D5071E92A077000D9249 /* MTECHProgramme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTECHProgramme.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -230,6 +240,8 @@
 			isa = PBXGroup;
 			children = (
 				BC1973161EA0ACA7009D410B /* BookListViewController.swift */,
+				9E830B651EADE6D5000F2712 /* CreateAccountViewController.swift */,
+				9E830B661EADE6D5000F2712 /* CreateAccountViewController.xib */,
 				BC1973171EA0ACA7009D410B /* BookListViewController.xib */,
 				BC51D53B1E92AECC000D9249 /* LoginViewController.swift */,
 				BC51D53C1E92AECC000D9249 /* LoginViewController.xib */,
@@ -239,6 +251,8 @@
 				768962BF1EA9C77F00A73A9B /* SideMenuTableViewCell.xib */,
 				76B222821EA9F808003E2196 /* MapAddressViewController.swift */,
 				76B222841EAA0149003E2196 /* LocationSearchTableViewController.swift */,
+				9E016A4B1EAFA4360025BEF3 /* BorrowedBookListViewController.swift */,
+				9E016A4C1EAFA4360025BEF3 /* BorrowedBookListViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -258,6 +272,7 @@
 				BCEE2EC51E9CB32700D469FD /* Themes */,
 				BCEE2EB91E9C998400D469FD /* AppMessage.swift */,
 				BCEE2EB51E9C7C2000D469FD /* ViewControllerExtension.swift */,
+				9E016A491EAF3EE50025BEF3 /* Constants.swift */,
 			);
 			name = Utils;
 			path = MTECHProgramme;
@@ -404,9 +419,11 @@
 			files = (
 				BC51D53F1E92AECC000D9249 /* LoginViewController.xib in Resources */,
 				BC51D5171E92A077000D9249 /* LaunchScreen.storyboard in Resources */,
+				9E830B681EADE6D5000F2712 /* CreateAccountViewController.xib in Resources */,
 				768962B71EA8F78A00A73A9B /* ProfileViewController.xib in Resources */,
 				BCEE2EB41E9C76D300D469FD /* GoogleService-Info.plist in Resources */,
 				BC51D5141E92A077000D9249 /* Assets.xcassets in Resources */,
+				9E016A4E1EAFA4370025BEF3 /* BorrowedBookListViewController.xib in Resources */,
 				BC51D5121E92A077000D9249 /* Main.storyboard in Resources */,
 				768962C11EA9C77F00A73A9B /* SideMenuTableViewCell.xib in Resources */,
 				BCC14F1F1EA34DBC00A1219E /* BookCell.xib in Resources */,
@@ -443,7 +460,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		5EAAD5851AF259F5E3CE02EE /* [CP] Embed Pods Frameworks */ = {
@@ -518,7 +535,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D971FDB034A93676655F5625 /* [CP] Copy Pods Resources */ = {
@@ -563,7 +580,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -573,16 +590,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E830B671EADE6D5000F2712 /* CreateAccountViewController.swift in Sources */,
 				BCEE2EBA1E9C998400D469FD /* AppMessage.swift in Sources */,
 				BCEE2EC01E9C9DF600D469FD /* Themer.swift in Sources */,
 				BCEE2ECD1E9CB82400D469FD /* TextFieldTheme.swift in Sources */,
 				BC51D53D1E92AECC000D9249 /* LoginModel.swift in Sources */,
 				76B222851EAA0149003E2196 /* LocationSearchTableViewController.swift in Sources */,
 				BCEE2EC91E9CB7F700D469FD /* ButtonThemer.swift in Sources */,
+				9E016A4D1EAFA4370025BEF3 /* BorrowedBookListViewController.swift in Sources */,
 				BC51D50B1E92A077000D9249 /* AppDelegate.swift in Sources */,
 				BCEE2EB81E9C83B500D469FD /* LoadingView.swift in Sources */,
 				BCEE2ECB1E9CB80F00D469FD /* TextFieldThemer.swift in Sources */,
 				BC51D53E1E92AECC000D9249 /* LoginViewController.swift in Sources */,
+				9E016A4A1EAF3EE50025BEF3 /* Constants.swift in Sources */,
 				BCC14F1E1EA34DBC00A1219E /* BookCell.swift in Sources */,
 				768962C01EA9C77F00A73A9B /* SideMenuTableViewCell.swift in Sources */,
 				BCEE2EB61E9C7C2000D469FD /* ViewControllerExtension.swift in Sources */,

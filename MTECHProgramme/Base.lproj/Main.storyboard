@@ -53,6 +53,7 @@
                     <navigationItem key="navigationItem" id="GaC-SN-Mh9"/>
                     <connections>
                         <segue destination="zvF-Vc-bFk" kind="show" identifier="showTab" id="ApD-58-YYv"/>
+                        <segue destination="hRQ-qH-MnF" kind="show" identifier="showCreate" id="k1f-IY-jYe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WkE-tH-lf3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -85,7 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vkd-YW-A5q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1814" y="-772"/>
+            <point key="canvasLocation" x="1604" y="-755"/>
         </scene>
         <!--Map Address Controller-->
         <scene sceneID="b43-wu-kw4">
@@ -147,18 +148,18 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UHf-2N-Crm" id="hbS-g7-83q">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="D4E-a6-Oxl">
-                                            <rect key="frame" x="15" y="4" width="34" height="21"/>
+                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0hr-eL-ThX">
-                                            <rect key="frame" x="15" y="25" width="44" height="15"/>
+                                            <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -193,6 +194,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KbY-0t-Njo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-71" y="-2"/>
+        </scene>
+        <!--Create Account View Controller-->
+        <scene sceneID="c9W-gU-iqI">
+            <objects>
+                <viewController id="hRQ-qH-MnF" customClass="CreateAccountViewController" customModule="MTECHProgramme" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="reI-LK-KKd"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tcg-ys-Fcc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zfw-GP-L2e">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="zvF-Vc-bFk" kind="show" identifier="showBookFromSignUp" id="HTS-Vm-cRk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pwa-A5-ukb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-894" y="812"/>
         </scene>
         <!--Book List View Controller-->
         <scene sceneID="gd6-CH-Ubq">
@@ -307,4 +329,7 @@
     <resources>
         <image name="menu" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="HTS-Vm-cRk"/>
+    </inferredMetricsTieBreakers>
 </document>

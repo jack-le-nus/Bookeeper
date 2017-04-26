@@ -12,9 +12,9 @@ import FlatUIKit
 
 class ButtonTheme : Theme {
 
-    let buttonColor: UIColor = UIColor.turquoise()
-    let shadowColor:UIColor = UIColor.greenSea()
+    let buttonColor: UIColor = UIColor(fromHexCode: "#FA0013")
+    //let shadowColor:UIColor = UIColor.greenSea()
     let titleColor:UIColor = UIColor.white
     let shadowHeight:CGFloat = 3.0
-    let cornerRadius:CGFloat = 6.0
+    //let cornerRadius:CGFloat = 6.0
 }

@@ -16,7 +16,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lblPassword: UILabel!
     @IBOutlet weak var userID: FUITextField!
     @IBOutlet weak var password: FUITextField!
-    
+    @IBOutlet weak var createAccount: FUIButton!
     override var nibName: String?
     {
         get
@@ -39,6 +39,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         let buttonThemer:ButtonThemer = ButtonThemer()
         buttonThemer.applyTheme(view: btnLogin, theme: ButtonTheme())
+        buttonThemer.applyTheme(view: createAccount, theme: ButtonTheme())
         
         let textFieldThemer:TextFieldThemer = TextFieldThemer()
         textFieldThemer.applyTheme(view: userID, theme: TextFieldTheme())
@@ -104,6 +105,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         } else {
             self.alert(content: AppMessage.UserOrPasswordEmpty.rawValue)
         }
+        
+    }
+    
+    
+    @IBAction func createAccountClick(_ sender: Any) {
+      loginSession() 
+    }
+    
+    func loginSession() {
+        
+        self.performSegue(withIdentifier: "showCreate", sender: nil)
         
     }
 
