@@ -33,6 +33,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     var storageRef: FIRStorageReference!
     var storage: FIRStorage!
     var data = NSData()
+    var currentUser = (FIRAuth.auth()?.currentUser?.uid)!
     
     override var nibName: String? {
         get {
@@ -68,13 +69,13 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         password.delegate=self
         confirmPassword.delegate=self
         
-//        let textFieldThemer:TextFieldThemer = TextFieldThemer()
-//        textFieldThemer.applyTheme(view: userName, theme: TextFieldTheme())
-//        textFieldThemer.applyTheme(view: userEmailId, theme: TextFieldTheme())
-//        textFieldThemer.applyTheme(view: userContactNumber, theme: TextFieldTheme())
-//        textFieldThemer.applyTheme(view: address, theme: TextFieldTheme())
-//        textFieldThemer.applyTheme(view: password, theme: TextFieldTheme())
-//        textFieldThemer.applyTheme(view: confirmPassword, theme: TextFieldTheme())
+        let textFieldThemer:TextFieldThemer = TextFieldThemer()
+        textFieldThemer.applyTheme(view: userName, theme: TextFieldTheme())
+        textFieldThemer.applyTheme(view: userEmailId, theme: TextFieldTheme())
+        textFieldThemer.applyTheme(view: userContactNumber, theme: TextFieldTheme())
+        textFieldThemer.applyTheme(view: address, theme: TextFieldTheme())
+        textFieldThemer.applyTheme(view: password, theme: TextFieldTheme())
+        textFieldThemer.applyTheme(view: confirmPassword, theme: TextFieldTheme())
         
         let buttonThemer:ButtonThemer = ButtonThemer()
         buttonThemer.applyTheme(view: btnUpdate, theme: ButtonTheme())
@@ -85,9 +86,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         userImage.layer.masksToBounds = false
         userImage.clipsToBounds = true
         
-        signedUser = (FIRAuth.auth()?.currentUser?.uid)!
-        
-        let userRef = ref.child("User").child("1")
+        let userRef = ref.child("User").child(currentUser)
         userRef.observeSingleEvent(of: .value, with: { snapshot in
         
         let values =  snapshot.value as? [String:AnyObject] ?? [:]
@@ -151,7 +150,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         
         data = UIImageJPEGRepresentation(userImage.image!, 0.8)! as NSData
         // set upload path
-        let filePath = "user_image/" + "\(1)/\("userPhoto")"
+        let filePath = "user_image/" + "\(currentUser)/\("userPhoto")"
         let metaData = FIRStorageMetadata()
         metaData.contentType = "image/jpeg"
         
@@ -162,16 +161,16 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
             }else{                
                 let downloadURL = self.storageRef!.child((metaData?.path)!).description
                 //store downloadURL at database
-                self.ref.child("User").child("1").updateChildValues(["imageUrl": downloadURL])
+                self.ref.child("User").child(self.currentUser).updateChildValues(["imageUrl": downloadURL])
             }
             
         }
         
         //Save Values to database and return to home page
-        self.ref.child("User").child("1").child("name").setValue(userName.text!)
-        self.ref.child("User").child("1").child("email").setValue(userEmailId.text!)
-        self.ref.child("User").child("1").child("phone").setValue(userContactNumber.text!)
-        self.ref.child("User").child("1").child("address").setValue(address.text!)
+        self.ref.child("User").child(currentUser).child("name").setValue(userName.text!)
+        self.ref.child("User").child(currentUser).child("email").setValue(userEmailId.text!)
+        self.ref.child("User").child(currentUser).child("phone").setValue(userContactNumber.text!)
+        self.ref.child("User").child(currentUser).child("address").setValue(address.text!)
         
         
         

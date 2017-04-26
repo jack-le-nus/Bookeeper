@@ -110,8 +110,9 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         self.title = "Books"
         
         //Added by Medha to implement Navigation Drawer
+        let currentUser = (FIRAuth.auth()?.currentUser?.uid)!
         menuNameArray = ["Profile","My Books","Borrowed Books","Log Out"]
-        let userRef = ref.child("User").child("1")
+        let userRef = ref.child("User").child(currentUser)
         userRef.observeSingleEvent(of: .value, with: { snapshot in
         let values =  snapshot.value as? [String:AnyObject] ?? [:]
         //Retrieval of user image from db
@@ -138,9 +139,9 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         self.tableView.register(UINib(nibName: "SideMenuTableViewCell", bundle: nil), forCellReuseIdentifier: "SideMenuTableViewCell")
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-            }
+    override func viewWillAppear(_ animated: Bool) {
+        //viewDidLoad()
+    }
     
     func getUid() -> String {
         return (FIRAuth.auth()?.currentUser?.uid)!
