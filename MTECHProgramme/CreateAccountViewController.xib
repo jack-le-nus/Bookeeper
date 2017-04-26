@@ -17,6 +17,7 @@
                 <outlet property="emailText" destination="Pva-yv-avR" id="eKm-tB-igc"/>
                 <outlet property="nameText" destination="Jc3-Za-s3D" id="7o6-OU-O7O"/>
                 <outlet property="passwordText" destination="bgh-of-1uo" id="lWc-4Y-drR"/>
+                <outlet property="signInBtn" destination="woS-r7-3BR" id="N2o-Wc-UrU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -75,6 +76,21 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Already Have an Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7v9-ES-Vfa">
+                    <rect key="frame" x="116" y="580" width="192" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woS-r7-3BR" customClass="FUIButton">
+                    <rect key="frame" x="63" y="627" width="299" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Sign In"/>
+                    <connections>
+                        <action selector="signInAction:" destination="-1" eventType="touchUpInside" id="VfL-cr-fHe"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.92143112421035767" green="0.92145270109176636" blue="0.92144101858139038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <point key="canvasLocation" x="32" y="87"/>

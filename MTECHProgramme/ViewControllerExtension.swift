@@ -43,7 +43,7 @@ extension UIViewController {
     }
     
     func applyTheme() {
-//        self.view.backgroundColor = UIColor(fromHexCode: "#ECF3F4")
+        self.view.backgroundColor = UIColor(fromHexCode: "#ECF3F4")
     }
     
     func showSpinner(view: UIView) {

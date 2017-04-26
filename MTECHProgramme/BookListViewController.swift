@@ -196,7 +196,11 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         if cell.menu.text! == "Profile"
         {
             self.performSegue(withIdentifier: "openProfileView", sender: nil)
-        }        
+        }
+        if cell.menu.text! == "Borrowed Books"
+        {
+            self.performSegue(withIdentifier: "showBorrowedBooks", sender: nil)
+        }
     }
 }
 

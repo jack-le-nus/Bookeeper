@@ -26,7 +26,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Get Started"/>
                                 <connections>
-                                    <segue destination="S9o-7c-m98" kind="show" id="4wA-kQ-4r0"/>
+                                    <segue destination="bod-yh-hmK" kind="show" id="4wA-kQ-4r0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -53,12 +53,12 @@
                     <navigationItem key="navigationItem" id="GaC-SN-Mh9"/>
                     <connections>
                         <segue destination="zvF-Vc-bFk" kind="show" identifier="showTab" id="ApD-58-YYv"/>
-                        <segue destination="hRQ-qH-MnF" kind="show" identifier="showCreate" id="k1f-IY-jYe"/>
+                        <segue destination="hRQ-qH-MnF" kind="show" identifier="showCreate" id="hsg-gO-5lr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WkE-tH-lf3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-893" y="-2"/>
+            <point key="canvasLocation" x="45.600000000000001" y="-2.2488755622188905"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="Oeg-4n-y5s">
@@ -148,18 +148,18 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UHf-2N-Crm" id="hbS-g7-83q">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="D4E-a6-Oxl">
-                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="15" y="4" width="34" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0hr-eL-ThX">
-                                            <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                            <rect key="frame" x="15" y="25" width="44" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -193,7 +193,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KbY-0t-Njo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-71" y="-2"/>
+            <point key="canvasLocation" x="868" y="-2.2488755622188905"/>
         </scene>
         <!--Create Account View Controller-->
         <scene sceneID="c9W-gU-iqI">
@@ -208,13 +208,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="09p-Ua-8Wb"/>
                     <connections>
                         <segue destination="zvF-Vc-bFk" kind="show" identifier="showBookFromSignUp" id="HTS-Vm-cRk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pwa-A5-ukb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-894" y="812"/>
+            <point key="canvasLocation" x="44" y="811.84407796101959"/>
         </scene>
         <!--Book List View Controller-->
         <scene sceneID="gd6-CH-Ubq">
@@ -252,7 +253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mHO-SL-yYB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="836" y="-9.4452773613193415"/>
+            <point key="canvasLocation" x="1775.2" y="-9.4452773613193415"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="cgp-yA-XDg">
@@ -280,7 +281,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KIz-6a-kIF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1679" y="-2"/>
+            <point key="canvasLocation" x="2616.8000000000002" y="-2.2488755622188905"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="BSL-vE-g7Q">
@@ -305,7 +306,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l2G-vo-2L0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2535" y="-9"/>
+            <point key="canvasLocation" x="3472.8000000000002" y="-9.4452773613193415"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AS9-uG-q9i">
@@ -325,11 +326,29 @@
             </objects>
             <point key="canvasLocation" x="2688.8000000000002" y="-772.26386806596713"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EZH-8S-mCN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bod-yh-hmK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y6F-6H-UuZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="S9o-7c-m98" kind="relationship" relationship="rootViewController" id="awV-au-Z5D"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Xu-hH-cIB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-893.60000000000002" y="-2.2488755622188905"/>
+        </scene>
     </scenes>
     <resources>
         <image name="menu" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="HTS-Vm-cRk"/>
+        <segue reference="ApD-58-YYv"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -12,7 +12,7 @@ import FirebaseAuthUI
 import FirebaseGoogleAuthUI
 import FlatUIKit
 
-class CreateAccountViewController: UIViewController,UITextFieldDelegate {
+class CreateAccountViewController: UIViewController,UITextFieldDelegate, UINavigationControllerDelegate {
 
     @IBOutlet var createView: UIView!
     @IBOutlet weak var nameText: FUITextField!
@@ -20,10 +20,14 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var passwordText: FUITextField!
     @IBOutlet weak var emailText: FUITextField!
     @IBOutlet weak var createButton: FUIButton!
+    
+    @IBOutlet weak var signInBtn: FUIButton!
     var ref: FIRDatabaseReference!
     var remoteConfig: FIRRemoteConfig!
     fileprivate var _refHandle: FIRDatabaseHandle!
     fileprivate var _authHandle: FIRAuthStateDidChangeListenerHandle!
+   
+    
     
     override var nibName: String?
         {
@@ -47,16 +51,16 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate {
         confirmPasswordText.delegate = self
         let buttonThemer:ButtonThemer = ButtonThemer()
         buttonThemer.applyTheme(view: createButton, theme: ButtonTheme())
-        
+        buttonThemer.applyTheme(view: signInBtn, theme: ButtonTheme())
         let textFieldThemer:TextFieldThemer = TextFieldThemer()
         textFieldThemer.applyTheme(view: nameText, theme: TextFieldTheme())
         textFieldThemer.applyTheme(view: emailText, theme: TextFieldTheme())
         textFieldThemer.applyTheme(view: passwordText, theme: TextFieldTheme())
         textFieldThemer.applyTheme(view: confirmPasswordText, theme: TextFieldTheme())
-        createView.backgroundColor = UIColor(fromHexCode: "#ECF3F4")
+        self.applyTheme()
         self.title = "Create Account"
         configureDatabase()
-        
+        navigationController?.setToolbarHidden(false, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -75,28 +79,39 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate {
      }
      */
     @IBAction func CreateAccountAction(_ sender: Any) {
-        let password: String = passwordText.text!
-        let confirmedPassword = confirmPasswordText.text
         
-        if password != confirmedPassword {
-           self.alert(content: AppMessage.PasswordNotMatched.rawValue)
-        }
-        FIRAuth.auth()?.createUser(withEmail: emailText.text!, password: passwordText.text!, completion: { (user, error) in
+        if validateData() {
+            let password: String = passwordText.text!
+            let confirmedPassword = confirmPasswordText.text
             
-            self.hideSpinner()
+            if password != confirmedPassword {
+                self.alert(content: AppMessage.PasswordNotMatched.rawValue)
+                return
+            }
+            if validateName() {
+            self.showSpinner(view: self.view)
+            FIRAuth.auth()?.createUser(withEmail: emailText.text!, password: passwordText.text!, completion: { (user, error) in
+            
+                 self.hideSpinner()
             
             if let error = error {
                 self.alert(content: error.localizedDescription)
                 return
             }
             else {
-                self.alert(content: AppMessage.LoginSuccess.rawValue, onCancel: {
+                self.alert(content: AppMessage.SignUpSuccess.rawValue, onCancel: {
                     action -> Void in
                     self.saveData()
                     self.performSegue(withIdentifier: "showBookFromSignUp", sender: nil)
                 })
             }
         })
+            } else {
+                self.alert(content: AppMessage.InvalidName.rawValue)
+            }
+        } else {
+            self.alert(content: AppMessage.RequiredFieldNotFilled.rawValue)
+        }
         
     }
     
@@ -106,22 +121,61 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate {
     }
     
     func saveData() {
-        var newKey: String = ""
+        //var newKey: String = ""
+        let userID = FIRAuth.auth()?.currentUser?.uid
         let data = [Constants.UserTableField.name : nameText.text! as String,Constants.UserTableField.email: emailText.text! as String]
-        let query = ref.child("User").queryOrderedByKey().queryLimited(toLast: 1)
-        query.observeSingleEvent(of: .value, with: { snapshot in
-            for task in snapshot.children {
-                guard let taskSnapshot = task as? FIRDataSnapshot else {
-                    continue
-                }
-                print("Last key in firebase: "+taskSnapshot.key)
-                newKey = String(Int(taskSnapshot.key)! + 1)
-               self.ref.child("User").child(newKey).setValue(data)
-            }
-        })
+        self.ref.child("User").child(userID!).setValue(data)
+//        let query = ref.child("User").queryOrderedByKey().queryLimited(toLast: 1)
+//        query.observeSingleEvent(of: .value, with: { snapshot in
+//            for task in snapshot.children {
+//                guard let taskSnapshot = task as? FIRDataSnapshot else {
+//                    continue
+//                }
+//                print("Last key in firebase: "+taskSnapshot.key)
+//                newKey = String(Int(taskSnapshot.key)! + 1)
+//               
+//            }
+//        })
         
     }
 
+    func validateData() -> Bool{
+        if (nameText.text?.isEmpty)! {
+            return false
+        }
+        if (emailText.text?.isEmpty)! {
+            return false
+        }
+        if (passwordText.text?.isEmpty)! {
+            return false
+        }
+        if (confirmPasswordText.text?.isEmpty)! {
+            return false
+        }
+        
+        return true
+    }
+    
+    func validateName() ->Bool {
+        let name :String = nameText.text!
+        let letters = NSCharacterSet.letters
+        
+        //let phrase = "Test case"
+        let range = name.rangeOfCharacter(from: letters, options: .caseInsensitive)
+        
+        // range will be nil if no letters is found
+        if range != nil {
+            return true
+        }
+        else {
+            return false
+        }
+        return true;
+    }
+    
+    @IBAction func signInAction(_ sender: Any) {
+    navigationController?.popToRootViewController(animated: true)
+    }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         nameText.resignFirstResponder()
         emailText.resignFirstResponder()
@@ -129,4 +183,6 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate {
         confirmPasswordText.resignFirstResponder()
         return true
     }
+    
+   
 }

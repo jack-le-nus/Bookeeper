@@ -11,5 +11,8 @@ import Foundation
 enum AppMessage: String {
     case UserOrPasswordEmpty = "Email/password can't be empty"
     case LoginSuccess = "Welcome to the application"
-    case PasswordNotMatched = "Password should Match"
+    case PasswordNotMatched = "Password and confirm password must be the same"
+     case RequiredFieldNotFilled = "All required fields must be filled"
+    case SignUpSuccess = "You created an account successfully"
+     case InvalidName = "Name should be valid"
 }
