@@ -56,6 +56,7 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate {
         createView.backgroundColor = UIColor(fromHexCode: "#ECF3F4")
         self.title = "Create Account"
         configureDatabase()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -121,4 +122,11 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate {
         
     }
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        nameText.resignFirstResponder()
+        emailText.resignFirstResponder()
+        passwordText.resignFirstResponder()
+        confirmPasswordText.resignFirstResponder()
+        return true
+    }
 }
