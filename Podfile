@@ -26,4 +26,5 @@ target 'MTECHProgramme' do
   pod 'Firebase/Storage'
   pod 'Firebase/RemoteConfig'
   pod 'SDWebImage', '~>3.8'
+  pod 'GoogleSignIn'
 end
