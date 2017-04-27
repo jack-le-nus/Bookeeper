@@ -36,6 +36,7 @@ class BookDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.applyTheme()
         
         self.collectionView.register(UINib(nibName: "BookImages", bundle: nil), forCellWithReuseIdentifier: "BookImages")
         self.collectionView.delegate = self
@@ -80,12 +81,6 @@ class BookDetailViewController: UIViewController {
         textView.isScrollEnabled = false
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let width : CGFloat = scrollView.frame.size.width;
-        pageControl.currentPage = Int(scrollView.contentOffset.x/width);
-    }
-    
-    
     
 }
 
@@ -111,7 +106,10 @@ extension BookDetailViewController: UICollectionViewDataSource, UICollectionView
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let imageCell = cell as! BookImages
-        if((bookCell?.images.count)!>0){
+        imageCell.contentView.backgroundColor = UIColor.alizarin()
+        imageCell.contentView.layer.borderWidth=1
+        //imageCell.contentMode = UIViewContentMode.scaleAspectFit
+        if(bookCell?.images[0] != ""){
             FIRStorage.storage().reference(forURL : (bookCell?.images[indexPath.row])!).data(withMaxSize: INT64_MAX ) {( data,error)
                 in
                 let imageView = UIImage.init(data: data!, scale: 50)
@@ -120,24 +118,31 @@ extension BookDetailViewController: UICollectionViewDataSource, UICollectionView
         }else{
             imageCell.bookImages.image = #imageLiteral(resourceName: "imageBook")
         }
-        
+        cell.contentView.frame = self.collectionView.bounds;
     }
     
     func collectionView(_ collectionView: UICollectionView, layout
         collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        if (collectionView == self.collectionView) {
-            return collectionView.bounds.size
-        }
-        else {
-            let padding : CGFloat =  10
-            let collectionViewSize = collectionView.frame.size.width - padding
-            return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
-        }
+        //if (collectionView == self.collectionView) {
+            let padding : CGFloat =  0
+            let collectionViewSize = self.collectionView.frame.size.width - padding
+            return CGSize(width: self.collectionView.frame.width, height: self.collectionView.frame.height)
+        //}
+//        else {
+//            let padding : CGFloat =  10
+//            let collectionViewSize = collectionView.frame.size.width - padding
+//            return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
+//        }
+        //}
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets.zero
     }
 
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let width : CGFloat = scrollView.frame.size.width;
+        pageControl.currentPage = Int(scrollView.contentOffset.x/width);
+    }
 }

@@ -18,12 +18,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="386" height="211"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zvB-Nj-Wu1">
-                        <rect key="frame" x="0.0" y="-8" width="386" height="211"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zvB-Nj-Wu1">
+                        <rect key="frame" x="0.0" y="0.0" width="386" height="211"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="211" id="0mn-Rz-GUp"/>
+                            <constraint firstAttribute="width" constant="386" id="zJa-Vk-wfG"/>
+                        </constraints>
                     </imageView>
                 </subviews>
             </view>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="zvB-Nj-Wu1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="80l-MK-Quj"/>
+                <constraint firstItem="zvB-Nj-Wu1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="LyB-vu-8Cp"/>
+            </constraints>
             <size key="customSize" width="229" height="112"/>
             <connections>
                 <outlet property="bookImages" destination="zvB-Nj-Wu1" id="mAy-Tl-MsL"/>
