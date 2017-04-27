@@ -16,6 +16,10 @@ class BookCell: UICollectionViewCell {
     @IBOutlet weak var imgBook: UIImageView!
     @IBOutlet weak var lblName: UILabel!
     
+    var category: String = ""
+    var author: String = ""
+    var bookDescription: String = ""
+    var images: [String]! = []
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

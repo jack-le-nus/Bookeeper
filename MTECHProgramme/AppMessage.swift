@@ -11,4 +11,16 @@ import Foundation
 enum AppMessage: String {
     case UserOrPasswordEmpty = "Email/password can't be empty"
     case LoginSuccess = "Welcome to the application"
+    
+    case name = "name"
+    case author = "author"
+    case categary = "categary"
+    case owner = "owner"
+    case description = "description"
+    case id = "id"
+    case isAvailable = "isAvailable"
+    case isFeatured = "isFeatured"
+    case imageUrl = "imageUrl"
+    case booksaved = "New Book is saved"
+    case bookname = "bookname"
 }
