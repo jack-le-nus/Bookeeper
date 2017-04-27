@@ -18,7 +18,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     }
 
     @IBOutlet weak var userImage: UIImageView!
-    //@IBOutlet weak var userEmailId: FUITextField!
     @IBOutlet weak var userName: FUITextField!
     @IBOutlet weak var userEmailId: FUITextField!
     @IBOutlet weak var userContactNumber: FUITextField!
@@ -96,7 +95,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
                 self.userImage.image = image!
                 }
             })
-            
         }
             
         self.userName.text = values["name"] as? String ?? ""
@@ -116,8 +114,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
             return
         }
         
-        if(!profileModel.isValidName(name: userName.text!))
-        {
+        if(!profileModel.isValidName(name: userName.text!)) {
             userName.text = nil
             userName.attributedPlaceholder = NSAttributedString(string:"Please enter valid Name",attributes: [NSForegroundColorAttributeName: UIColor.red])
             return
@@ -129,8 +126,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
             return
         }
         
-        if(userImage.image == nil)
-        {
+        if(userImage.image == nil) {
             self.alert(content: "Please upload profile picture")
             return
         }
@@ -151,7 +147,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
                 //store downloadURL at database
                 self.ref.child("User").child(self.currentUser).updateChildValues(["imageUrl": downloadURL])
             }
-            
         }
         
         //Save Values to database and return to home page
@@ -159,8 +154,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         self.ref.child("User").child(currentUser).child("email").setValue(userEmailId.text!)
         self.ref.child("User").child(currentUser).child("phone").setValue(userContactNumber.text!)
         self.ref.child("User").child(currentUser).child("address").setValue(address.text!)
-        
-        
         
         let alert:UIAlertController=UIAlertController(title: "Profile updated successfully", message: nil, preferredStyle: UIAlertControllerStyle.alert)
         let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) {
@@ -170,13 +163,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         }
         
         alert.addAction(okAction)
-        self.present(alert, animated: true, completion: nil)      
-        
-    }
-    
-    override func viewWillDisappear(_ animated : Bool)
-    {
-        
+        self.present(alert, animated: true, completion: nil)
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -250,17 +237,12 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     //Null Check validations for the fields
     func validateTextField() -> Bool
     {
-        
         var valid: Bool = true
         if ((userName.text?.isEmpty))! {
             // change placeholder color to red color for textfield user name
             userName.attributedPlaceholder = NSAttributedString(string: "Please enter User Name", attributes: [NSForegroundColorAttributeName: UIColor.red])
             valid = false
         }
-//        if ((userEmailId.text?.isEmpty))!{
-//            userEmailId.attributedPlaceholder = NSAttributedString(string:"Please enter Your Email ID",attributes: [NSForegroundColorAttributeName: UIColor.red])
-//            valid = false
-//        }
         if ((userContactNumber.text?.isEmpty))!{
             userContactNumber.attributedPlaceholder = NSAttributedString(string:"Please enter Contact Number",attributes: [NSForegroundColorAttributeName:UIColor.red])
             valid = false

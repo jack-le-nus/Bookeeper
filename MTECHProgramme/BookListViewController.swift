@@ -53,7 +53,7 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     override func viewDidLoad() {
         super.viewDidLoad()
         self.applyTheme()
-        leadingConstraint.constant = -245
+        leadingConstraint.constant = -250
         flag = false
         self.ref = FIRDatabase.database().reference()
         
@@ -172,7 +172,7 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
             })
             
             print(message)
-            self.leadingConstraint.constant = -245
+            self.leadingConstraint.constant = -250
             isMenuVisible = !isMenuVisible
         } else{
             flag = true
@@ -214,9 +214,8 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     @IBAction func onProfileClick(_ sender: UIButton)
     {
         self.performSegue(withIdentifier: "openProfileView", sender: nil)
-        leadingConstraint.constant = -245
+        leadingConstraint.constant = -250
         isMenuVisible = !isMenuVisible
-        
     }
     
     //to open menu
@@ -227,7 +226,7 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
             leadingConstraint.constant = 0
         }
         else{
-            leadingConstraint.constant = -245
+            leadingConstraint.constant = -250
         }
         isMenuVisible = !isMenuVisible
     }

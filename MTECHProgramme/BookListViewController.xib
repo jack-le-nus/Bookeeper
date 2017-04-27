@@ -54,8 +54,8 @@
                         <constraint firstAttribute="width" constant="39" id="rL2-W9-qVM"/>
                     </constraints>
                 </pageControl>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x0U-K0-YUY">
-                    <rect key="frame" x="0.0" y="65" width="245" height="602"/>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x0U-K0-YUY">
+                    <rect key="frame" x="0.0" y="65" width="250" height="602"/>
                     <subviews>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8QI-7a-Kov">
                             <rect key="frame" x="0.0" y="260" width="245" height="525"/>
