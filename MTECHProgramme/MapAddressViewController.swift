@@ -57,11 +57,9 @@ class MapAddressController: UIViewController, UISearchControllerDelegate {
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
         searchBar.placeholder = "Search for places"
-        //resultSearchController?.searchBar.showsCancelButton = false
         navigationItem.titleView = resultSearchController?.searchBar
         resultSearchController.hidesNavigationBarDuringPresentation = false
         resultSearchController.dimsBackgroundDuringPresentation = true
-        //searchBar.showsCancelButton = false
         definesPresentationContext = true
         locationSearchTable.mapView = mapView
         locationSearchTable.handleMapSearchDelegate = self
@@ -76,13 +74,8 @@ class MapAddressController: UIViewController, UISearchControllerDelegate {
         let mapItem = MKMapItem(placemark: selectedPin)
         let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
         mapItem.openInMaps(launchOptions: launchOptions)
-    }
+    }   
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //let destVC = segue.destination as! ProfileViewController
-        //destVC.addressData = data
-        //presentingViewController?.dismiss(animated: true, completion: nil)
-    }
 }
 
 extension MapAddressController : CLLocationManagerDelegate {

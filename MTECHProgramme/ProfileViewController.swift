@@ -18,12 +18,11 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     }
 
     @IBOutlet weak var userImage: UIImageView!
-    @IBOutlet weak var userEmailId: FUITextField!
+    //@IBOutlet weak var userEmailId: FUITextField!
     @IBOutlet weak var userName: FUITextField!
+    @IBOutlet weak var userEmailId: FUITextField!
     @IBOutlet weak var userContactNumber: FUITextField!
     @IBOutlet weak var address: FUITextField!
-    @IBOutlet weak var password: FUITextField!
-    @IBOutlet weak var confirmPassword: FUITextField!
     
     @IBOutlet weak var btnUpdate: FUIButton!
     var addressData: String = ""
@@ -54,28 +53,25 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         ref = FIRDatabase.database().reference()
         storageRef = FIRStorage.storage().reference()
         storage = FIRStorage()
+        self.showSpinner(view: self.view)
         
         userName.resignFirstResponder()
         userEmailId.resignFirstResponder()
         userContactNumber.resignFirstResponder()
         address.resignFirstResponder()
-        password.resignFirstResponder()
-        confirmPassword.resignFirstResponder()
+        
+        userEmailId.isUserInteractionEnabled = false
         
         userName.delegate=self
         userEmailId.delegate=self
         userContactNumber.delegate=self
         address.delegate=self
-        password.delegate=self
-        confirmPassword.delegate=self
         
         let textFieldThemer:TextFieldThemer = TextFieldThemer()
         textFieldThemer.applyTheme(view: userName, theme: TextFieldTheme())
         textFieldThemer.applyTheme(view: userEmailId, theme: TextFieldTheme())
         textFieldThemer.applyTheme(view: userContactNumber, theme: TextFieldTheme())
         textFieldThemer.applyTheme(view: address, theme: TextFieldTheme())
-        textFieldThemer.applyTheme(view: password, theme: TextFieldTheme())
-        textFieldThemer.applyTheme(view: confirmPassword, theme: TextFieldTheme())
         
         let buttonThemer:ButtonThemer = ButtonThemer()
         buttonThemer.applyTheme(view: btnUpdate, theme: ButtonTheme())
@@ -107,20 +103,23 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         self.userEmailId.text = values["email"] as? String ?? ""
         self.address.text = values["address"] as? String ?? ""
         self.userContactNumber.text  = values["phone"] as? String ?? ""
+        
+        self.hideSpinner()
         })
     }
     
-    @IBAction func onUpdateClick(_ sender: Any) {
+    @IBAction func onUpdateClick(_ sender: Any)
+    {
         let profileModel:ProfileModel = ProfileModel()
-        var status = ""
-        
+                
         if !validateTextField() {
             return
         }
         
-        if !profileModel.isValidEmail(eMail: userEmailId.text!) {
-            userEmailId.text = nil
-            userEmailId.attributedPlaceholder = NSAttributedString(string:"Please enter valid Email ID",attributes: [NSForegroundColorAttributeName: UIColor.red])
+        if(!profileModel.isValidName(name: userName.text!))
+        {
+            userName.text = nil
+            userName.attributedPlaceholder = NSAttributedString(string:"Please enter valid Name",attributes: [NSForegroundColorAttributeName: UIColor.red])
             return
         }
         
@@ -130,23 +129,12 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
             return
         }
         
-        if(!(password.text?.isEmpty)!)
-        {
-            status = profileModel.isPasswordUpdated(password: password.text!, confirmPassword: confirmPassword.text!)
-            if(status == "Empty" || status == "Do not match")
-            {
-                confirmPassword.text = nil
-                confirmPassword.attributedPlaceholder = NSAttributedString(string: "Password do not match", attributes: [NSForegroundColorAttributeName: UIColor.red])
-                return
-            }
-        }
-        
         if(userImage.image == nil)
         {
             self.alert(content: "Please upload profile picture")
             return
         }
-        
+        self.showSpinner(view: self.view)
         
         data = UIImageJPEGRepresentation(userImage.image!, 0.8)! as NSData
         // set upload path
@@ -177,11 +165,13 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         let alert:UIAlertController=UIAlertController(title: "Profile updated successfully", message: nil, preferredStyle: UIAlertControllerStyle.alert)
         let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) {
             UIAlertAction in
-            _ = self.navigationController?.popViewController(animated: true)           
+            _ = self.navigationController?.popViewController(animated: true)
+            self.hideSpinner()
         }
         
         alert.addAction(okAction)
-        self.present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true, completion: nil)      
+        
     }
     
     override func viewWillDisappear(_ animated : Bool)
@@ -194,8 +184,6 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         userEmailId.resignFirstResponder()
         userContactNumber.resignFirstResponder()
         address.resignFirstResponder()
-        password.resignFirstResponder()
-        confirmPassword.resignFirstResponder()
         return true
     }
     
@@ -269,10 +257,10 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
             userName.attributedPlaceholder = NSAttributedString(string: "Please enter User Name", attributes: [NSForegroundColorAttributeName: UIColor.red])
             valid = false
         }
-        if ((userEmailId.text?.isEmpty))!{
-            userEmailId.attributedPlaceholder = NSAttributedString(string:"Please enter Your Email ID",attributes: [NSForegroundColorAttributeName: UIColor.red])
-            valid = false
-        }
+//        if ((userEmailId.text?.isEmpty))!{
+//            userEmailId.attributedPlaceholder = NSAttributedString(string:"Please enter Your Email ID",attributes: [NSForegroundColorAttributeName: UIColor.red])
+//            valid = false
+//        }
         if ((userContactNumber.text?.isEmpty))!{
             userContactNumber.attributedPlaceholder = NSAttributedString(string:"Please enter Contact Number",attributes: [NSForegroundColorAttributeName:UIColor.red])
             valid = false

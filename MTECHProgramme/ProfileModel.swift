@@ -40,31 +40,17 @@ class ProfileModel
         }
     }
     
-    //to validate password
-    
-    func isPasswordUpdated(password: String, confirmPassword: String) -> String {
-        if(confirmPassword.isEmpty)
-        {
-            return "Empty"
-        }
-        if(!(password==confirmPassword))
-        {
-            return "Do not match"
-        }
-        return "None"
-    }
-    
-    func isUserEmailIdAlreadyExist(userEmailId : String) -> Bool
+    //to validate user name
+    func isValidName(name: String) -> Bool
     {
-        var isExists = false
-        ref = FIRDatabase.database().reference()
-        ref.child("User").observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            if snapshot.hasChild(userEmailId)
-            {
-                isExists = true
-            }
-        })
-        return isExists
+        let letters = NSCharacterSet.letters
+        let range = name.rangeOfCharacter(from: letters, options: .caseInsensitive)
+        // range will be nil if no letters is found
+        if range != nil {
+            return true
+        }
+        else {
+            return false
+        }
     }
- }
+}

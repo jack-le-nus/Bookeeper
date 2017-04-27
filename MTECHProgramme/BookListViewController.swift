@@ -30,9 +30,11 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     var isMenuVisible = true
     var menuNameArray:Array = [String]()
+    var flag = true
     
     override var nibName: String?
     {
@@ -52,6 +54,7 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         super.viewDidLoad()
         self.applyTheme()
         leadingConstraint.constant = -245
+        flag = false
         self.ref = FIRDatabase.database().reference()
         
         self.bookCollectionView.register(UINib(nibName: "BookCell", bundle: nil), forCellWithReuseIdentifier: "BookCell")
@@ -110,12 +113,17 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         self.title = "Books"
         
         //Added by Medha to implement Navigation Drawer
-        let currentUser = (FIRAuth.auth()?.currentUser?.uid)!
+        let currentUser = getUid()
         menuNameArray = ["Profile","My Books","Borrowed Books","Log Out"]
+        var message = "Welcome "
         let userRef = ref.child("User").child(currentUser)
         userRef.observeSingleEvent(of: .value, with: { snapshot in
         let values =  snapshot.value as? [String:AnyObject] ?? [:]
-        //Retrieval of user image from db
+            
+        //Retrieval of user image and name from db
+        let displayName = values["name"] as? String ?? ""
+        message = message.appending(displayName)
+        self.userLabel.text = message
         if snapshot.hasChild("imageUrl")
         {
            let url = values["imageUrl"] as? String ?? ""
@@ -140,7 +148,35 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        //viewDidLoad()
+        if(flag)
+        {
+            let currentUser = getUid()
+            let userRef = ref.child("User").child(currentUser)
+            var message = "Welcome "
+            userRef.observeSingleEvent(of: .value, with: { snapshot in
+                let values =  snapshot.value as? [String:AnyObject] ?? [:]
+                //Retrieval of user image from db
+                let displayName = values["name"] as? String ?? ""
+                message = message.appending(displayName)
+                self.userLabel.text = message
+                if (snapshot.hasChild("imageUrl"))
+                {
+                    let url = values["imageUrl"] as? String ?? ""
+                    FIRStorage.storage().reference(forURL: url).data(withMaxSize: 10 * 1024 * 1024, completion: { (data,error) in
+                        DispatchQueue.main.async() { Void in
+                            let image = UIImage(data: data!)
+                            self.userImage.image = image!
+                        }
+                    })
+                }
+            })
+            
+            print(message)
+            self.leadingConstraint.constant = -245
+            isMenuVisible = !isMenuVisible
+        } else{
+            flag = true
+        }
     }
     
     func getUid() -> String {
@@ -180,6 +216,7 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         self.performSegue(withIdentifier: "openProfileView", sender: nil)
         leadingConstraint.constant = -245
         isMenuVisible = !isMenuVisible
+        
     }
     
     //to open menu
