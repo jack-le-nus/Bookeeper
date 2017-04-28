@@ -15,6 +15,12 @@ struct Constants {
         static let email = "email"
         static let contactNo = "contatctNo"
         static let address = "address"
+        static let bookTable = "Book"
+    }
+    
+    struct UserTables {
+       static let userTable = "User"
+        static let bookTable = "Book"
     }
 
 }

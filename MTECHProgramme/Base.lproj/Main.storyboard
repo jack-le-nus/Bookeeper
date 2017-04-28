@@ -249,16 +249,17 @@
                     </navigationItem>
                     <connections>
                         <segue destination="9zT-MX-GNz" kind="show" identifier="openProfileView" id="xzm-x4-sb0"/>
+                        <segue destination="GfR-nT-QTT" kind="show" identifier="showBorrowedBooks" id="MF1-rZ-gBE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mHO-SL-yYB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1775.2" y="-9.4452773613193415"/>
         </scene>
-        <!--View Controller-->
+        <!--Book Detail View Controller-->
         <scene sceneID="cgp-yA-XDg">
             <objects>
-                <viewController id="bEj-9Q-Agh" sceneMemberID="viewController">
+                <viewController id="bEj-9Q-Agh" customClass="BookDetailViewController" customModule="MTECHProgramme" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EC3-U7-Kss"/>
                         <viewControllerLayoutGuide type="bottom" id="3m4-Kg-bFM"/>
@@ -282,6 +283,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KIz-6a-kIF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2616.8000000000002" y="-2.2488755622188905"/>
+        </scene>
+        <!--Borrowed Book List View Controller-->
+        <scene sceneID="1gw-iV-lnk">
+            <objects>
+                <viewController id="GfR-nT-QTT" customClass="BorrowedBookListViewController" customModule="MTECHProgramme" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="V1K-a1-ehg"/>
+                        <viewControllerLayoutGuide type="bottom" id="LqB-wK-AEg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wSR-G4-Bfr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="bEj-9Q-Agh" kind="show" identifier="borrowedBookDetail" id="L9y-Qh-jxI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MhB-e1-skO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2498" y="716"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="BSL-vE-g7Q">
@@ -331,7 +353,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bod-yh-hmK" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y6F-6H-UuZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Y6F-6H-UuZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -350,5 +372,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ApD-58-YYv"/>
+        <segue reference="L9y-Qh-jxI"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -22,7 +22,7 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     var featuredDataSource: FUICollectionViewDataSource!
     @IBOutlet weak var pageControl: UIPageControl!
     var generalDataSource: FUICollectionViewDataSource!
-    
+    var storeRef: FIRStorageReference!
     @IBOutlet weak var bookCollectionView: UICollectionView!
     @IBOutlet weak var generalBookCollectionView: UICollectionView!
     
@@ -54,7 +54,7 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         self.applyTheme()
         leadingConstraint.constant = -245
         self.ref = FIRDatabase.database().reference()
-        
+        self.storeRef = FIRStorage.storage().reference()
         self.bookCollectionView.register(UINib(nibName: "BookCell", bundle: nil), forCellWithReuseIdentifier: "BookCell")
         self.bookCollectionView.delegate = self
         self.bookCollectionView.isPagingEnabled = true
@@ -86,7 +86,18 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
             cell.lblName.text = postDict["name"] as? String ?? ""
             cell.lblDescription.text = postDict["description"] as? String ?? ""
             cell.imgBook.contentMode = UIViewContentMode.scaleAspectFit
-            cell.imgBook.sd_setImage(with: URL(string: postDict["imageUrl"] as? String ?? ""))
+            let imagesUrls = postDict["imageUrl"] as! NSArray
+            let firstImage = imagesUrls[0] as! String
+            if(firstImage == ""){
+                cell.imgBook.image = #imageLiteral(resourceName: "bookImage")
+            }else{
+                FIRStorage.storage().reference(forURL : imagesUrls[0] as! String).data(withMaxSize: INT64_MAX ) {( data,error)
+                    in
+                    let messageImage = UIImage.init(data: data!, scale: 50)
+                    cell.imgBook.image = messageImage
+                    
+                }
+            }
             cell.contentView.frame = bookCollectionView.bounds;
             return cell
         }
@@ -96,10 +107,28 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
             let postDict = snap.value as? [String : AnyObject] ?? [:]
             cell.contentView.backgroundColor = UIColor.alizarin()
             cell.contentView.layer.borderWidth=1
-            cell.lblName.text = postDict["name"] as? String ?? ""
+            cell.lblName.text = postDict["bookname"] as? String ?? ""
             cell.lblDescription.text = postDict["author"] as? String ?? ""
             cell.imgBook.contentMode = UIViewContentMode.scaleAspectFit
-            cell.imgBook.sd_setImage(with: URL(string: postDict["imageUrl"] as? String ?? ""))
+            cell.bookDescription = postDict["description"] as? String ?? ""
+            cell.author = postDict["author"] as? String ?? ""
+            cell.category = postDict["categary"] as? String ?? ""
+            cell.bookId = snap.key
+            cell.imgBook.contentMode = UIViewContentMode.scaleAspectFit
+            let imagesUrls = postDict["imageUrl"] as! NSArray
+            let castArray = imagesUrls as? Array<Any>
+            cell.images = castArray as! [String]!
+            let firstImage = imagesUrls[0] as! String
+            if(firstImage == ""){
+                cell.imgBook.image = #imageLiteral(resourceName: "bookImage")
+            }else{
+                FIRStorage.storage().reference(forURL : imagesUrls[0] as! String).data(withMaxSize: INT64_MAX ) {( data,error)
+                    in
+                    let messageImage = UIImage.init(data: data!, scale: 50)
+                    cell.imgBook.image = messageImage
+                    
+                }
+            }
             return cell
         }
         
@@ -133,7 +162,16 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "showBookDetail", sender: collectionView)
+        self.performSegue(withIdentifier: "showBookDetail", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showBookDetail" {
+            let detailsVC: BookDetailViewController = segue.destination as! BookDetailViewController
+            let indexPaths:NSIndexPath = self.generalBookCollectionView.indexPathsForSelectedItems![0] as NSIndexPath
+            let cell = generalBookCollectionView.cellForItem(at: indexPaths as IndexPath) as! BookCell
+            detailsVC.bookCell = cell
+        }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -200,6 +238,16 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         if cell.menu.text! == "Borrowed Books"
         {
             self.performSegue(withIdentifier: "showBorrowedBooks", sender: nil)
+        }
+        if cell.menu.text! == "Log Out"
+        {
+            do {
+                print("Sign Out Clicked")
+                try FIRAuth.auth()?.signOut()
+                navigationController?.popToRootViewController(animated: true)
+            } catch let signOutError as NSError {
+                print ("Error signing out: %@", signOutError)
+            }
         }
     }
 }

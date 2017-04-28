@@ -125,17 +125,7 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate, UINavig
         let userID = FIRAuth.auth()?.currentUser?.uid
         let data = [Constants.UserTableField.name : nameText.text! as String,Constants.UserTableField.email: emailText.text! as String]
         self.ref.child("User").child(userID!).setValue(data)
-//        let query = ref.child("User").queryOrderedByKey().queryLimited(toLast: 1)
-//        query.observeSingleEvent(of: .value, with: { snapshot in
-//            for task in snapshot.children {
-//                guard let taskSnapshot = task as? FIRDataSnapshot else {
-//                    continue
-//                }
-//                print("Last key in firebase: "+taskSnapshot.key)
-//                newKey = String(Int(taskSnapshot.key)! + 1)
-//               
-//            }
-//        })
+
         
     }
 
