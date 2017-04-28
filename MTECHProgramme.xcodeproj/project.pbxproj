@@ -40,6 +40,8 @@
 		BC51D53E1E92AECC000D9249 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC51D53B1E92AECC000D9249 /* LoginViewController.swift */; };
 		BC51D53F1E92AECC000D9249 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC51D53C1E92AECC000D9249 /* LoginViewController.xib */; };
 		BC51D54A1E92AF4E000D9249 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC51D5491E92AF4E000D9249 /* MessageUI.framework */; };
+		BC8D1DD51EB381D9004B91C6 /* LabelTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8D1DD41EB381D9004B91C6 /* LabelTheme.swift */; };
+		BC8D1DD71EB381E4004B91C6 /* LabelThemer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8D1DD61EB381E4004B91C6 /* LabelThemer.swift */; };
 		BCB85A091E934BE3007BC078 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCB85A081E934BE2007BC078 /* UIKit.framework */; };
 		BCC14F1E1EA34DBC00A1219E /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC14F1C1EA34DBC00A1219E /* BookCell.swift */; };
 		BCC14F1F1EA34DBC00A1219E /* BookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCC14F1D1EA34DBC00A1219E /* BookCell.xib */; };
@@ -114,6 +116,8 @@
 		BC51D53B1E92AECC000D9249 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BC51D53C1E92AECC000D9249 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		BC51D5491E92AF4E000D9249 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		BC8D1DD41EB381D9004B91C6 /* LabelTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTheme.swift; sourceTree = "<group>"; };
+		BC8D1DD61EB381E4004B91C6 /* LabelThemer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelThemer.swift; sourceTree = "<group>"; };
 		BCB85A081E934BE2007BC078 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BCC14F1C1EA34DBC00A1219E /* BookCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		BCC14F1D1EA34DBC00A1219E /* BookCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookCell.xib; sourceTree = "<group>"; };
@@ -181,7 +185,6 @@
 		BC51D4FE1E92A077000D9249 = {
 			isa = PBXGroup;
 			children = (
-				BCEE2EBD1E9C9D7500D469FD /* Utils */,
 				BC51D5091E92A077000D9249 /* MTECHProgramme */,
 				BC51D5201E92A078000D9249 /* MTECHProgrammeTests */,
 				BC51D52B1E92A078000D9249 /* MTECHProgrammeUITests */,
@@ -204,6 +207,7 @@
 		BC51D5091E92A077000D9249 /* MTECHProgramme */ = {
 			isa = PBXGroup;
 			children = (
+				BCEE2EBD1E9C9D7500D469FD /* Utils */,
 				BCEE2EBE1E9C9DB900D469FD /* Views */,
 				BCEE2EBC1E9C9D6600D469FD /* Models */,
 				BCEE2EBB1E9C9D5900D469FD /* ViewControllers */,
@@ -291,7 +295,6 @@
 				9E016A491EAF3EE50025BEF3 /* Constants.swift */,
 			);
 			name = Utils;
-			path = MTECHProgramme;
 			sourceTree = "<group>";
 		};
 		BCEE2EBE1E9C9DB900D469FD /* Views */ = {
@@ -315,6 +318,8 @@
 				BCEE2EC81E9CB7F700D469FD /* ButtonThemer.swift */,
 				BCEE2ECA1E9CB80F00D469FD /* TextFieldThemer.swift */,
 				BCEE2ECC1E9CB82400D469FD /* TextFieldTheme.swift */,
+				BC8D1DD41EB381D9004B91C6 /* LabelTheme.swift */,
+				BC8D1DD61EB381E4004B91C6 /* LabelThemer.swift */,
 			);
 			name = Themes;
 			sourceTree = "<group>";
@@ -481,7 +486,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		5EAAD5851AF259F5E3CE02EE /* [CP] Embed Pods Frameworks */ = {
@@ -556,7 +561,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D971FDB034A93676655F5625 /* [CP] Copy Pods Resources */ = {
@@ -601,7 +606,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -617,8 +622,10 @@
 				BCEE2ECD1E9CB82400D469FD /* TextFieldTheme.swift in Sources */,
 				9EFF52CD1EB3357B006DC43B /* LocationSearchTableViewController.swift in Sources */,
 				9E0FD4241EB1FE94006B4B48 /* BookImages.swift in Sources */,
+				BC8D1DD71EB381E4004B91C6 /* LabelThemer.swift in Sources */,
 				9EFF52D11EB3357B006DC43B /* ProfileViewController.swift in Sources */,
 				BC51D53D1E92AECC000D9249 /* LoginModel.swift in Sources */,
+				BC8D1DD51EB381D9004B91C6 /* LabelTheme.swift in Sources */,
 				BCEE2EC91E9CB7F700D469FD /* ButtonThemer.swift in Sources */,
 				9E016A4D1EAFA4370025BEF3 /* BorrowedBookListViewController.swift in Sources */,
 				9EFF52D31EB3357B006DC43B /* SideMenuTableViewCell.swift in Sources */,

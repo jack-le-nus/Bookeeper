@@ -12,6 +12,8 @@ import Firebase
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lblUserID: UILabel!
+    @IBOutlet weak var lblSignup: UILabel!
+    @IBOutlet weak var lblForgotPassword: UILabel!
     @IBOutlet weak var btnLogin: FUIButton!
     @IBOutlet weak var lblPassword: UILabel!
     @IBOutlet weak var userID: FUITextField!
@@ -37,13 +39,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         userID.delegate=self
         password.delegate=self
         
+        self.applyTheme()
+        
         let buttonThemer:ButtonThemer = ButtonThemer()
-        buttonThemer.applyTheme(view: btnLogin, theme: ButtonTheme())
-        buttonThemer.applyTheme(view: createAccount, theme: ButtonTheme())
+        let buttonTheme: ButtonTheme = ButtonTheme()
+        buttonThemer.applyTheme(view: btnLogin, theme: buttonTheme)
+        buttonThemer.applyTheme(view: createAccount, theme: buttonTheme)
         
         let textFieldThemer:TextFieldThemer = TextFieldThemer()
-        textFieldThemer.applyTheme(view: userID, theme: TextFieldTheme())
-        textFieldThemer.applyTheme(view: password, theme: TextFieldTheme())
+        let textFieldTheme: TextFieldTheme = TextFieldTheme()
+        textFieldThemer.applyTheme(view: userID, theme: textFieldTheme)
+        textFieldThemer.applyTheme(view: password, theme: textFieldTheme)
+        
+        let labelThemer:LabelThemer = LabelThemer()
+        let labelTheme: LabelTheme = LabelTheme()
+        labelThemer.applyTheme(view: lblForgotPassword, theme: labelTheme)
+        labelThemer.applyTheme(view: lblSignup, theme: labelTheme)
         
         self.userID.text = "jack@gmail.com"
         self.password.text = "123456"
@@ -72,14 +83,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         } catch _ {
             
         }
-        
-        
-        
-//        let userId:String = ((FIRAuth.auth()?.currentUser)?.uid)!
-//        if (!userId.isEmpty) {
-//            self.performSegue(withIdentifier: "showTab", sender: nil)
-//            return
-//        }
         
         let login:LoginModel = LoginModel()
         
