@@ -13,9 +13,10 @@
             <connections>
                 <outlet property="authorName" destination="0JE-cY-dPe" id="0zl-ic-Ack"/>
                 <outlet property="bookName" destination="6B3-nN-eP4" id="8gG-Tl-oof"/>
-                <outlet property="createButton" destination="yBK-uH-nfu" id="it7-XU-DKy"/>
+                <outlet property="createButton" destination="yBK-uH-nfu" id="40y-l0-Y6A"/>
                 <outlet property="descriptionOfBook" destination="hLV-5N-J4g" id="Af9-yq-f10"/>
                 <outlet property="imgScrollView" destination="3cA-Ip-R63" id="Jws-Hs-cTf"/>
+                <outlet property="pickImageButton" destination="cK3-G7-HaC" id="IEZ-x8-599"/>
                 <outlet property="selectCategory" destination="Xyw-lF-Lbz" id="vOF-sG-NEI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -52,7 +53,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cK3-G7-HaC">
-                            <rect key="frame" x="281" y="17" width="76" height="34"/>
+                            <rect key="frame" x="290" y="8" width="76" height="34"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="UploadImage"/>
                             <connections>

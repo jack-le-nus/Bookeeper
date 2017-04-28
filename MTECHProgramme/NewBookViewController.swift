@@ -9,19 +9,22 @@
 import UIKit
 import ELCImagePickerController
 import Firebase
+import FlatUIKit
 
 class NewBookViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,ELCImagePickerControllerDelegate, UITextFieldDelegate {
 
-    @IBOutlet weak var authorName: UITextField!
-    @IBOutlet weak var bookName: UITextField!
-    @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var authorName: FUITextField!
+    @IBOutlet weak var bookName: FUITextField!
     
+    @IBOutlet weak var createButton: FUIButton!
+    @IBOutlet weak var pickImageButton: UIButton!
     @IBOutlet weak var descriptionOfBook: UITextField!
 
-    @IBOutlet weak var selectCategory: UITextField!
+    @IBOutlet weak var selectCategory: FUITextField!
     @IBOutlet weak var imgScrollView: UIScrollView!
     
-    @IBOutlet weak var imageWithinScroll: UIImageView!
+    var categoryPickerView = UIPickerView()
+    
     var ref: FIRDatabaseReference!
     var storageRef: FIRStorageReference!
     
@@ -41,11 +44,26 @@ class NewBookViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        pickerView.delegate = self
-        pickerView.dataSource = self
+        categoryPickerView.delegate = self
+        categoryPickerView.dataSource = self
         authorName.delegate = self
         bookName.delegate = self
         descriptionOfBook.delegate = self
+        
+        
+        let buttonThemer:ButtonThemer = ButtonThemer()
+        buttonThemer.applyTheme(view: createButton, theme: ButtonTheme())
+        
+        let textFieldThemer:TextFieldThemer = TextFieldThemer()
+        textFieldThemer.applyTheme(view: authorName, theme: TextFieldTheme())
+        textFieldThemer.applyTheme(view: bookName, theme: TextFieldTheme())
+        textFieldThemer.applyTheme(view: selectCategory, theme: TextFieldTheme())
+        
+        imgScrollView.backgroundColor = UIColor.alizarin()
+        imgScrollView.layer.borderWidth=1
+        
+        selectCategory.inputView = categoryPickerView
+
         isUserSignedIn()
         // Do any additional setup after loading the view.
     }
@@ -69,14 +87,7 @@ class NewBookViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     //cofig with firebase
     func configureDatabase() {
-        // TODO: configure database to sync messages
         ref = FIRDatabase.database().reference()
-//        _refHandle = ref.child("book").observe(.childAdded) { (snaphot : FIRDataSnapshot) in
-//            self.messages.append(snaphot)
-//            self.messagesTable.insertRows(at: [IndexPath(row: self.messages.count - 1, section : 0 )],
-//                                          with: .automatic)
-//            self.scrollToBottomMessage()
-//        }
     }
     
     func configureStorage() {
@@ -102,23 +113,17 @@ class NewBookViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectCategory.text = AppMessage.categories[row]
+        self.view.endEditing(false)
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let titleData = catValue[row]
+        let titleData = AppMessage.categories[row]
         let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 15.0)!,NSForegroundColorAttributeName:UIColor.blue])
         return myTitle
     }
 
     @IBAction func saveBook(_ sender: Any) {
         // TODO: null and if checkof text field
-        
-        
-        var data = [AppMessage.author.rawValue: authorName.text! as String]
-        data[AppMessage.name.rawValue] = bookName.text! as String
-        data[AppMessage.categary.rawValue] = selectedCategary as String
-        data[AppMessage.description.rawValue] = descriptionOfBook.text! as String
-        //saveImageUrl(data: data)
         let fieldCheck:Bool = true;
         sendBookDetail(fieldCheck : fieldCheck)
         //authorName.resignFirstResponder()
@@ -149,16 +154,16 @@ class NewBookViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             subview.removeFromSuperview()
             pickedImages.removeAllObjects()
         }
-        //let pickedImages = NSMutableArray()
+        
         for any in info {
             let dict = any as! NSMutableDictionary
             let image = dict.object(forKey: UIImagePickerControllerOriginalImage) as! UIImage
             pickedImages.add(image)
         }
         
-        let imageWidth:CGFloat = 275
-        let imageHeight:CGFloat = 135
-        let yPosition:CGFloat = 10
+        let imageWidth:CGFloat = 320
+        let imageHeight:CGFloat = 175
+        let yPosition:CGFloat = 15
         var xPosition:CGFloat = 10
         var scrollViewContentSize:CGFloat=0;
         
@@ -174,7 +179,8 @@ class NewBookViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             myImageView.frame.origin.x = xPosition
             
             imgScrollView.addSubview(myImageView)
-            let spacer:CGFloat = 20
+            imgScrollView.addSubview(pickImageButton)
+            let spacer:CGFloat = 5
             xPosition+=imageWidth + spacer
             scrollViewContentSize+=imageWidth + spacer
             imgScrollView.contentSize = CGSize(width: scrollViewContentSize, height: imageHeight)
@@ -195,7 +201,7 @@ class NewBookViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             
             var b = [String:String]()
             b[AppMessage.author.rawValue] = authorName.text! as String
-            b[AppMessage.categary.rawValue] = selectedCategary as String
+            b[AppMessage.categary.rawValue] = selectCategory.text! as String
             b[AppMessage.description.rawValue] = descriptionOfBook.text! as String
             b[AppMessage.isAvailable.rawValue] = "true"
             b[AppMessage.isFeatured.rawValue] = "true"
