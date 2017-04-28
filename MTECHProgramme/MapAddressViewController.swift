@@ -26,7 +26,7 @@ class MapAddressController: UIViewController, UISearchControllerDelegate {
     static var delegate : ReturnAddressDelegate!
     
     @IBAction func onCancelClick(_ sender: Any) {
-        presentingViewController?.dismiss(animated: true, completion: nil) 
+        presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func onSaveClick(_ sender: Any)
@@ -35,7 +35,7 @@ class MapAddressController: UIViewController, UISearchControllerDelegate {
         //Save the data and go back to previous page
         //
         MapAddressController.delegate.returnAddressOnMap(data: data)
-        presentingViewController?.dismiss(animated: true, completion: nil)        
+        presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     @IBOutlet weak var mapView: MKMapView!
@@ -57,11 +57,9 @@ class MapAddressController: UIViewController, UISearchControllerDelegate {
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
         searchBar.placeholder = "Search for places"
-        //resultSearchController?.searchBar.showsCancelButton = false
         navigationItem.titleView = resultSearchController?.searchBar
         resultSearchController.hidesNavigationBarDuringPresentation = false
         resultSearchController.dimsBackgroundDuringPresentation = true
-        //searchBar.showsCancelButton = false
         definesPresentationContext = true
         locationSearchTable.mapView = mapView
         locationSearchTable.handleMapSearchDelegate = self
@@ -78,11 +76,6 @@ class MapAddressController: UIViewController, UISearchControllerDelegate {
         mapItem.openInMaps(launchOptions: launchOptions)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //let destVC = segue.destination as! ProfileViewController
-        //destVC.addressData = data
-        //presentingViewController?.dismiss(animated: true, completion: nil)
-    }
 }
 
 extension MapAddressController : CLLocationManagerDelegate {
@@ -94,7 +87,7 @@ extension MapAddressController : CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.first else { return }
+        guard let location = locations.last else { return }
         let span = MKCoordinateSpanMake(0.05, 0.05)
         let region = MKCoordinateRegion(center: location.coordinate, span: span)
         mapView.setRegion(region, animated: true)

@@ -19,7 +19,7 @@ enum AppMessage: String {
     case name = "name"
     case author = "author"
     case categary = "categary"
-    case owner = "owner"
+    case userId = "userId"
     case description = "description"
     case id = "id"
     case isAvailable = "isAvailable"
@@ -27,4 +27,8 @@ enum AppMessage: String {
     case imageUrl = "imageUrl"
     case booksaved = "New Book is saved"
     case bookname = "bookname"
+    case borrowerUid = "borrowerUid"
+    case checkoutSuccessful = "This book has been checked out to you succesfully"
+    static let categories = ["abc", "bcd", "gft", "huj"]
+   
 }

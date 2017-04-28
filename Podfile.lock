@@ -5,6 +5,7 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - ELCImagePickerController (0.2.0)
   - Fabric (1.6.11)
   - FBSDKCoreKit (4.22.0):
     - Bolts (~> 1.7)
@@ -107,6 +108,7 @@ PODS:
     - TwitterCore (>= 2.8)
 
 DEPENDENCIES:
+  - ELCImagePickerController
   - Firebase
   - Firebase/Auth
   - Firebase/Core
@@ -119,6 +121,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  ELCImagePickerController: b1b7084434a7d49f2cfc916bde1f3ba353d38de9
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   FBSDKCoreKit: c693bad19feb225469eeff14452ba364522ee48b
   FBSDKLoginKit: 1fa529fc622d7b32ebeaffbecd377180833c6d30
@@ -141,6 +144,6 @@ SPEC CHECKSUMS:
   TwitterCore: e959987be23c767004d29eb7fab8d85d8585a2e5
   TwitterKit: 3b6044a7320340326a4098f3e37aa1dbaeb94942
 
-PODFILE CHECKSUM: b610618863b7357e95e96bb8501fc6c37a27a6dd
+PODFILE CHECKSUM: 85c112b3fde9ada928d548cb139d0109a0e8d154
 
 COCOAPODS: 1.2.1

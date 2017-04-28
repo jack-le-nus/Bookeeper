@@ -28,11 +28,14 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     
     //Added by Medha
     @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
     var isMenuVisible = true
+    
     var menuNameArray:Array = [String]()
+    var flag = true
     
     
     override var nibName: String?
@@ -141,7 +144,7 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         
         //Added by Medha to implement Navigation Drawer
         
-        menuNameArray = ["Profile","My Books","Borrowed Books","About Us", "Log Out"]
+        menuNameArray = ["Profile","Add Books","Borrowed Books","About Us", "Log Out"]
         userImage.contentMode = UIViewContentMode.scaleAspectFit
         userImage.layer.borderWidth = 2
         userImage.layer.borderColor = UIColor.green.cgColor
@@ -156,6 +159,39 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     override func viewDidAppear(_ animated: Bool) {
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if(flag)
+        {
+            let currentUser = getUid()
+            let userRef = ref.child("User").child(currentUser)
+            var message = "Welcome "
+            userRef.observeSingleEvent(of: .value, with: { snapshot in
+                let values =  snapshot.value as? [String:AnyObject] ?? [:]
+                //Retrieval of user image from db
+                let displayName = values["name"] as? String ?? ""
+                message = message.appending(displayName)
+                self.userLabel.text = message
+                if (snapshot.hasChild("imageUrl"))
+                {
+                    let url = values["imageUrl"] as? String ?? ""
+                    FIRStorage.storage().reference(forURL: url).data(withMaxSize: 10 * 1024 * 1024, completion: { (data,error) in
+                        DispatchQueue.main.async() { Void in
+                            let image = UIImage(data: data!)
+                            self.userImage.image = image!
+                        }
+                    })
+                }
+            })
+            
+            print(message)
+            self.leadingConstraint.constant = -250
+            isMenuVisible = !isMenuVisible
+        } else{
+            flag = true
+        }
+    }
+
     
     func getUid() -> String {
         return (FIRAuth.auth()?.currentUser?.uid)!
@@ -234,12 +270,13 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         if cell.menu.text! == "Profile"
         {
             self.performSegue(withIdentifier: "openProfileView", sender: nil)
-        }
-        if cell.menu.text! == "Borrowed Books"
+        }else if cell.menu.text! == "Add Books"
+        {
+            self.performSegue(withIdentifier: "showNewBook", sender: nil)
+        }else if cell.menu.text! == "Borrowed Books"
         {
             self.performSegue(withIdentifier: "showBorrowedBooks", sender: nil)
-        }
-        if cell.menu.text! == "Log Out"
+        }else if cell.menu.text! == "Log Out"
         {
             do {
                 print("Sign Out Clicked")

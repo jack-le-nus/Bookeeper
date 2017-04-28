@@ -9,13 +9,7 @@
 /* Begin PBXBuildFile section */
 		33486362734B4E95CBE7A27D /* Pods_MTECHProgramme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF658CD344D360EAA1EE76B /* Pods_MTECHProgramme.framework */; };
 		5BA00E9D599613F5FE5687B2 /* Pods_MTECHProgrammeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3EBD8F437B0D28D1EC5890 /* Pods_MTECHProgrammeUITests.framework */; };
-		768962B61EA8F78A00A73A9B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768962B41EA8F78A00A73A9B /* ProfileViewController.swift */; };
-		768962B71EA8F78A00A73A9B /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 768962B51EA8F78A00A73A9B /* ProfileViewController.xib */; };
 		768962B91EA9007800A73A9B /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768962B81EA9007800A73A9B /* ProfileModel.swift */; };
-		768962C01EA9C77F00A73A9B /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768962BE1EA9C77F00A73A9B /* SideMenuTableViewCell.swift */; };
-		768962C11EA9C77F00A73A9B /* SideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 768962BF1EA9C77F00A73A9B /* SideMenuTableViewCell.xib */; };
-		76B222831EA9F808003E2196 /* MapAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B222821EA9F808003E2196 /* MapAddressViewController.swift */; };
-		76B222851EAA0149003E2196 /* LocationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76B222841EAA0149003E2196 /* LocationSearchTableViewController.swift */; };
 		93EAEE0B842FB46BF7D18AB9 /* Pods_MTECHProgrammeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98E9CC37AC8951F9B298EF1 /* Pods_MTECHProgrammeTests.framework */; };
 		9E016A4A1EAF3EE50025BEF3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E016A491EAF3EE50025BEF3 /* Constants.swift */; };
 		9E016A4D1EAFA4370025BEF3 /* BorrowedBookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E016A4B1EAFA4360025BEF3 /* BorrowedBookListViewController.swift */; };
@@ -26,6 +20,14 @@
 		9E830B671EADE6D5000F2712 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E830B651EADE6D5000F2712 /* CreateAccountViewController.swift */; };
 		9E830B681EADE6D5000F2712 /* CreateAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E830B661EADE6D5000F2712 /* CreateAccountViewController.xib */; };
 		9E8413AA1EB1C42400345B21 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8413A81EB1C42400345B21 /* BookDetailViewController.swift */; };
+		9EFF52CD1EB3357B006DC43B /* LocationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFF52C51EB3357B006DC43B /* LocationSearchTableViewController.swift */; };
+		9EFF52CE1EB3357B006DC43B /* MapAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFF52C61EB3357B006DC43B /* MapAddressViewController.swift */; };
+		9EFF52D11EB3357B006DC43B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFF52C91EB3357B006DC43B /* ProfileViewController.swift */; };
+		9EFF52D21EB3357B006DC43B /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EFF52CA1EB3357B006DC43B /* ProfileViewController.xib */; };
+		9EFF52D31EB3357B006DC43B /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFF52CB1EB3357B006DC43B /* SideMenuTableViewCell.swift */; };
+		9EFF52D41EB3357B006DC43B /* SideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EFF52CC1EB3357B006DC43B /* SideMenuTableViewCell.xib */; };
+		9EFF52D91EB3472D006DC43B /* NewBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFF52D71EB3472D006DC43B /* NewBookViewController.swift */; };
+		9EFF52DA1EB3472D006DC43B /* NewBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EFF52D81EB3472D006DC43B /* NewBookViewController.xib */; };
 		BC1973181EA0ACA7009D410B /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1973161EA0ACA7009D410B /* BookListViewController.swift */; };
 		BC1973191EA0ACA7009D410B /* BookListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC1973171EA0ACA7009D410B /* BookListViewController.xib */; };
 		BC51D50B1E92A077000D9249 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC51D50A1E92A077000D9249 /* AppDelegate.swift */; };
@@ -75,13 +77,7 @@
 		1CF658CD344D360EAA1EE76B /* Pods_MTECHProgramme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MTECHProgramme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		266588B814F62C691C054B47 /* Pods-MTECHProgramme.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTECHProgramme.release.xcconfig"; path = "Pods/Target Support Files/Pods-MTECHProgramme/Pods-MTECHProgramme.release.xcconfig"; sourceTree = "<group>"; };
 		6D3EBD8F437B0D28D1EC5890 /* Pods_MTECHProgrammeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MTECHProgrammeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		768962B41EA8F78A00A73A9B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		768962B51EA8F78A00A73A9B /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
 		768962B81EA9007800A73A9B /* ProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
-		768962BE1EA9C77F00A73A9B /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
-		768962BF1EA9C77F00A73A9B /* SideMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuTableViewCell.xib; sourceTree = "<group>"; };
-		76B222821EA9F808003E2196 /* MapAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAddressViewController.swift; sourceTree = "<group>"; };
-		76B222841EAA0149003E2196 /* LocationSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchTableViewController.swift; sourceTree = "<group>"; };
 		926E61E3741649F9115B710F /* Pods-MTECHProgrammeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTECHProgrammeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MTECHProgrammeTests/Pods-MTECHProgrammeTests.release.xcconfig"; sourceTree = "<group>"; };
 		9E016A491EAF3EE50025BEF3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9E016A4B1EAFA4360025BEF3 /* BorrowedBookListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorrowedBookListViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +88,14 @@
 		9E830B651EADE6D5000F2712 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		9E830B661EADE6D5000F2712 /* CreateAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateAccountViewController.xib; sourceTree = "<group>"; };
 		9E8413A81EB1C42400345B21 /* BookDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
+		9EFF52C51EB3357B006DC43B /* LocationSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchTableViewController.swift; sourceTree = "<group>"; };
+		9EFF52C61EB3357B006DC43B /* MapAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAddressViewController.swift; sourceTree = "<group>"; };
+		9EFF52C91EB3357B006DC43B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9EFF52CA1EB3357B006DC43B /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		9EFF52CB1EB3357B006DC43B /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		9EFF52CC1EB3357B006DC43B /* SideMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuTableViewCell.xib; sourceTree = "<group>"; };
+		9EFF52D71EB3472D006DC43B /* NewBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBookViewController.swift; sourceTree = "<group>"; };
+		9EFF52D81EB3472D006DC43B /* NewBookViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewBookViewController.xib; sourceTree = "<group>"; };
 		BC1973161EA0ACA7009D410B /* BookListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
 		BC1973171EA0ACA7009D410B /* BookListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookListViewController.xib; sourceTree = "<group>"; };
 		BC51D5071E92A077000D9249 /* MTECHProgramme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTECHProgramme.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,22 +251,24 @@
 		BCEE2EBB1E9C9D5900D469FD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9E8413A81EB1C42400345B21 /* BookDetailViewController.swift */,
 				9E0FD4261EB1FECA006B4B48 /* BookDetailViewController.xib */,
 				BC1973161EA0ACA7009D410B /* BookListViewController.swift */,
-				9E830B651EADE6D5000F2712 /* CreateAccountViewController.swift */,
-				9E830B661EADE6D5000F2712 /* CreateAccountViewController.xib */,
 				BC1973171EA0ACA7009D410B /* BookListViewController.xib */,
-				BC51D53B1E92AECC000D9249 /* LoginViewController.swift */,
-				BC51D53C1E92AECC000D9249 /* LoginViewController.xib */,
-				768962B41EA8F78A00A73A9B /* ProfileViewController.swift */,
-				768962B51EA8F78A00A73A9B /* ProfileViewController.xib */,
-				768962BE1EA9C77F00A73A9B /* SideMenuTableViewCell.swift */,
-				768962BF1EA9C77F00A73A9B /* SideMenuTableViewCell.xib */,
-				76B222821EA9F808003E2196 /* MapAddressViewController.swift */,
-				76B222841EAA0149003E2196 /* LocationSearchTableViewController.swift */,
 				9E016A4B1EAFA4360025BEF3 /* BorrowedBookListViewController.swift */,
 				9E016A4C1EAFA4360025BEF3 /* BorrowedBookListViewController.xib */,
-				9E8413A81EB1C42400345B21 /* BookDetailViewController.swift */,
+				9E830B651EADE6D5000F2712 /* CreateAccountViewController.swift */,
+				9E830B661EADE6D5000F2712 /* CreateAccountViewController.xib */,
+				9EFF52C51EB3357B006DC43B /* LocationSearchTableViewController.swift */,
+				BC51D53B1E92AECC000D9249 /* LoginViewController.swift */,
+				BC51D53C1E92AECC000D9249 /* LoginViewController.xib */,
+				9EFF52C61EB3357B006DC43B /* MapAddressViewController.swift */,
+				9EFF52D71EB3472D006DC43B /* NewBookViewController.swift */,
+				9EFF52D81EB3472D006DC43B /* NewBookViewController.xib */,
+				9EFF52C91EB3357B006DC43B /* ProfileViewController.swift */,
+				9EFF52CA1EB3357B006DC43B /* ProfileViewController.xib */,
+				9EFF52CB1EB3357B006DC43B /* SideMenuTableViewCell.swift */,
+				9EFF52CC1EB3357B006DC43B /* SideMenuTableViewCell.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -429,17 +435,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EFF52D21EB3357B006DC43B /* ProfileViewController.xib in Resources */,
 				BC51D53F1E92AECC000D9249 /* LoginViewController.xib in Resources */,
 				BC51D5171E92A077000D9249 /* LaunchScreen.storyboard in Resources */,
 				9E830B681EADE6D5000F2712 /* CreateAccountViewController.xib in Resources */,
-				768962B71EA8F78A00A73A9B /* ProfileViewController.xib in Resources */,
 				BCEE2EB41E9C76D300D469FD /* GoogleService-Info.plist in Resources */,
+				9EFF52DA1EB3472D006DC43B /* NewBookViewController.xib in Resources */,
 				9E0FD4271EB1FECA006B4B48 /* BookDetailViewController.xib in Resources */,
+				9EFF52D41EB3357B006DC43B /* SideMenuTableViewCell.xib in Resources */,
 				9E0FD4251EB1FE94006B4B48 /* BookImages.xib in Resources */,
 				BC51D5141E92A077000D9249 /* Assets.xcassets in Resources */,
 				9E016A4E1EAFA4370025BEF3 /* BorrowedBookListViewController.xib in Resources */,
 				BC51D5121E92A077000D9249 /* Main.storyboard in Resources */,
-				768962C11EA9C77F00A73A9B /* SideMenuTableViewCell.xib in Resources */,
 				BCC14F1F1EA34DBC00A1219E /* BookCell.xib in Resources */,
 				BC1973191EA0ACA7009D410B /* BookListViewController.xib in Resources */,
 			);
@@ -608,23 +615,24 @@
 				BCEE2EBA1E9C998400D469FD /* AppMessage.swift in Sources */,
 				BCEE2EC01E9C9DF600D469FD /* Themer.swift in Sources */,
 				BCEE2ECD1E9CB82400D469FD /* TextFieldTheme.swift in Sources */,
+				9EFF52CD1EB3357B006DC43B /* LocationSearchTableViewController.swift in Sources */,
 				9E0FD4241EB1FE94006B4B48 /* BookImages.swift in Sources */,
+				9EFF52D11EB3357B006DC43B /* ProfileViewController.swift in Sources */,
 				BC51D53D1E92AECC000D9249 /* LoginModel.swift in Sources */,
-				76B222851EAA0149003E2196 /* LocationSearchTableViewController.swift in Sources */,
 				BCEE2EC91E9CB7F700D469FD /* ButtonThemer.swift in Sources */,
 				9E016A4D1EAFA4370025BEF3 /* BorrowedBookListViewController.swift in Sources */,
+				9EFF52D31EB3357B006DC43B /* SideMenuTableViewCell.swift in Sources */,
 				BC51D50B1E92A077000D9249 /* AppDelegate.swift in Sources */,
 				BCEE2EB81E9C83B500D469FD /* LoadingView.swift in Sources */,
 				9E8413AA1EB1C42400345B21 /* BookDetailViewController.swift in Sources */,
 				BCEE2ECB1E9CB80F00D469FD /* TextFieldThemer.swift in Sources */,
 				BC51D53E1E92AECC000D9249 /* LoginViewController.swift in Sources */,
+				9EFF52CE1EB3357B006DC43B /* MapAddressViewController.swift in Sources */,
 				9E016A4A1EAF3EE50025BEF3 /* Constants.swift in Sources */,
+				9EFF52D91EB3472D006DC43B /* NewBookViewController.swift in Sources */,
 				BCC14F1E1EA34DBC00A1219E /* BookCell.swift in Sources */,
-				768962C01EA9C77F00A73A9B /* SideMenuTableViewCell.swift in Sources */,
 				BCEE2EB61E9C7C2000D469FD /* ViewControllerExtension.swift in Sources */,
 				BC1973181EA0ACA7009D410B /* BookListViewController.swift in Sources */,
-				768962B61EA8F78A00A73A9B /* ProfileViewController.swift in Sources */,
-				76B222831EA9F808003E2196 /* MapAddressViewController.swift in Sources */,
 				BCEE2EC71E9CB36400D469FD /* ButtonTheme.swift in Sources */,
 				BCEE2EC41E9CB25200D469FD /* Theme.swift in Sources */,
 				768962B91EA9007800A73A9B /* ProfileModel.swift in Sources */,
@@ -787,7 +795,7 @@
 				INFOPLIST_FILE = MTECHProgramme/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "PRODUCT-BUNDLE-IDENTIFIER";
+				PRODUCT_BUNDLE_IDENTIFIER = sg.edu.nus.iss.wlad.MTECHProgramme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -802,7 +810,7 @@
 				INFOPLIST_FILE = MTECHProgramme/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "PRODUCT-BUNDLE-IDENTIFIER";
+				PRODUCT_BUNDLE_IDENTIFIER = sg.edu.nus.iss.wlad.MTECHProgramme;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

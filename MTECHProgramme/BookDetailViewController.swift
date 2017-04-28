@@ -173,7 +173,10 @@ extension BookDetailViewController: UICollectionViewDataSource, UICollectionView
             print("Message services are not available")
            // print("UserID is \(self.userId!) and contact number is \(self.ownerContactDetails.stringValue)")
         }
-        navigationController?.popViewController(animated: true)
+        self.alert(content: AppMessage.checkoutSuccessful.rawValue, onCancel: {
+            action -> Void in
+            self.navigationController?.popViewController(animated: true)
+        })
     }
     
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result:MessageComposeResult) {
