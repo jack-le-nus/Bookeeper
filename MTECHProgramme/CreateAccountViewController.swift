@@ -51,7 +51,6 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate, UINavig
         confirmPasswordText.delegate = self
         let buttonThemer:ButtonThemer = ButtonThemer()
         buttonThemer.applyTheme(view: createButton, theme: ButtonTheme())
-        buttonThemer.applyTheme(view: signInBtn, theme: ButtonTheme())
         let textFieldThemer:TextFieldThemer = TextFieldThemer()
         textFieldThemer.applyTheme(view: nameText, theme: TextFieldTheme())
         textFieldThemer.applyTheme(view: emailText, theme: TextFieldTheme())
@@ -60,7 +59,6 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate, UINavig
         self.applyTheme()
         self.title = "Create Account"
         configureDatabase()
-        navigationController?.setToolbarHidden(false, animated: true)
     }
     
     override func didReceiveMemoryWarning() {

@@ -10,13 +10,13 @@ import UIKit
 import FlatUIKit
 import Firebase
 
-
 class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate, ReturnAddressDelegate
 {
     internal func returnAddressOnMap(data: String) {
         address.text! = data
     }
     
+    @IBOutlet weak var btnSearch: FUIButton!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: FUITextField!
     @IBOutlet weak var userEmailId: FUITextField!
@@ -74,12 +74,13 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         
         let buttonThemer:ButtonThemer = ButtonThemer()
         buttonThemer.applyTheme(view: btnUpdate, theme: ButtonTheme())
+        buttonThemer.applyTheme(view: btnSearch, theme: ButtonTheme())
         
-        userImage.layer.borderWidth = 2
-        userImage.layer.borderColor = UIColor.green.cgColor
-        userImage.layer.cornerRadius = userImage.frame.size.height/2
-        userImage.layer.masksToBounds = false
-        userImage.clipsToBounds = true
+//        userImage.layer.borderWidth = 2
+//        userImage.layer.borderColor = UIColor.green.cgColor
+//        userImage.layer.cornerRadius = userImage.frame.size.height/2
+//        userImage.layer.masksToBounds = false
+//        userImage.clipsToBounds = true
         
         let userRef = ref.child("User").child(currentUser)
         userRef.observeSingleEvent(of: .value, with: { snapshot in
