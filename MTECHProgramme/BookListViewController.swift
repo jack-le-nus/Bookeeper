@@ -13,8 +13,8 @@ import FirebaseDatabaseUI
 import FirebaseDatabase
 import SDWebImage
 
-class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
-   
+class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource {
+    
     var ref: FIRDatabaseReference!
     var storeRef: FIRStorageReference!
     var _refHandle: FIRDatabaseHandle!
@@ -25,9 +25,19 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     
     @IBOutlet weak var bookCollectionView: UICollectionView!
     @IBOutlet weak var generalBookCollectionView: UICollectionView!
-
+    
+    //Added by Medha
+    @IBOutlet weak var userImage: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var userLabel: UILabel!
+    @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
+    var isMenuVisible = true
+    var menuNameArray:Array = [String]()
+    var flag = true
+    
     override var nibName: String?
-    {
+        {
         get
         {
             
@@ -43,7 +53,8 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     override func viewDidLoad() {
         super.viewDidLoad()
         self.applyTheme()
-        
+        leadingConstraint.constant = -250
+        flag = false
         self.ref = FIRDatabase.database().reference()
         self.storeRef = FIRStorage.storage().reference()
         
@@ -92,7 +103,7 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
                     in
                     let messageImageTop = UIImage.init(data: data!, scale: 50)
                     cell.imgBook.image = messageImageTop
-                
+                    
                 }
             }
             cell.contentView.frame = bookCollectionView.bounds;
@@ -117,14 +128,14 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
             if(firstImage == ""){
                 cell.imgBook.image = #imageLiteral(resourceName: "imageBook")
             }else{
-            FIRStorage.storage().reference(forURL : imagesUrls[0] as! String).data(withMaxSize: INT64_MAX ) {( data,error)
-                in
-                let messageImage = UIImage.init(data: data!, scale: 50)
-                cell.imgBook.image = messageImage
-                
+                FIRStorage.storage().reference(forURL : imagesUrls[0] as! String).data(withMaxSize: INT64_MAX ) {( data,error)
+                    in
+                    let messageImage = UIImage.init(data: data!, scale: 50)
+                    cell.imgBook.image = messageImage
+                    
                 }
             }
-           return cell
+            return cell
         }
         
         self.ref.child("Book").queryOrdered(byChild: "isFeatured").queryEqual(toValue: true)
@@ -133,61 +144,170 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
             })
         
         self.title = "Books"
+        
+        //Added by Medha to implement Navigation Drawer
+        let currentUser = getUid()
+        menuNameArray = ["Profile","Add Books","Borrowed Books","Log Out"]
+        var message = "Welcome "
+        let userRef = ref.child("User").child(currentUser)
+        userRef.observeSingleEvent(of: .value, with: { snapshot in
+            let values =  snapshot.value as? [String:AnyObject] ?? [:]
+            
+            //Retrieval of user image and name from db
+            let displayName = values["name"] as? String ?? ""
+            message = message.appending(displayName)
+            self.userLabel.text = message
+            if snapshot.hasChild("imageUrl")
+            {
+                let url = values["imageUrl"] as? String ?? ""
+                FIRStorage.storage().reference(forURL: url).data(withMaxSize: 10 * 1024 * 1024, completion: { (data,error) in
+                    DispatchQueue.main.async() { Void in
+                        let image = UIImage(data: data!)
+                        self.userImage.image = image!
+                    }
+                })
+            }
+        })
+        
+        userImage.contentMode = UIViewContentMode.scaleAspectFit
+        userImage.layer.borderWidth = 2
+        userImage.layer.borderColor = UIColor.green.cgColor
+        userImage.layer.cornerRadius = userImage.frame.height/2
+        userImage.layer.masksToBounds = false
+        userImage.clipsToBounds = true
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.register(UINib(nibName: "SideMenuTableViewCell", bundle: nil), forCellReuseIdentifier: "SideMenuTableViewCell")
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-    }
-    
-    func getUid() -> String {
-        return (FIRAuth.auth()?.currentUser?.uid)!
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        if let cell = collectionView.cellForItem(at: indexPath) {
-//            self.performSegue(withIdentifier: "showBookDetail", sender: cell)
-//        }
-        
-        
-        let cell = collectionView.cellForItem(at: indexPath) as! BookCell
-            self.performSegue(withIdentifier: "showBookDetail", sender: cell)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         //let indexPath = self.generalBookCollectionView?.indexPathForCell(sender as UICollectionView)
-        
-        if segue.identifier == "showBookDetail" {
-            let detailsVC: BookDetailViewController = segue.destination as! BookDetailViewController
-            let cell = sender as! BookCell
-            //let indexPath = self.generalBookCollectionView!.indexPath(for: cell)
-            //let indexPaths:NSIndexPath = self.generalBookCollectionView.indexPathsForSelectedItems![0] as NSIndexPath
-            //let cell1 = generalBookCollectionView.cellForItem(at: indexPath! as IndexPath) as! BookCell
-            detailsVC.bookCell = cell
+    override func viewWillAppear(_ animated: Bool) {
+        if(flag)
+        {
+            let currentUser = getUid()
+            let userRef = ref.child("User").child(currentUser)
+            var message = "Welcome "
+            userRef.observeSingleEvent(of: .value, with: { snapshot in
+                let values =  snapshot.value as? [String:AnyObject] ?? [:]
+                //Retrieval of user image from db
+                let displayName = values["name"] as? String ?? ""
+                message = message.appending(displayName)
+                self.userLabel.text = message
+                if (snapshot.hasChild("imageUrl"))
+                {
+                    let url = values["imageUrl"] as? String ?? ""
+                    FIRStorage.storage().reference(forURL: url).data(withMaxSize: 10 * 1024 * 1024, completion: { (data,error) in
+                        DispatchQueue.main.async() { Void in
+                            let image = UIImage(data: data!)
+                            self.userImage.image = image!
+                        }
+                    })
+                }
+            })
+            
+            print(message)
+            self.leadingConstraint.constant = -250
+            isMenuVisible = !isMenuVisible
+        } else{
+            flag = true
         }
     }
+
+
+
+func getUid() -> String {
+    return (FIRAuth.auth()?.currentUser?.uid)!
+}
+
+func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    //        if let cell = collectionView.cellForItem(at: indexPath) {
+    //            self.performSegue(withIdentifier: "showBookDetail", sender: cell)
+    //        }
     
-   
-   func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let width : CGFloat = scrollView.frame.size.width;
-        pageControl.currentPage = Int(scrollView.contentOffset.x/width);
-    }
     
-    // MARK: UICollectionViewDelegateFlowLayout
-    func collectionView(_ collectionView: UICollectionView, layout
-        collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        if (collectionView == bookCollectionView) {
-            return collectionView.bounds.size
-        }
-        else {
-            let padding : CGFloat =  10
-            let collectionViewSize = collectionView.frame.size.width - padding
-            return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
-        }
-    }
+    let cell = collectionView.cellForItem(at: indexPath) as! BookCell
+    self.performSegue(withIdentifier: "showBookDetail", sender: cell)
+}
+
+override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //let indexPath = self.generalBookCollectionView?.indexPathForCell(sender as UICollectionView)
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets.zero
+    if segue.identifier == "showBookDetail" {
+        let detailsVC: BookDetailViewController = segue.destination as! BookDetailViewController
+        let cell = sender as! BookCell
+        //let indexPath = self.generalBookCollectionView!.indexPath(for: cell)
+        //let indexPaths:NSIndexPath = self.generalBookCollectionView.indexPathsForSelectedItems![0] as NSIndexPath
+        //let cell1 = generalBookCollectionView.cellForItem(at: indexPath! as IndexPath) as! BookCell
+        detailsVC.bookCell = cell
     }
+}
+
+
+func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    let width : CGFloat = scrollView.frame.size.width;
+    pageControl.currentPage = Int(scrollView.contentOffset.x/width);
+}
+
+// MARK: UICollectionViewDelegateFlowLayout
+func collectionView(_ collectionView: UICollectionView, layout
+    collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    
+    if (collectionView == bookCollectionView) {
+        return collectionView.bounds.size
+    }
+    else {
+        let padding : CGFloat =  10
+        let collectionViewSize = collectionView.frame.size.width - padding
+        return CGSize(width: collectionViewSize/2, height: collectionViewSize/2)
+    }
+}
+
+func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    return UIEdgeInsets.zero
+}
+
+//Added by Medha to open user profile view
+@IBAction func onProfileClick(_ sender: UIButton)
+{
+    self.performSegue(withIdentifier: "openProfileView", sender: nil)
+    leadingConstraint.constant = -250
+    isMenuVisible = !isMenuVisible
+}
+
+//to open menu
+@IBAction func onMenuClick(_ sender: Any)
+{
+    if (isMenuVisible)
+    {
+        leadingConstraint.constant = 0
+    }
+    else{
+        leadingConstraint.constant = -250
+    }
+    isMenuVisible = !isMenuVisible
+}
+
+func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return menuNameArray.count
+}
+
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+{
+    let cell = tableView.dequeueReusableCell(withIdentifier: "SideMenuTableViewCell", for: indexPath) as! SideMenuTableViewCell
+    cell.menu.text = menuNameArray[indexPath.row]
+    return cell
+}
+
+func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+{
+    let cell:SideMenuTableViewCell = tableView.cellForRow(at: indexPath) as! SideMenuTableViewCell
+    if cell.menu.text! == "Profile"
+    {
+        self.performSegue(withIdentifier: "openProfileView", sender: nil)
+    }
+    else if cell.menu.text! == "Add Books"
+    {
+        self.performSegue(withIdentifier: "showNewBook", sender: nil)
+    }
+}
 }
 

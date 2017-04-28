@@ -25,5 +25,6 @@ target 'MTECHProgramme' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'Firebase/RemoteConfig'
+  pod 'ELCImagePickerController'
   pod 'SDWebImage', '~>3.8'
 end
