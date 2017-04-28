@@ -11,7 +11,6 @@
 		1B30274F1EAF413400CC4680 /* BookDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B30274D1EAF413400CC4680 /* BookDetailViewController.xib */; };
 		1B40F47F1EB1C0AF00252DBD /* BookImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B40F47D1EB1C0AF00252DBD /* BookImages.swift */; };
 		1B40F4801EB1C0AF00252DBD /* BookImages.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B40F47E1EB1C0AF00252DBD /* BookImages.xib */; };
-		1BB385571EB308B70006E12F /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB385561EB308B70006E12F /* ProfileModel.swift */; };
 		1BB385701EB32C8D0006E12F /* LocationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB3856A1EB32C8D0006E12F /* LocationSearchTableViewController.swift */; };
 		1BB385711EB32C8D0006E12F /* MapAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB3856B1EB32C8D0006E12F /* MapAddressViewController.swift */; };
 		1BB385721EB32C8D0006E12F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB3856C1EB32C8D0006E12F /* ProfileViewController.swift */; };
@@ -20,6 +19,7 @@
 		1BB385751EB32C8D0006E12F /* SideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BB3856F1EB32C8D0006E12F /* SideMenuTableViewCell.xib */; };
 		1BB385781EB32D180006E12F /* NewBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB385761EB32D180006E12F /* NewBookViewController.swift */; };
 		1BB385791EB32D180006E12F /* NewBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BB385771EB32D180006E12F /* NewBookViewController.xib */; };
+		1BB3857B1EB349750006E12F /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB3857A1EB349750006E12F /* ProfileModel.swift */; };
 		33486362734B4E95CBE7A27D /* Pods_MTECHProgramme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF658CD344D360EAA1EE76B /* Pods_MTECHProgramme.framework */; };
 		5BA00E9D599613F5FE5687B2 /* Pods_MTECHProgrammeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3EBD8F437B0D28D1EC5890 /* Pods_MTECHProgrammeUITests.framework */; };
 		93EAEE0B842FB46BF7D18AB9 /* Pods_MTECHProgrammeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98E9CC37AC8951F9B298EF1 /* Pods_MTECHProgrammeTests.framework */; };
@@ -73,7 +73,6 @@
 		1B30274D1EAF413400CC4680 /* BookDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookDetailViewController.xib; sourceTree = "<group>"; };
 		1B40F47D1EB1C0AF00252DBD /* BookImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookImages.swift; sourceTree = "<group>"; };
 		1B40F47E1EB1C0AF00252DBD /* BookImages.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookImages.xib; sourceTree = "<group>"; };
-		1BB385561EB308B70006E12F /* ProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileModel.swift; path = ../../../localNew/Bookeeper/MTECHProgramme/ProfileModel.swift; sourceTree = "<group>"; };
 		1BB3856A1EB32C8D0006E12F /* LocationSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchTableViewController.swift; sourceTree = "<group>"; };
 		1BB3856B1EB32C8D0006E12F /* MapAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAddressViewController.swift; sourceTree = "<group>"; };
 		1BB3856C1EB32C8D0006E12F /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +81,7 @@
 		1BB3856F1EB32C8D0006E12F /* SideMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideMenuTableViewCell.xib; sourceTree = "<group>"; };
 		1BB385761EB32D180006E12F /* NewBookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewBookViewController.swift; sourceTree = "<group>"; };
 		1BB385771EB32D180006E12F /* NewBookViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewBookViewController.xib; sourceTree = "<group>"; };
+		1BB3857A1EB349750006E12F /* ProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		1CF658CD344D360EAA1EE76B /* Pods_MTECHProgramme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MTECHProgramme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		266588B814F62C691C054B47 /* Pods-MTECHProgramme.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTECHProgramme.release.xcconfig"; path = "Pods/Target Support Files/Pods-MTECHProgramme/Pods-MTECHProgramme.release.xcconfig"; sourceTree = "<group>"; };
 		6D3EBD8F437B0D28D1EC5890 /* Pods_MTECHProgrammeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MTECHProgrammeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -262,7 +262,7 @@
 		BCEE2EBC1E9C9D6600D469FD /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1BB385561EB308B70006E12F /* ProfileModel.swift */,
+				1BB3857A1EB349750006E12F /* ProfileModel.swift */,
 				BC51D53A1E92AECC000D9249 /* LoginModel.swift */,
 			);
 			name = Models;
@@ -603,7 +603,6 @@
 				BCEE2ECB1E9CB80F00D469FD /* TextFieldThemer.swift in Sources */,
 				1BB385741EB32C8D0006E12F /* SideMenuTableViewCell.swift in Sources */,
 				BC51D53E1E92AECC000D9249 /* LoginViewController.swift in Sources */,
-				1BB385571EB308B70006E12F /* ProfileModel.swift in Sources */,
 				BCC14F1E1EA34DBC00A1219E /* BookCell.swift in Sources */,
 				BCEE2EB61E9C7C2000D469FD /* ViewControllerExtension.swift in Sources */,
 				BC1973181EA0ACA7009D410B /* BookListViewController.swift in Sources */,
@@ -612,6 +611,7 @@
 				1BB385701EB32C8D0006E12F /* LocationSearchTableViewController.swift in Sources */,
 				1BB385711EB32C8D0006E12F /* MapAddressViewController.swift in Sources */,
 				1BB385721EB32C8D0006E12F /* ProfileViewController.swift in Sources */,
+				1BB3857B1EB349750006E12F /* ProfileModel.swift in Sources */,
 				BCEE2EC41E9CB25200D469FD /* Theme.swift in Sources */,
 				1BB385781EB32D180006E12F /* NewBookViewController.swift in Sources */,
 				1B30274E1EAF413400CC4680 /* BookDetailViewController.swift in Sources */,
