@@ -11,7 +11,7 @@ import ELCImagePickerController
 import Firebase
 import FlatUIKit
 
-class NewBookViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,ELCImagePickerControllerDelegate, UITextFieldDelegate {
+class NewBookViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource,ELCImagePickerControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
 
     @IBOutlet weak var authorName: FUITextField!
     @IBOutlet weak var bookName: FUITextField!
@@ -58,6 +58,9 @@ class NewBookViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         textFieldThemer.applyTheme(view: authorName, theme: TextFieldTheme())
         textFieldThemer.applyTheme(view: bookName, theme: TextFieldTheme())
         textFieldThemer.applyTheme(view: selectCategory, theme: TextFieldTheme())
+        
+        descriptionOfBook.text = "Description"
+        descriptionOfBook.textColor = UIColor.lightGray
         
         imgScrollView.backgroundColor = UIColor.alizarin()
         imgScrollView.layer.borderWidth=1
@@ -130,6 +133,19 @@ class NewBookViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         //bookName.resignFirstResponder()
     }
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = "Description"
+            textView.textColor = UIColor.lightGray
+        }
+    }
     
     @IBAction func selectImage(_ sender: Any) {
         self.pickImages()
