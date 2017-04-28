@@ -27,7 +27,6 @@ class BookDetailViewController: UIViewController {
           return "BookDetailViewController";
         }
     }
-    
     override required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
