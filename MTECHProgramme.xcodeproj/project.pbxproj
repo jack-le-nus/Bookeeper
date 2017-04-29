@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		33486362734B4E95CBE7A27D /* Pods_MTECHProgramme.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF658CD344D360EAA1EE76B /* Pods_MTECHProgramme.framework */; };
+		5ABE49D11EB4DF9400495FC7 /* GetStartedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ABE49CF1EB4DF9400495FC7 /* GetStartedViewController.xib */; };
+		5ABE49DA1EB505B100495FC7 /* GetStartedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABE49D81EB505B100495FC7 /* GetStartedCollectionViewCell.swift */; };
+		5ABE49DB1EB505B100495FC7 /* GetStartedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ABE49D91EB505B100495FC7 /* GetStartedCollectionViewCell.xib */; };
+		5ABE49DD1EB5069800495FC7 /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABE49CE1EB4DF9400495FC7 /* GetStartedViewController.swift */; };
 		5BA00E9D599613F5FE5687B2 /* Pods_MTECHProgrammeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3EBD8F437B0D28D1EC5890 /* Pods_MTECHProgrammeUITests.framework */; };
 		93EAEE0B842FB46BF7D18AB9 /* Pods_MTECHProgrammeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98E9CC37AC8951F9B298EF1 /* Pods_MTECHProgrammeTests.framework */; };
 		BC1973181EA0ACA7009D410B /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1973161EA0ACA7009D410B /* BookListViewController.swift */; };
@@ -58,6 +62,10 @@
 /* Begin PBXFileReference section */
 		1CF658CD344D360EAA1EE76B /* Pods_MTECHProgramme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MTECHProgramme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		266588B814F62C691C054B47 /* Pods-MTECHProgramme.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTECHProgramme.release.xcconfig"; path = "Pods/Target Support Files/Pods-MTECHProgramme/Pods-MTECHProgramme.release.xcconfig"; sourceTree = "<group>"; };
+		5ABE49CE1EB4DF9400495FC7 /* GetStartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedViewController.swift; sourceTree = "<group>"; };
+		5ABE49CF1EB4DF9400495FC7 /* GetStartedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GetStartedViewController.xib; sourceTree = "<group>"; };
+		5ABE49D81EB505B100495FC7 /* GetStartedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedCollectionViewCell.swift; sourceTree = "<group>"; };
+		5ABE49D91EB505B100495FC7 /* GetStartedCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GetStartedCollectionViewCell.xib; sourceTree = "<group>"; };
 		6D3EBD8F437B0D28D1EC5890 /* Pods_MTECHProgrammeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MTECHProgrammeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		926E61E3741649F9115B710F /* Pods-MTECHProgrammeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTECHProgrammeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MTECHProgrammeTests/Pods-MTECHProgrammeTests.release.xcconfig"; sourceTree = "<group>"; };
 		BC1973161EA0ACA7009D410B /* BookListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +227,8 @@
 				BC1973171EA0ACA7009D410B /* BookListViewController.xib */,
 				BC51D53B1E92AECC000D9249 /* LoginViewController.swift */,
 				BC51D53C1E92AECC000D9249 /* LoginViewController.xib */,
+				5ABE49CE1EB4DF9400495FC7 /* GetStartedViewController.swift */,
+				5ABE49CF1EB4DF9400495FC7 /* GetStartedViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -244,6 +254,8 @@
 		BCEE2EBE1E9C9DB900D469FD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5ABE49D81EB505B100495FC7 /* GetStartedCollectionViewCell.swift */,
+				5ABE49D91EB505B100495FC7 /* GetStartedCollectionViewCell.xib */,
 				BCEE2EB71E9C83B500D469FD /* LoadingView.swift */,
 				BCC14F1C1EA34DBC00A1219E /* BookCell.swift */,
 				BCC14F1D1EA34DBC00A1219E /* BookCell.xib */,
@@ -381,8 +393,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC51D53F1E92AECC000D9249 /* LoginViewController.xib in Resources */,
+				5ABE49DB1EB505B100495FC7 /* GetStartedCollectionViewCell.xib in Resources */,
 				BC51D5171E92A077000D9249 /* LaunchScreen.storyboard in Resources */,
 				BCEE2EB41E9C76D300D469FD /* GoogleService-Info.plist in Resources */,
+				5ABE49D11EB4DF9400495FC7 /* GetStartedViewController.xib in Resources */,
 				BC51D5141E92A077000D9249 /* Assets.xcassets in Resources */,
 				BC51D5121E92A077000D9249 /* Main.storyboard in Resources */,
 				BCC14F1F1EA34DBC00A1219E /* BookCell.xib in Resources */,
@@ -419,7 +433,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		5EAAD5851AF259F5E3CE02EE /* [CP] Embed Pods Frameworks */ = {
@@ -494,7 +508,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		D971FDB034A93676655F5625 /* [CP] Copy Pods Resources */ = {
@@ -539,7 +553,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -556,6 +570,8 @@
 				BCEE2EC91E9CB7F700D469FD /* ButtonThemer.swift in Sources */,
 				BC51D50B1E92A077000D9249 /* AppDelegate.swift in Sources */,
 				BCEE2EB81E9C83B500D469FD /* LoadingView.swift in Sources */,
+				5ABE49DD1EB5069800495FC7 /* GetStartedViewController.swift in Sources */,
+				5ABE49DA1EB505B100495FC7 /* GetStartedCollectionViewCell.swift in Sources */,
 				BCEE2ECB1E9CB80F00D469FD /* TextFieldThemer.swift in Sources */,
 				BC51D53E1E92AECC000D9249 /* LoginViewController.swift in Sources */,
 				BCC14F1E1EA34DBC00A1219E /* BookCell.swift in Sources */,
