@@ -30,10 +30,6 @@ class MessageViewController: UIViewController,UITableViewDataSource,UITableViewD
     fileprivate var _refHandle: FIRDatabaseHandle?
     
     var storageRef: FIRStorageReference!
-
-  //  @IBOutlet weak var banner: GADBannerView!
-    
-    
     
     override var nibName: String?
         {
@@ -71,7 +67,10 @@ class MessageViewController: UIViewController,UITableViewDataSource,UITableViewD
         _refHandle = self.ref.child("messages").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
             guard let strongSelf = self else {return}
             strongSelf.messages.append(snapshot)
+            self?.clientTable.beginUpdates();
             strongSelf.clientTable.insertRows(at: [IndexPath(row: strongSelf.messages.count-1, section: 0)], with: .automatic)
+            self?.clientTable.endUpdates();
+            
         })
     }
     
@@ -82,59 +81,9 @@ class MessageViewController: UIViewController,UITableViewDataSource,UITableViewD
         
     }
     
-    /*
-    func configureRemoteConfig() {
-       
-     remoteConfig = FIRRemoteConfig.remoteConfig()
-     let remoteConfigSettings = FIRRemoteConfigSettings(developerModeEnabled: true)
-        remoteConfig.configSettings = remoteConfigSettings!
-    }
- */
-    
-   /*
-    func fetchConfig() {
-       
-     var expirationDuration: Double = 3600
-     
-     if self.remoteConfig.configSettings.isDeveloperModeEnabled {
-            expirationDuration = 0
-        }
-     
-      remoteConfig.fetch(withExpirationDuration: expirationDuration) { [weak self] (status, error) in
-            if status == .success {
-                print("Config fetched!")
-                guard let strongSelf = self else { return }
-                strongSelf.remoteConfig.activateFetched()
-                let friendlyMsgLength = strongSelf.remoteConfig["friendly_msg_length"]
-                if friendlyMsgLength.source != .static {
-                    strongSelf.msglength = friendlyMsgLength.numberValue!
-                    print("Friendly msg length config: \(strongSelf.msglength)")
-                }
-            } else {
-                print("Config not fetched")
-                if let error = error {
-                    print("Error \(error)")
-                }
-            }
-        }
-    }
- 
-    
-    @IBAction func didPressFreshConfig(_ sender: AnyObject){
-        fetchConfig()
-    }
- */
-    
     @IBAction func didSendMessage(_ sender: UIButton) {
         _ = textFieldShouldReturn(textField)
     }
-    
-   /* 
-     @IBAction func didPressCrash(_ sender: AnyObject){
-         FIRCrashMessage("Cause Crash button clieked")
-        fatalError()
-    }
- */
     
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -185,6 +134,8 @@ class MessageViewController: UIViewController,UITableViewDataSource,UITableViewD
         }
         return cell
     }
+    
+    
  
     
     // UITextViewDelegateProtocols methos
@@ -281,6 +232,5 @@ class MessageViewController: UIViewController,UITableViewDataSource,UITableViewD
     }
     
 }
-
 
 

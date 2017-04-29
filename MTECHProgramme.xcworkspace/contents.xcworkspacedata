@@ -2,15 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:MTECHProgramme/Constants.swift">
-   </FileRef>
-   <FileRef
-      location = "group:MTECHProgramme/MessageViewController.swift">
-   </FileRef>
-   <FileRef
-      location = "group:MTECHProgramme/MessageViewController.xib">
-   </FileRef>
-   <FileRef
       location = "group:MTECHProgramme.xcodeproj">
    </FileRef>
    <FileRef

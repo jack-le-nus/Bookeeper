@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" customClass="MessageViewController" customModule="MTECHProgramme" customModuleProvider="target">
             <connections>
-                <outlet property="clientTable" destination="gys-sv-CnJ" id="thZ-ho-JNs"/>
-                <outlet property="imagebuttin" destination="2Ts-Ns-VmW" id="4Ku-OW-KD2"/>
-                <outlet property="imagebutton" destination="2Ts-Ns-VmW" id="0Q9-Lj-Vhg"/>
-                <outlet property="sendButton" destination="xmb-Uy-ESG" id="eK1-sP-kRA"/>
-                <outlet property="textField" destination="BGW-vB-Olm" id="AD4-rz-TTD"/>
+                <outlet property="clientTable" destination="Tjd-CR-uaI" id="SaB-hG-Mgi"/>
+                <outlet property="imagebutton" destination="2Ts-Ns-VmW" id="EGM-BP-05U"/>
+                <outlet property="sendButton" destination="xmb-Uy-ESG" id="9WG-ou-tdJ"/>
+                <outlet property="textField" destination="BGW-vB-Olm" id="oJE-f3-Kan"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="ALq-nY-Ull"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -28,7 +28,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chat Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nac-je-r94">
-                            <rect key="frame" x="0.0" y="2" width="80" height="40"/>
+                            <rect key="frame" x="0.0" y="-4" width="80" height="40"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -37,22 +37,12 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gys-sv-CnJ" userLabel="Client Table">
-                    <rect key="frame" x="16" y="72" width="343" height="511"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </tableView>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BG3-C3-vDW">
-                    <rect key="frame" x="315" y="30" width="56" height="34"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="SignOut"/>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xmb-Uy-ESG">
                     <rect key="frame" x="319" y="616" width="49" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Send"/>
                     <connections>
-                        <action selector="didSendMessage:" destination="-1" eventType="touchUpInside" id="Enn-Qr-whc"/>
+                        <action selector="didSendMessage:" destination="-1" eventType="touchUpInside" id="bru-Km-JHe"/>
                     </connections>
                 </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BGW-vB-Olm" userLabel="TextField">
@@ -62,18 +52,22 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ts-Ns-VmW" userLabel="Image">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="Image" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ts-Ns-VmW" userLabel="Image" customClass="FUIButton">
                     <rect key="frame" x="16" y="614" width="50" height="31"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                    <state key="normal" title="Button" image="ic_checkmark_black_24.png"/>
+                    <state key="normal" title="Button">
+                        <color key="titleShadowColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
                 </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tjd-CR-uaI">
+                    <rect key="frame" x="0.0" y="61" width="375" height="522"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <point key="canvasLocation" x="209.5" y="79.5"/>
         </view>
     </objects>
-    <resources>
-        <image name="ic_checkmark_black_24.png" width="24" height="24"/>
-    </resources>
 </document>
