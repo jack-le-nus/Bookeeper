@@ -46,6 +46,8 @@ class MessageViewController: UIViewController,UITableViewDataSource,UITableViewD
         super.viewDidLoad()
         
         self.clientTable.register(UITableViewCell.self, forCellReuseIdentifier: "tableViewCell")
+        self.clientTable.dataSource = self
+        self.clientTable.delegate = self
         
         configureDatabase()
         configureStorage()

@@ -17,10 +17,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var userID: FUITextField!
     @IBOutlet weak var password: FUITextField!
     
-    
-    
     override var nibName: String?
-    {
+        {
         get
         {
             return "LoginViewController";
@@ -29,12 +27,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         userID.delegate=self
         password.delegate=self
@@ -46,9 +44,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         textFieldThemer.applyTheme(view: userID, theme: TextFieldTheme())
         textFieldThemer.applyTheme(view: password, theme: TextFieldTheme())
         
+        self.userID.text = "jack@gmail.com"
+        self.password.text = "123456"
+        
         self.title = "Login"
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -59,17 +60,32 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         password.resignFirstResponder()
         return true
     }
-
+    
     @IBAction func login(_ sender: Any) {
         userID.resignFirstResponder()
         password.resignFirstResponder()
+        
+        do {
+            try FIRAuth.auth()?.signOut()
+            
+        } catch _ {
+            
+        }
+        
+        
+        
+        //        let userId:String = ((FIRAuth.auth()?.currentUser)?.uid)!
+        //        if (!userId.isEmpty) {
+        //            self.performSegue(withIdentifier: "showTab", sender: nil)
+        //            return
+        //        }
         
         let login:LoginModel = LoginModel()
         
         if !login.isUserOrPasswordEmpty(userID: userID.text, password: password.text) {
             showSpinner(view: self.view)
             
-            FIRAuth.auth()?.createUser(withEmail: userID.text!, password: password.text!, completion: { (user, error) in
+            FIRAuth.auth()?.signIn(withEmail: userID.text!, password: password.text!, completion: { (user, error) in
                 
                 self.hideSpinner()
                 
@@ -90,5 +106,5 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         
     }
-
+    
 }
