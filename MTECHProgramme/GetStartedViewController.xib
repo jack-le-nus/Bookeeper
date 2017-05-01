@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GetStartedViewController" customModule="MTECHProgramme" customModuleProvider="target">
             <connections>
-                <outlet property="GetStarted" destination="nBc-XB-sKy" id="nQS-7Y-bZp"/>
+                <outlet property="GetStarted" destination="nBc-XB-sKy" id="0wH-Zm-pZf"/>
                 <outlet property="Label" destination="2Yi-YI-hBd" id="jLc-DV-sqB"/>
                 <outlet property="imagecollectionView" destination="cZh-FA-UqZ" id="1jG-i9-mqO"/>
                 <outlet property="pageControl" destination="Co4-8V-kRx" id="I6k-hj-WMF"/>

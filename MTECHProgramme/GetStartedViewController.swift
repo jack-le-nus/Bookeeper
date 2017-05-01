@@ -8,13 +8,14 @@
 
 
 import UIKit
-
+import FlatUIKit
 
 class GetStartedViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     
-    @IBOutlet weak var GetStarted: UIButton!
+ 
     
+    @IBOutlet weak var GetStarted: FUIButton!
     @IBOutlet var TextView: [UITextView]!
     @IBOutlet weak var Label: UILabel!
     
@@ -22,11 +23,12 @@ class GetStartedViewController: UIViewController, UICollectionViewDataSource, UI
     
     @IBOutlet weak var pageControl: UIPageControl!
     
+    var logoImage: [String] = ["Image_1", "Image_2", "Image_3"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+                
         self.imagecollectionView.register(UINib(nibName: "GetStartedCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GetStartedCollectionViewCell")
         
         self.imagecollectionView.delegate = self
@@ -40,7 +42,10 @@ class GetStartedViewController: UIViewController, UICollectionViewDataSource, UI
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         
+        
+        
         self.imagecollectionView.reloadData()
+        
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -51,7 +56,7 @@ class GetStartedViewController: UIViewController, UICollectionViewDataSource, UI
                                 cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = imagecollectionView.dequeueReusableCell(withReuseIdentifier: "GetStartedCollectionViewCell", for: indexPath) as! GetStartedCollectionViewCell
         
-        cell.img.image = UIImage(named: "Image_1")
+        cell.img.image = UIImage(named: logoImage[indexPath.row])
     
         return cell
     }
