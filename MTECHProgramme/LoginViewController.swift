@@ -9,8 +9,9 @@
 import UIKit
 import FlatUIKit
 import Firebase
+import GoogleSignIn
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
     @IBOutlet weak var lblUserID: UILabel!
     @IBOutlet weak var lblSignup: UILabel!
     @IBOutlet weak var lblForgotPassword: UILabel!
@@ -19,6 +20,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var userID: FUITextField!
     @IBOutlet weak var password: FUITextField!
     @IBOutlet weak var createAccount: FUIButton!
+    @IBOutlet weak var signInButton: GIDSignInButton!
+    
     override var nibName: String?
     {
         get
@@ -35,7 +38,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Do any additional setup after loading the view.
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
+        GIDSignIn.sharedInstance().signInSilently()
+        
+        // Normal SignIn
         userID.delegate=self
         password.delegate=self
         
@@ -110,7 +120,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         
     }
-    
     
     @IBAction func createAccountClick(_ sender: Any) {
       loginSession() 
