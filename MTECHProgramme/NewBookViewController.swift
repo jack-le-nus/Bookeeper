@@ -296,6 +296,10 @@ class NewBookViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         }
     }
     
+    func fieldCheck(){
+        	
+    }
+    
 }
 
 

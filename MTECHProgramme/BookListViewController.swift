@@ -287,7 +287,12 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
             do {
                 print("Sign Out Clicked")
                 try FIRAuth.auth()?.signOut()
-                navigationController?.popToRootViewController(animated: true)
+                self.alert(content: AppMessage.SignOutSuccess.rawValue, onCancel: {
+                    action -> Void in
+                    
+                    self.performSegue(withIdentifier: "logOut", sender: nil)
+                })
+                
             } catch let signOutError as NSError {
                 print ("Error signing out: %@", signOutError)
             }
