@@ -64,7 +64,8 @@
             overlayView.hidden = asset.selected ? NO : YES;
         } else {
             if (overlayImage == nil) {
-                overlayImage = [UIImage imageNamed:@"Overlay.png"];
+                NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+                overlayImage = [UIImage imageNamed:@"Overlay.png" inBundle:bundle compatibleWithTraitCollection:nil];
             }
             UIImageView *overlayView = [[UIImageView alloc] initWithImage:overlayImage];
             [_overlayViewArray addObject:overlayView];
