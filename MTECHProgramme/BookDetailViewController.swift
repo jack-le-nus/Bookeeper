@@ -18,6 +18,9 @@ class BookDetailViewController: UIViewController, MFMessageComposeViewController
     @IBOutlet weak var bookAuthor: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var bookName: UILabel!
+    
+    @IBOutlet weak var chatMessage: UIButton!
+
     var userId : String!
     var ownerContactDetails : NSNumber!
     var ref: FIRDatabaseReference!
@@ -231,4 +234,10 @@ extension BookDetailViewController: UICollectionViewDataSource, UICollectionView
     }
 
     
+    @IBAction func btnclicked(_ sender: Any){
+        
+        //self.performSegue(withIdentifier: "ChatMessage", sender: nil)
+        
+        print("chat button clicked")
+    }
 }
