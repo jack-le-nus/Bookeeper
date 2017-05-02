@@ -220,17 +220,17 @@ extension BookDetailViewController: UICollectionViewDataSource, UICollectionView
     
     func hideShowChatButton() {
         
-        let query = ref.child(Constants.UserTables.bookTable).child(bookId).child(AppMessage.isAvailable.rawValue)
-        query.observeSingleEvent(of: .value, with: { bookSnapshot in
-            // TODO remove comment once Medha fixes Phone number
-             let bookAvailable = bookSnapshot.value as! String
-            print("Is book available", bookAvailable)
-            if bookAvailable == "false" {
-            self.checkOutBtn.isHidden = true
-            }else {
-              self.checkOutBtn.isHidden = false
-            }
-        })
+//        let query = ref.child(Constants.UserTables.bookTable).child(bookId).child(AppMessage.isAvailable.rawValue)
+//        query.observeSingleEvent(of: .value, with: { bookSnapshot in
+//            // TODO remove comment once Medha fixes Phone number
+//             let bookAvailable = bookSnapshot.value as! String
+//            print("Is book available", bookAvailable)
+//            if bookAvailable == "false" {
+//            self.checkOutBtn.isHidden = true
+//            }else {
+//              self.checkOutBtn.isHidden = false
+//            }
+//        })
     }
 
     
