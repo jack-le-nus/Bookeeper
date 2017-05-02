@@ -12,6 +12,8 @@
 		3FD1C35D1EB87CF600B331BD /* GetStartedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FD1C35B1EB87CF600B331BD /* GetStartedCollectionViewCell.xib */; };
 		3FD1C3601EB87E3A00B331BD /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1C35E1EB87E3A00B331BD /* GetStartedViewController.swift */; };
 		3FD1C3611EB87E3A00B331BD /* GetStartedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FD1C35F1EB87E3A00B331BD /* GetStartedViewController.xib */; };
+		3FD1C3641EB895A000B331BD /* ChatMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD1C3621EB895A000B331BD /* ChatMessageViewController.swift */; };
+		3FD1C3651EB895A000B331BD /* ChatMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FD1C3631EB895A000B331BD /* ChatMessageViewController.xib */; };
 		5BA00E9D599613F5FE5687B2 /* Pods_MTECHProgrammeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3EBD8F437B0D28D1EC5890 /* Pods_MTECHProgrammeUITests.framework */; };
 		768962B91EA9007800A73A9B /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768962B81EA9007800A73A9B /* ProfileModel.swift */; };
 		93EAEE0B842FB46BF7D18AB9 /* Pods_MTECHProgrammeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98E9CC37AC8951F9B298EF1 /* Pods_MTECHProgrammeTests.framework */; };
@@ -86,6 +88,8 @@
 		3FD1C35B1EB87CF600B331BD /* GetStartedCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GetStartedCollectionViewCell.xib; sourceTree = "<group>"; };
 		3FD1C35E1EB87E3A00B331BD /* GetStartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedViewController.swift; sourceTree = "<group>"; };
 		3FD1C35F1EB87E3A00B331BD /* GetStartedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GetStartedViewController.xib; sourceTree = "<group>"; };
+		3FD1C3621EB895A000B331BD /* ChatMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageViewController.swift; sourceTree = "<group>"; };
+		3FD1C3631EB895A000B331BD /* ChatMessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatMessageViewController.xib; sourceTree = "<group>"; };
 		6D3EBD8F437B0D28D1EC5890 /* Pods_MTECHProgrammeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MTECHProgrammeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		768962B81EA9007800A73A9B /* ProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		926E61E3741649F9115B710F /* Pods-MTECHProgrammeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTECHProgrammeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MTECHProgrammeTests/Pods-MTECHProgrammeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -267,6 +271,8 @@
 				3FD1C35F1EB87E3A00B331BD /* GetStartedViewController.xib */,
 				9E8413A81EB1C42400345B21 /* BookDetailViewController.swift */,
 				9E0FD4261EB1FECA006B4B48 /* BookDetailViewController.xib */,
+				3FD1C3621EB895A000B331BD /* ChatMessageViewController.swift */,
+				3FD1C3631EB895A000B331BD /* ChatMessageViewController.xib */,
 				BC1973161EA0ACA7009D410B /* BookListViewController.swift */,
 				BC1973171EA0ACA7009D410B /* BookListViewController.xib */,
 				9E016A4B1EAFA4360025BEF3 /* BorrowedBookListViewController.swift */,
@@ -465,6 +471,7 @@
 				BC51D5141E92A077000D9249 /* Assets.xcassets in Resources */,
 				3FD1C35D1EB87CF600B331BD /* GetStartedCollectionViewCell.xib in Resources */,
 				9E016A4E1EAFA4370025BEF3 /* BorrowedBookListViewController.xib in Resources */,
+				3FD1C3651EB895A000B331BD /* ChatMessageViewController.xib in Resources */,
 				BC51D5121E92A077000D9249 /* Main.storyboard in Resources */,
 				BCC14F1F1EA34DBC00A1219E /* BookCell.xib in Resources */,
 				BC1973191EA0ACA7009D410B /* BookListViewController.xib in Resources */,
@@ -644,6 +651,7 @@
 				BCEE2EC91E9CB7F700D469FD /* ButtonThemer.swift in Sources */,
 				3FD1C35C1EB87CF600B331BD /* GetStartedCollectionViewCell.swift in Sources */,
 				9E016A4D1EAFA4370025BEF3 /* BorrowedBookListViewController.swift in Sources */,
+				3FD1C3641EB895A000B331BD /* ChatMessageViewController.swift in Sources */,
 				9EFF52D31EB3357B006DC43B /* SideMenuTableViewCell.swift in Sources */,
 				BC51D50B1E92A077000D9249 /* AppDelegate.swift in Sources */,
 				BCEE2EB81E9C83B500D469FD /* LoadingView.swift in Sources */,

@@ -308,27 +308,10 @@
             </objects>
             <point key="canvasLocation" x="1775" y="745"/>
         </scene>
-        <!--View Controller-->
+        <!--Chat Message View Controller-->
         <scene sceneID="BSL-vE-g7Q">
             <objects>
-                <viewController id="MZR-Pd-OJM" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="AIv-TN-w4b"/>
-                        <viewControllerLayoutGuide type="bottom" id="4qk-Wt-F4u"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="HDJ-OF-SQJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ESu-ex-5ca">
-                                <rect key="frame" x="138" y="318" width="99" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Chat Message"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
+                <viewController id="MZR-Pd-OJM" customClass="ChatMessageViewController" customModule="MTECHProgramme" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l2G-vo-2L0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3472.8000000000002" y="-9.4452773613193415"/>
