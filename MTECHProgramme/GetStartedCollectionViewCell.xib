@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GetStartedCollectionViewCell" customModule="MTECHProgramme" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="174"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="174"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q3p-gh-OVw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="174"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Q3p-gh-OVw" secondAttribute="bottom" id="34B-ZM-0cc"/>
+                <constraint firstItem="Q3p-gh-OVw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="AFM-q5-0RE"/>
+                <constraint firstItem="Q3p-gh-OVw" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="a6H-wp-5H7"/>
+                <constraint firstAttribute="trailing" secondItem="Q3p-gh-OVw" secondAttribute="trailing" id="loZ-Cd-cCm"/>
+            </constraints>
+            <size key="customSize" width="320" height="174"/>
+            <connections>
+                <outlet property="img" destination="Q3p-gh-OVw" id="QsO-F3-gAm"/>
+            </connections>
+            <point key="canvasLocation" x="-282" y="-37"/>
+        </collectionViewCell>
+    </objects>
+</document>
