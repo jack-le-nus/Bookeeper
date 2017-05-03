@@ -31,5 +31,5 @@ enum AppMessage: String {
     case checkoutSuccessful = "This book has been checked out to you succesfully"
     static let categories = ["Arts & Photography","Biographies & Memoirs","Business & Money","Calendars","Children's Books","Christian Books & Bibles","Computers and Technology","Cookbooks","Crafts, Hobbies & Home","Education & Teaching"]
     case SignOutSuccess = "Signout Successfully"
-   
+    case noImage = "Please provide atleast one image"
 }

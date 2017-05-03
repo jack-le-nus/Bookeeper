@@ -132,15 +132,14 @@ class NewBookViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     
     @IBAction func saveBook(_ sender: Any) {
-        // TODO: null and if checkof text field
-        let fieldCheck:Bool = true;
-        sendBookDetail(fieldCheck : fieldCheck)
-        //authorName.resignFirstResponder()
-        //bookName.resignFirstResponder()
+        if(validateData()){
+            let fieldCheck:Bool = true;
+            sendBookDetail(fieldCheck : fieldCheck)
+        }
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.textColor == UIColor.lightGray {
+        if textView.textColor == UIColor.lightGray || textView.textColor == UIColor.red{
             textView.text = nil
             textView.textColor = UIColor.black
         }
@@ -296,10 +295,50 @@ class NewBookViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         }
     }
     
-    func fieldCheck(){
-        	
+    func validateData() -> Bool{
+        var valid: Bool = true
+        if (bookName.text?.isEmpty)! || validateName(){
+            authorName.text = ""
+            bookName.attributedPlaceholder = NSAttributedString(string: "Invalid Book Name", attributes: [NSForegroundColorAttributeName: UIColor.red])
+            valid = false
+        }
+        if (selectCategory.text?.isEmpty)! {
+            selectCategory.attributedPlaceholder = NSAttributedString(string: "Please select category", attributes: [NSForegroundColorAttributeName: UIColor.red])
+            valid = false
+        }
+        if (authorName.text?.isEmpty)! || validateName(){
+            authorName.text = ""
+            authorName.attributedPlaceholder = NSAttributedString(string: "Invalid Author Name", attributes: [NSForegroundColorAttributeName: UIColor.red])
+            valid = false
+        }
+        if pickedImages.count == 0{
+            self.alert(content: AppMessage.noImage.rawValue)
+            valid = false
+        }
+        if descriptionOfBook.text == "Description" {
+            descriptionOfBook.text = "Please enter Description Name"
+            descriptionOfBook.textColor = UIColor.red
+            valid = false
+        }
+        return valid
     }
     
+    
+    func validateName() ->Bool {
+        let name :String = String(describing: authorName.text?.characters.first)
+        let digit = NSCharacterSet.decimalDigits
+        
+        //let phrase = "Test case"
+        let range = name.rangeOfCharacter(from: digit, options: .caseInsensitive)
+        
+        // range will be nil if no letters is found
+        if range != nil {
+            return true
+        }
+        else {
+            return false
+        }
+    }
 }
 
 
