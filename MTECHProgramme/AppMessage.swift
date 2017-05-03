@@ -29,6 +29,8 @@ enum AppMessage: String {
     case bookname = "bookname"
     case borrowerUid = "borrowerUid"
     case checkoutSuccessful = "This book has been checked out to you succesfully"
-    static let categories = ["abc", "bcd", "gft", "huj"]
+    static let categories = ["Arts & Photography","Biographies & Memoirs","Business & Money","Calendars","Children's Books","Christian Books & Bibles","Computers and Technology","Cookbooks","Crafts, Hobbies & Home","Education & Teaching"]
+    case SignOutSuccess = "Signed Out Successfully"
+    case PasswordResetSuccess = "Password Reset Link sent to your registered email id."
    
 }

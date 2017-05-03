@@ -1,19 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="MTECHProgramme" customModuleProvider="target">
             <connections>
+                <outlet property="btnForgotPassword" destination="g2Z-b3-7lp" id="hLy-pz-UCi"/>
                 <outlet property="btnLogin" destination="vRp-vB-ChL" id="QGX-dE-ViN"/>
                 <outlet property="createAccount" destination="NJz-u0-zTV" id="7ly-pc-LBB"/>
-                <outlet property="lblForgotPassword" destination="eN2-PG-HMv" id="YPF-94-Hwi"/>
                 <outlet property="lblSignup" destination="Pfh-VJ-6Rj" id="dt4-oj-gOl"/>
                 <outlet property="password" destination="dhV-mh-DcI" id="A7R-dw-Ovs"/>
                 <outlet property="userID" destination="d0v-EU-NCe" id="e87-Q5-L5b"/>
@@ -76,12 +76,13 @@
                         <constraint firstAttribute="height" constant="100" id="C4B-wY-fzh"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot password ?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eN2-PG-HMv">
-                    <rect key="frame" x="20" y="350" width="335" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g2Z-b3-7lp" userLabel="Btn Forgot Password">
+                    <rect key="frame" x="20" y="350" width="335" height="30"/>
+                    <state key="normal" title="Forgot Passowrd ?"/>
+                    <connections>
+                        <action selector="forgotPassword:" destination="-1" eventType="touchUpInside" id="soP-V1-OJ0"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
@@ -94,19 +95,19 @@
                 <constraint firstItem="d0v-EU-NCe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="GM4-wI-Xcn"/>
                 <constraint firstAttribute="trailing" secondItem="dhV-mh-DcI" secondAttribute="trailing" constant="20" id="OfY-24-GJl"/>
                 <constraint firstAttribute="trailing" secondItem="NJz-u0-zTV" secondAttribute="trailing" constant="20" id="QSZ-Hk-S2Q"/>
+                <constraint firstItem="g2Z-b3-7lp" firstAttribute="top" secondItem="vRp-vB-ChL" secondAttribute="bottom" constant="20" id="RTs-KV-8vh"/>
                 <constraint firstItem="dhV-mh-DcI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="SkZ-Bl-wOu"/>
                 <constraint firstItem="drW-ou-C5q" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="77" id="VOl-gA-NjY"/>
-                <constraint firstItem="eN2-PG-HMv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="WTT-7q-KVA"/>
                 <constraint firstItem="Pfh-VJ-6Rj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Wpf-eO-s8x"/>
                 <constraint firstAttribute="trailing" secondItem="Pfh-VJ-6Rj" secondAttribute="trailing" constant="20" id="Y6c-fH-vFj"/>
                 <constraint firstAttribute="trailing" secondItem="d0v-EU-NCe" secondAttribute="trailing" constant="20" id="aYW-N4-Xgy"/>
                 <constraint firstAttribute="trailing" secondItem="vRp-vB-ChL" secondAttribute="trailing" constant="20" id="bij-uN-Cje"/>
-                <constraint firstItem="eN2-PG-HMv" firstAttribute="top" secondItem="vRp-vB-ChL" secondAttribute="bottom" constant="20" id="eAx-vA-jaP"/>
                 <constraint firstItem="dhV-mh-DcI" firstAttribute="top" secondItem="d0v-EU-NCe" secondAttribute="bottom" constant="20" id="eQL-za-Vej"/>
                 <constraint firstItem="drW-ou-C5q" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gzX-RT-wLB"/>
                 <constraint firstAttribute="bottom" secondItem="NJz-u0-zTV" secondAttribute="bottom" constant="20" id="jr4-y9-Ldd"/>
+                <constraint firstItem="g2Z-b3-7lp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="kAg-3y-13r"/>
                 <constraint firstItem="NJz-u0-zTV" firstAttribute="top" secondItem="Pfh-VJ-6Rj" secondAttribute="bottom" constant="20" id="lx0-s3-Gh6"/>
-                <constraint firstAttribute="trailing" secondItem="eN2-PG-HMv" secondAttribute="trailing" constant="20" id="vbr-l9-1Cg"/>
+                <constraint firstAttribute="trailing" secondItem="g2Z-b3-7lp" secondAttribute="trailing" constant="20" id="oNT-V5-sEA"/>
                 <constraint firstItem="vRp-vB-ChL" firstAttribute="top" secondItem="dhV-mh-DcI" secondAttribute="bottom" constant="20" id="ygd-Aq-1fs"/>
             </constraints>
             <point key="canvasLocation" x="33.5" y="54.5"/>

@@ -18,12 +18,17 @@
                 <rect key="frame" x="0.0" y="0.0" width="386" height="211"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zvB-Nj-Wu1">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zvB-Nj-Wu1">
                         <rect key="frame" x="0.0" y="-8" width="386" height="211"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
                 </subviews>
             </view>
+            <constraints>
+                <constraint firstItem="zvB-Nj-Wu1" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5mx-YG-jmx"/>
+                <constraint firstItem="zvB-Nj-Wu1" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="-8" id="Cmr-Ab-ee6"/>
+                <constraint firstAttribute="trailing" secondItem="zvB-Nj-Wu1" secondAttribute="trailing" id="XhA-NP-chv"/>
+                <constraint firstAttribute="bottom" secondItem="zvB-Nj-Wu1" secondAttribute="bottom" constant="8" id="yNt-Kz-vYe"/>
+            </constraints>
             <size key="customSize" width="229" height="112"/>
             <connections>
                 <outlet property="bookImages" destination="zvB-Nj-Wu1" id="mAy-Tl-MsL"/>

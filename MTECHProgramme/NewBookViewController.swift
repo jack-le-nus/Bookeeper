@@ -36,7 +36,7 @@ class NewBookViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         }
     }
     
-    override required init?(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
     }
@@ -50,6 +50,10 @@ class NewBookViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         bookName.delegate = self
         descriptionOfBook.delegate = self
         
+        authorName.resignFirstResponder()
+        bookName.resignFirstResponder()
+        selectCategory.resignFirstResponder()
+        descriptionOfBook.resignFirstResponder()
         
         let buttonThemer:ButtonThemer = ButtonThemer()
         buttonThemer.applyTheme(view: createButton, theme: ButtonTheme())
@@ -64,6 +68,7 @@ class NewBookViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         
         imgScrollView.backgroundColor = UIColor.alizarin()
         imgScrollView.layer.borderWidth=1
+        imgScrollView.addSubview(pickImageButton)
         
         selectCategory.inputView = categoryPickerView
         
@@ -79,6 +84,7 @@ class NewBookViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         authorName.resignFirstResponder()
         bookName.resignFirstResponder()
+        selectCategory.resignFirstResponder()
         descriptionOfBook.resignFirstResponder()
         return true
     }
@@ -288,6 +294,10 @@ class NewBookViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             sdata[AppMessage.imageUrl.rawValue] = imageUrls
             self.ref.child("Book").child(newkey).setValue(sdata)
         }
+    }
+    
+    func fieldCheck(){
+        	
     }
     
 }
