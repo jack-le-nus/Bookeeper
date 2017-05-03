@@ -19,7 +19,7 @@ class BookDetailViewController: UIViewController, MFMessageComposeViewController
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var bookName: UILabel!
     var userId : String!
-    var ownerContactDetails : NSNumber!
+    var ownerContactDetails : String!
     var ref: FIRDatabaseReference!
     var _refHandle: FIRDatabaseHandle!
     var bookCell: BookCell?
@@ -168,7 +168,7 @@ extension BookDetailViewController: UICollectionViewDataSource, UICollectionView
             updateData()
             let messageViewController:MFMessageComposeViewController = MFMessageComposeViewController()
             messageViewController.messageComposeDelegate=self
-            messageViewController.recipients = [self.ownerContactDetails.stringValue]
+            messageViewController.recipients = [self.ownerContactDetails]
             messageViewController.body = "Hi,I want to borrow your Book."
             
             self.present(messageViewController, animated: true, completion: nil)
@@ -211,8 +211,8 @@ extension BookDetailViewController: UICollectionViewDataSource, UICollectionView
             let userQuery = self.ref.child(Constants.UserTables.userTable).child(self.userId).child("phone")
             userQuery.observeSingleEvent(of: .value, with: { userSnapshot in
                // TODO remove comment once Medha fixes Phone number
-              //  self.ownerContactDetails = userSnapshot.value as! NSNumber
-               // print("contactNo is", self.ownerContactDetails)
+                self.ownerContactDetails = userSnapshot.value as! String
+                print("contactNo is", self.ownerContactDetails)
             })
         })
         
@@ -220,17 +220,17 @@ extension BookDetailViewController: UICollectionViewDataSource, UICollectionView
     
     func hideShowChatButton() {
         
-//        let query = ref.child(Constants.UserTables.bookTable).child(bookId).child(AppMessage.isAvailable.rawValue)
-//        query.observeSingleEvent(of: .value, with: { bookSnapshot in
-//            // TODO remove comment once Medha fixes Phone number
-//             let bookAvailable = bookSnapshot.value as! String
-//            print("Is book available", bookAvailable)
-//            if bookAvailable == "false" {
-//            self.checkOutBtn.isHidden = true
-//            }else {
-//              self.checkOutBtn.isHidden = false
-//            }
-//        })
+        let query = ref.child(Constants.UserTables.bookTable).child(bookId).child(AppMessage.isAvailable.rawValue)
+        query.observeSingleEvent(of: .value, with: { bookSnapshot in
+            // TODO remove comment once Medha fixes Phone number
+             let bookAvailable = bookSnapshot.value as! String
+            print("Is book available", bookAvailable)
+            if bookAvailable == "false" {
+            self.checkOutBtn.isHidden = true
+            }else {
+              self.checkOutBtn.isHidden = false
+            }
+        })
     }
 
     

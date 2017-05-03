@@ -27,7 +27,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBK-uH-nfu" customClass="FUIButton">
-                    <rect key="frame" x="69" y="682" width="276" height="34"/>
+                    <rect key="frame" x="20" y="682" width="374" height="34"/>
                     <state key="normal" title="Create"/>
                     <connections>
                         <action selector="saveBook:" destination="-1" eventType="touchUpInside" id="mtL-gX-NFS"/>
@@ -86,9 +86,9 @@
                 <constraint firstItem="0JE-cY-dPe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="78t-e9-5VO"/>
                 <constraint firstItem="Xyw-lF-Lbz" firstAttribute="top" secondItem="0JE-cY-dPe" secondAttribute="bottom" constant="20" id="BAD-pk-lks"/>
                 <constraint firstAttribute="bottom" secondItem="3cA-Ip-R63" secondAttribute="bottom" constant="464" id="DiV-BR-0NC"/>
-                <constraint firstItem="yBK-uH-nfu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="69" id="J7z-G8-9xw"/>
+                <constraint firstItem="yBK-uH-nfu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="J7z-G8-9xw"/>
                 <constraint firstItem="3cA-Ip-R63" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="PlR-xd-66o"/>
-                <constraint firstAttribute="trailing" secondItem="yBK-uH-nfu" secondAttribute="trailing" constant="69" id="SAy-5g-3as"/>
+                <constraint firstAttribute="trailing" secondItem="yBK-uH-nfu" secondAttribute="trailing" constant="20" id="SAy-5g-3as"/>
                 <constraint firstItem="hLV-5N-J4g" firstAttribute="top" secondItem="Xyw-lF-Lbz" secondAttribute="bottom" constant="20" id="W06-bS-iL3"/>
                 <constraint firstAttribute="trailing" secondItem="3cA-Ip-R63" secondAttribute="trailing" constant="20" id="Wze-B2-JsJ"/>
                 <constraint firstItem="0JE-cY-dPe" firstAttribute="top" secondItem="6B3-nN-eP4" secondAttribute="bottom" constant="20" id="aW2-Kg-yZq"/>
