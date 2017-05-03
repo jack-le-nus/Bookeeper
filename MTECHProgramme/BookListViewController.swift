@@ -55,7 +55,8 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     override func viewDidLoad() {
         super.viewDidLoad()
         self.applyTheme()
-        leadingConstraint.constant = -245
+        leadingConstraint.constant = -250
+        flag = false
         self.ref = FIRDatabase.database().reference()
         self.storeRef = FIRStorage.storage().reference()
         self.bookCollectionView.register(UINib(nibName: "BookCell", bundle: nil), forCellWithReuseIdentifier: "BookCell")
@@ -150,11 +151,32 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         
         //Added by Medha to implement Navigation Drawer
         
+        let currentUser = getUid()
         menuNameArray = ["Profile","Add Books","Borrowed Books","About Us", "Log Out"]
+        var message = "Welcome "
+        let userRef = ref.child("User").child(currentUser)
+        userRef.observeSingleEvent(of: .value, with: { snapshot in
+            let values =  snapshot.value as? [String:AnyObject] ?? [:]
+            
+            //Retrieval of user image and name from db
+            let displayName = values["name"] as? String ?? ""
+            message = message.appending(displayName)
+            self.userLabel.text = message
+            if snapshot.hasChild("imageUrl")
+            {
+                let url = values["imageUrl"] as? String ?? ""
+                FIRStorage.storage().reference(forURL: url).data(withMaxSize: 10 * 1024 * 1024, completion: { (data,error) in
+                    DispatchQueue.main.async() { Void in
+                        let image = UIImage(data: data!)
+                        self.userImage.image = image!
+                    }
+                })
+            }
+        })
         userImage.contentMode = UIViewContentMode.scaleAspectFit
-        userImage.layer.borderWidth = 2
-        userImage.layer.borderColor = UIColor.green.cgColor
+        userImage.layer.borderWidth = 2        
         userImage.layer.cornerRadius = userImage.frame.height/2
+        userImage.layer.borderColor = UIColor.white.cgColor
         userImage.layer.masksToBounds = false
         userImage.clipsToBounds = true
         self.tableView.delegate = self
@@ -243,7 +265,7 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     @IBAction func onProfileClick(_ sender: UIButton)
     {
         self.performSegue(withIdentifier: "openProfileView", sender: nil)
-        leadingConstraint.constant = -245
+        leadingConstraint.constant = -250
         isMenuVisible = !isMenuVisible
     }
     
@@ -254,7 +276,7 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
             leadingConstraint.constant = 0
         }
         else{
-            leadingConstraint.constant = -245
+            leadingConstraint.constant = -250
         }
         isMenuVisible = !isMenuVisible
     }
@@ -296,6 +318,9 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
             } catch let signOutError as NSError {
                 print ("Error signing out: %@", signOutError)
             }
+        }else if cell.menu.text! == "About Us"
+        {
+            self.performSegue(withIdentifier: "openAboutUsView", sender: nil)
         }
     }
 }
