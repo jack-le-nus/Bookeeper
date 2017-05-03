@@ -152,7 +152,7 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         //Added by Medha to implement Navigation Drawer
         
         let currentUser = getUid()
-        menuNameArray = ["Profile","My Books","Borrowed Books","About Us", "Log Out"]
+        menuNameArray = ["Profile","Add Books","Borrowed Books","About Us", "Log Out"]
         var message = "Welcome "
         let userRef = ref.child("User").child(currentUser)
         userRef.observeSingleEvent(of: .value, with: { snapshot in
