@@ -27,6 +27,7 @@ class BookDetailViewController: UIViewController, MFMessageComposeViewController
     @IBOutlet weak var messageBtn: FUIButton!
     @IBOutlet weak var bookDescription: UITextView!
     @IBOutlet weak var checkOutBtn: FUIButton!
+    @IBOutlet weak var chatMessage: FUIButton!
     
     override var nibName: String?
         {
@@ -231,6 +232,13 @@ extension BookDetailViewController: UICollectionViewDataSource, UICollectionView
               self.checkOutBtn.isHidden = false
             }
         })
+    }
+    
+    @IBAction func btnclicked(_ sender: Any){
+        
+        self.performSegue(withIdentifier: "chatMessage", sender: nil)
+        
+        print("chat button clicked")
     }
 
     

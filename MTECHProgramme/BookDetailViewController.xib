@@ -15,6 +15,7 @@
                 <outlet property="bookCategory" destination="PtI-6N-uhc" id="bSX-l7-MLM"/>
                 <outlet property="bookDescription" destination="nhd-VH-V0d" id="hka-oi-HSA"/>
                 <outlet property="bookName" destination="gzO-as-J02" id="6Nc-gY-qMS"/>
+                <outlet property="chatMessage" destination="0vG-NX-GrJ" id="Tyu-oA-xpY"/>
                 <outlet property="checkOutBtn" destination="hgC-MA-Gyj" id="OgM-Ma-w8X"/>
                 <outlet property="collectionView" destination="4x6-s3-n8y" id="p6b-e4-Nep"/>
                 <outlet property="messageBtn" destination="0vG-NX-GrJ" id="n26-Wc-ESX"/>
@@ -50,6 +51,9 @@
                     <state key="normal" title="Chat On">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="btnclicked:" destination="-1" eventType="touchUpInside" id="AFd-c3-bED"/>
+                    </connections>
                 </button>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="abc" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nhd-VH-V0d">
                     <rect key="frame" x="20" y="470" width="374" height="138"/>

@@ -22,6 +22,12 @@
 		9E830B671EADE6D5000F2712 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E830B651EADE6D5000F2712 /* CreateAccountViewController.swift */; };
 		9E830B681EADE6D5000F2712 /* CreateAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E830B661EADE6D5000F2712 /* CreateAccountViewController.xib */; };
 		9E8413AA1EB1C42400345B21 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E8413A81EB1C42400345B21 /* BookDetailViewController.swift */; };
+		9EDD41B51EBB447B00EA8AF8 /* GetStartedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDD41B31EBB447B00EA8AF8 /* GetStartedCollectionViewCell.swift */; };
+		9EDD41B61EBB447B00EA8AF8 /* GetStartedCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EDD41B41EBB447B00EA8AF8 /* GetStartedCollectionViewCell.xib */; };
+		9EDD41B91EBB454000EA8AF8 /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDD41B71EBB454000EA8AF8 /* GetStartedViewController.swift */; };
+		9EDD41BA1EBB454000EA8AF8 /* GetStartedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EDD41B81EBB454000EA8AF8 /* GetStartedViewController.xib */; };
+		9EDD41BD1EBB499400EA8AF8 /* ChatMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EDD41BB1EBB499400EA8AF8 /* ChatMessageViewController.swift */; };
+		9EDD41BE1EBB499400EA8AF8 /* ChatMessageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EDD41BC1EBB499400EA8AF8 /* ChatMessageViewController.xib */; };
 		9EFF52CD1EB3357B006DC43B /* LocationSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFF52C51EB3357B006DC43B /* LocationSearchTableViewController.swift */; };
 		9EFF52CE1EB3357B006DC43B /* MapAddressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFF52C61EB3357B006DC43B /* MapAddressViewController.swift */; };
 		9EFF52D11EB3357B006DC43B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFF52C91EB3357B006DC43B /* ProfileViewController.swift */; };
@@ -94,6 +100,12 @@
 		9E830B651EADE6D5000F2712 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		9E830B661EADE6D5000F2712 /* CreateAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreateAccountViewController.xib; sourceTree = "<group>"; };
 		9E8413A81EB1C42400345B21 /* BookDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
+		9EDD41B31EBB447B00EA8AF8 /* GetStartedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedCollectionViewCell.swift; sourceTree = "<group>"; };
+		9EDD41B41EBB447B00EA8AF8 /* GetStartedCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GetStartedCollectionViewCell.xib; sourceTree = "<group>"; };
+		9EDD41B71EBB454000EA8AF8 /* GetStartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedViewController.swift; sourceTree = "<group>"; };
+		9EDD41B81EBB454000EA8AF8 /* GetStartedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GetStartedViewController.xib; sourceTree = "<group>"; };
+		9EDD41BB1EBB499400EA8AF8 /* ChatMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageViewController.swift; sourceTree = "<group>"; };
+		9EDD41BC1EBB499400EA8AF8 /* ChatMessageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatMessageViewController.xib; sourceTree = "<group>"; };
 		9EFF52C51EB3357B006DC43B /* LocationSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchTableViewController.swift; sourceTree = "<group>"; };
 		9EFF52C61EB3357B006DC43B /* MapAddressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAddressViewController.swift; sourceTree = "<group>"; };
 		9EFF52C91EB3357B006DC43B /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -267,8 +279,12 @@
 				BC1973171EA0ACA7009D410B /* BookListViewController.xib */,
 				9E016A4B1EAFA4360025BEF3 /* BorrowedBookListViewController.swift */,
 				9E016A4C1EAFA4360025BEF3 /* BorrowedBookListViewController.xib */,
+				9EDD41BB1EBB499400EA8AF8 /* ChatMessageViewController.swift */,
+				9EDD41BC1EBB499400EA8AF8 /* ChatMessageViewController.xib */,
 				9E830B651EADE6D5000F2712 /* CreateAccountViewController.swift */,
 				9E830B661EADE6D5000F2712 /* CreateAccountViewController.xib */,
+				9EDD41B71EBB454000EA8AF8 /* GetStartedViewController.swift */,
+				9EDD41B81EBB454000EA8AF8 /* GetStartedViewController.xib */,
 				9EFF52C51EB3357B006DC43B /* LocationSearchTableViewController.swift */,
 				BC51D53B1E92AECC000D9249 /* LoginViewController.swift */,
 				BC51D53C1E92AECC000D9249 /* LoginViewController.xib */,
@@ -306,6 +322,8 @@
 		BCEE2EBE1E9C9DB900D469FD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9EDD41B31EBB447B00EA8AF8 /* GetStartedCollectionViewCell.swift */,
+				9EDD41B41EBB447B00EA8AF8 /* GetStartedCollectionViewCell.xib */,
 				9E0FD4221EB1FE94006B4B48 /* BookImages.swift */,
 				9E0FD4231EB1FE94006B4B48 /* BookImages.xib */,
 				BCEE2EB71E9C83B500D469FD /* LoadingView.swift */,
@@ -458,8 +476,11 @@
 				BC51D5141E92A077000D9249 /* Assets.xcassets in Resources */,
 				9E016A4E1EAFA4370025BEF3 /* BorrowedBookListViewController.xib in Resources */,
 				76F3B9701EB9BAB70064D502 /* AboutUsViewController.xib in Resources */,
+				9EDD41BA1EBB454000EA8AF8 /* GetStartedViewController.xib in Resources */,
 				BC51D5121E92A077000D9249 /* Main.storyboard in Resources */,
+				9EDD41BE1EBB499400EA8AF8 /* ChatMessageViewController.xib in Resources */,
 				BCC14F1F1EA34DBC00A1219E /* BookCell.xib in Resources */,
+				9EDD41B61EBB447B00EA8AF8 /* GetStartedCollectionViewCell.xib in Resources */,
 				BC1973191EA0ACA7009D410B /* BookListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -624,13 +645,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E830B671EADE6D5000F2712 /* CreateAccountViewController.swift in Sources */,
+				9EDD41B51EBB447B00EA8AF8 /* GetStartedCollectionViewCell.swift in Sources */,
 				BCEE2EBA1E9C998400D469FD /* AppMessage.swift in Sources */,
 				BCEE2EC01E9C9DF600D469FD /* Themer.swift in Sources */,
 				BCEE2ECD1E9CB82400D469FD /* TextFieldTheme.swift in Sources */,
+				9EDD41BD1EBB499400EA8AF8 /* ChatMessageViewController.swift in Sources */,
 				76F3B9741EB9DAC40064D502 /* AboutUsViewController.swift in Sources */,
 				9EFF52CD1EB3357B006DC43B /* LocationSearchTableViewController.swift in Sources */,
 				9E0FD4241EB1FE94006B4B48 /* BookImages.swift in Sources */,
 				BC8D1DD71EB381E4004B91C6 /* LabelThemer.swift in Sources */,
+				9EDD41B91EBB454000EA8AF8 /* GetStartedViewController.swift in Sources */,
 				9EFF52D11EB3357B006DC43B /* ProfileViewController.swift in Sources */,
 				BC51D53D1E92AECC000D9249 /* LoginModel.swift in Sources */,
 				BC8D1DD51EB381D9004B91C6 /* LabelTheme.swift in Sources */,

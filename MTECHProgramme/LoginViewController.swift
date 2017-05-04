@@ -9,8 +9,9 @@
 import UIKit
 import FlatUIKit
 import Firebase
+import GoogleSignIn
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate,GIDSignInUIDelegate {
     @IBOutlet weak var lblUserID: UILabel!
     @IBOutlet weak var lblSignup: UILabel!
     @IBOutlet weak var btnForgotPassword: UIButton!
@@ -36,6 +37,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
+        GIDSignIn.sharedInstance().signInSilently()
         userID.delegate=self
         password.delegate=self
         

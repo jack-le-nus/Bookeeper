@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Get Started View Controller-->
         <scene sceneID="AJP-98-23f">
             <objects>
-                <viewController id="G9a-Fl-MXK" sceneMemberID="viewController">
+                <viewController id="G9a-Fl-MXK" customClass="GetStartedViewController" customModule="MTECHProgramme" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Eek-M3-qK5"/>
                         <viewControllerLayoutGuide type="bottom" id="LOg-IB-dVj"/>
@@ -26,7 +26,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Get Started"/>
                                 <connections>
-                                    <segue destination="bod-yh-hmK" kind="show" id="4wA-kQ-4r0"/>
+                                    <segue destination="bod-yh-hmK" kind="show" identifier="showTab" id="4wA-kQ-4r0"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -288,7 +288,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Book Detail"/>
                                 <connections>
-                                    <segue destination="MZR-Pd-OJM" kind="show" id="b14-Eh-3h7"/>
+                                    <segue destination="MZR-Pd-OJM" kind="show" identifier="chatMessage" id="b14-Eh-3h7"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -338,10 +338,10 @@
             </objects>
             <point key="canvasLocation" x="1775" y="745"/>
         </scene>
-        <!--View Controller-->
+        <!--Chat Message View Controller-->
         <scene sceneID="BSL-vE-g7Q">
             <objects>
-                <viewController id="MZR-Pd-OJM" sceneMemberID="viewController">
+                <viewController id="MZR-Pd-OJM" customClass="ChatMessageViewController" customModule="MTECHProgramme" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AIv-TN-w4b"/>
                         <viewControllerLayoutGuide type="bottom" id="4qk-Wt-F4u"/>
@@ -386,7 +386,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bod-yh-hmK" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y6F-6H-UuZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Y6F-6H-UuZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -404,8 +404,8 @@
         <image name="menu" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uHv-2Z-94h"/>
         <segue reference="ApD-58-YYv"/>
+        <segue reference="4wA-kQ-4r0"/>
         <segue reference="g1g-UP-TKs"/>
     </inferredMetricsTieBreakers>
 </document>
