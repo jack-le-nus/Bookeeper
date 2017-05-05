@@ -51,7 +51,6 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate, UINavig
         confirmPasswordText.delegate = self
         let buttonThemer:ButtonThemer = ButtonThemer()
         buttonThemer.applyTheme(view: createButton, theme: ButtonTheme())
-        buttonThemer.applyTheme(view: signInBtn, theme: ButtonTheme())
         let textFieldThemer:TextFieldThemer = TextFieldThemer()
         textFieldThemer.applyTheme(view: nameText, theme: TextFieldTheme())
         textFieldThemer.applyTheme(view: emailText, theme: TextFieldTheme())
@@ -60,7 +59,6 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate, UINavig
         self.applyTheme()
         self.title = "Create Account"
         configureDatabase()
-        navigationController?.setToolbarHidden(false, animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -85,7 +83,7 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate, UINavig
             let confirmedPassword = confirmPasswordText.text
             
             if password != confirmedPassword {
-                self.alert(content: AppMessage.PasswordNotMatched.rawValue)
+                passwordText.attributedPlaceholder = NSAttributedString(string:AppMessage.PasswordNotMatched.rawValue,attributes: [NSForegroundColorAttributeName: UIColor.red])
                 return
             }
             if validateName() {
@@ -107,12 +105,9 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate, UINavig
             }
         })
             } else {
-                self.alert(content: AppMessage.InvalidName.rawValue)
+                nameText.attributedPlaceholder = NSAttributedString(string:AppMessage.InvalidName.rawValue,attributes: [NSForegroundColorAttributeName: UIColor.red])
             }
-        } else {
-            self.alert(content: AppMessage.RequiredFieldNotFilled.rawValue)
         }
-        
     }
     
     func configureDatabase() {
@@ -131,15 +126,19 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate, UINavig
 
     func validateData() -> Bool{
         if (nameText.text?.isEmpty)! {
+            nameText.attributedPlaceholder = NSAttributedString(string:AppMessage.NameEmpty.rawValue,attributes: [NSForegroundColorAttributeName: UIColor.red])
             return false
         }
         if (emailText.text?.isEmpty)! {
+            emailText.attributedPlaceholder = NSAttributedString(string:AppMessage.EmailEmpty.rawValue,attributes: [NSForegroundColorAttributeName: UIColor.red])
             return false
         }
         if (passwordText.text?.isEmpty)! {
+            passwordText.attributedPlaceholder = NSAttributedString(string:AppMessage.PasswordEmpty.rawValue,attributes: [NSForegroundColorAttributeName: UIColor.red])
             return false
         }
         if (confirmPasswordText.text?.isEmpty)! {
+            confirmPasswordText.attributedPlaceholder = NSAttributedString(string:AppMessage.ConfirmPasswordEmpty.rawValue,attributes: [NSForegroundColorAttributeName: UIColor.red])
             return false
         }
         

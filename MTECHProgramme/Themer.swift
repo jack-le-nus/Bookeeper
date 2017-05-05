@@ -10,11 +10,13 @@ import Foundation
 import UIKit
 import FlatUIKit
 
-class Themer<TControl : UIControl, TTheme: Theme> {
+class Themer<TControl : UIView, TTheme: Theme> {
     private var strategy: Theme
     
     open func applyTheme(view: TControl, theme: TTheme) {
-
+        let frame : CGRect = CGRect(x: view.frame.minX, y: view.frame.minY, width: view.frame.width, height: theme.controlHeight)
+        
+        view.frame = frame
     }
     
     init() {

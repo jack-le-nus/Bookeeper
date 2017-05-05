@@ -22,5 +22,12 @@ struct Constants {
        static let userTable = "User"
         static let bookTable = "Book"
     }
+    
+    struct MessageFields{
+        static let name = "name"
+        static let text = "text"
+        static let photoURL = "photoURL"
+        static let imageURL = "imageURL"
+    }
 
 }

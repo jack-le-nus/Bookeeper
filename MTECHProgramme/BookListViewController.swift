@@ -55,7 +55,8 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     override func viewDidLoad() {
         super.viewDidLoad()
         self.applyTheme()
-        leadingConstraint.constant = -245
+        leadingConstraint.constant = -250
+        flag = false
         self.ref = FIRDatabase.database().reference()
         self.storeRef = FIRStorage.storage().reference()
         self.bookCollectionView.register(UINib(nibName: "BookCell", bundle: nil), forCellWithReuseIdentifier: "BookCell")
@@ -88,16 +89,22 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
             cell.contentView.layer.borderWidth=1
             cell.lblName.text = postDict["name"] as? String ?? ""
             cell.lblDescription.text = postDict["description"] as? String ?? ""
+            cell.author = postDict["author"] as? String ?? ""
+            cell.category = postDict["categary"] as? String ?? ""
+            cell.bookId = snap.key
+            cell.bookDescription = postDict["description"] as? String ?? ""
             cell.imgBook.contentMode = UIViewContentMode.scaleAspectFit
             let imagesUrls = postDict["imageUrl"] as! NSArray
-            let firstImage = imagesUrls[0] as! String
-            if(firstImage == ""){
+            let castArray = imagesUrls as? Array<Any>
+            cell.images = castArray as! [String]!
+            let tImage = imagesUrls[0] as! String
+            if(tImage == ""){
                 cell.imgBook.image = #imageLiteral(resourceName: "bookImage")
             }else{
                 FIRStorage.storage().reference(forURL : imagesUrls[0] as! String).data(withMaxSize: INT64_MAX ) {( data,error)
                     in
-                    let messageImage = UIImage.init(data: data!, scale: 50)
-                    cell.imgBook.image = messageImage
+                    let messageImageTop = UIImage.init(data: data!, scale: 50)
+                    cell.imgBook.image = messageImageTop
                     
                 }
             }
@@ -144,11 +151,32 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         
         //Added by Medha to implement Navigation Drawer
         
+        let currentUser = getUid()
         menuNameArray = ["Profile","Add Books","Borrowed Books","About Us", "Log Out"]
+        var message = "Welcome "
+        let userRef = ref.child("User").child(currentUser)
+        userRef.observeSingleEvent(of: .value, with: { snapshot in
+            let values =  snapshot.value as? [String:AnyObject] ?? [:]
+            
+            //Retrieval of user image and name from db
+            let displayName = values["name"] as? String ?? ""
+            message = message.appending(displayName)
+            self.userLabel.text = message
+            if snapshot.hasChild("imageUrl")
+            {
+                let url = values["imageUrl"] as? String ?? ""
+                FIRStorage.storage().reference(forURL: url).data(withMaxSize: 10 * 1024 * 1024, completion: { (data,error) in
+                    DispatchQueue.main.async() { Void in
+                        let image = UIImage(data: data!)
+                        self.userImage.image = image!
+                    }
+                })
+            }
+        })
         userImage.contentMode = UIViewContentMode.scaleAspectFit
-        userImage.layer.borderWidth = 2
-        userImage.layer.borderColor = UIColor.green.cgColor
+        userImage.layer.borderWidth = 2        
         userImage.layer.cornerRadius = userImage.frame.height/2
+        userImage.layer.borderColor = UIColor.white.cgColor
         userImage.layer.masksToBounds = false
         userImage.clipsToBounds = true
         self.tableView.delegate = self
@@ -198,14 +226,14 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "showBookDetail", sender: nil)
+        let cell = collectionView.cellForItem(at: indexPath) as! BookCell
+        self.performSegue(withIdentifier: "showBookDetail", sender: cell)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showBookDetail" {
             let detailsVC: BookDetailViewController = segue.destination as! BookDetailViewController
-            let indexPaths:NSIndexPath = self.generalBookCollectionView.indexPathsForSelectedItems![0] as NSIndexPath
-            let cell = generalBookCollectionView.cellForItem(at: indexPaths as IndexPath) as! BookCell
+            let cell = sender as! BookCell
             detailsVC.bookCell = cell
         }
     }
@@ -237,7 +265,7 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     @IBAction func onProfileClick(_ sender: UIButton)
     {
         self.performSegue(withIdentifier: "openProfileView", sender: nil)
-        leadingConstraint.constant = -245
+        leadingConstraint.constant = -250
         isMenuVisible = !isMenuVisible
     }
     
@@ -248,7 +276,7 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
             leadingConstraint.constant = 0
         }
         else{
-            leadingConstraint.constant = -245
+            leadingConstraint.constant = -250
         }
         isMenuVisible = !isMenuVisible
     }
@@ -281,10 +309,18 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
             do {
                 print("Sign Out Clicked")
                 try FIRAuth.auth()?.signOut()
-                navigationController?.popToRootViewController(animated: true)
+                self.alert(content: AppMessage.SignOutSuccess.rawValue, onCancel: {
+                    action -> Void in
+                    
+                    self.performSegue(withIdentifier: "logOut", sender: nil)
+                })
+                
             } catch let signOutError as NSError {
                 print ("Error signing out: %@", signOutError)
             }
+        }else if cell.menu.text! == "About Us"
+        {
+            self.performSegue(withIdentifier: "openAboutUsView", sender: nil)
         }
     }
 }

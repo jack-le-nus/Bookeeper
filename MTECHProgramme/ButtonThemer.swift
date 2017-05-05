@@ -11,13 +11,10 @@ import FlatUIKit
 
 class ButtonThemer : Themer<FUIButton, ButtonTheme> {
     override func applyTheme(view: FUIButton, theme: ButtonTheme) {
+        super.applyTheme(view: view, theme: theme)
         view.buttonColor = theme.buttonColor
-      //  view.shadowColor = theme.shadowColor
-        view.shadowHeight = theme.shadowHeight
-       // view.cornerRadius = theme.cornerRadius
-        view.titleLabel?.font = theme.font
-        view.setTitleColor(theme.titleColor, for:UIControlState.normal);
-        
+        view.titleLabel?.font = theme.boldFont
+        view.setTitleColor(theme.titleColor, for:UIControlState.normal)
     }
 }
 

@@ -10,5 +10,7 @@ import Foundation
 import UIKit
 
 class Theme {
-    let font: UIFont = UIFont.boldSystemFont(ofSize: 16)
+    let boldFont: UIFont = UIFont.boldSystemFont(ofSize: 16)
+    let lightFont: UIFont = UIFont.systemFont(ofSize: 16)
+    let controlHeight : CGFloat = 50
 }

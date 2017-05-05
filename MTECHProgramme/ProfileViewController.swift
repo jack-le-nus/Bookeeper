@@ -10,13 +10,13 @@ import UIKit
 import FlatUIKit
 import Firebase
 
-
 class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate,UINavigationControllerDelegate, UIImagePickerControllerDelegate, ReturnAddressDelegate
 {
     internal func returnAddressOnMap(data: String) {
         address.text! = data
     }
     
+    @IBOutlet weak var btnSearch: FUIButton!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: FUITextField!
     @IBOutlet weak var userEmailId: FUITextField!
@@ -53,6 +53,9 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         storageRef = FIRStorage.storage().reference()
         storage = FIRStorage()
         self.showSpinner(view: self.view)
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        userImage.isUserInteractionEnabled = true
+        userImage.addGestureRecognizer(tapGestureRecognizer)
         
         userName.resignFirstResponder()
         userEmailId.resignFirstResponder()
@@ -74,12 +77,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         
         let buttonThemer:ButtonThemer = ButtonThemer()
         buttonThemer.applyTheme(view: btnUpdate, theme: ButtonTheme())
-        
-        userImage.layer.borderWidth = 2
-        userImage.layer.borderColor = UIColor.green.cgColor
-        userImage.layer.cornerRadius = userImage.frame.size.height/2
-        userImage.layer.masksToBounds = false
-        userImage.clipsToBounds = true
+        buttonThemer.applyTheme(view: btnSearch, theme: ButtonTheme())
         
         let userRef = ref.child("User").child(currentUser)
         userRef.observeSingleEvent(of: .value, with: { snapshot in
@@ -116,18 +114,19 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         
         if(!profileModel.isValidName(name: userName.text!)) {
             userName.text = nil
-            userName.attributedPlaceholder = NSAttributedString(string:"Please enter valid Name",attributes: [NSForegroundColorAttributeName: UIColor.red])
+            userName.attributedPlaceholder = NSAttributedString(string:"Name should be valid",attributes: [NSForegroundColorAttributeName: UIColor.red])
             return
         }
         
         if !profileModel.isValidNumber(number: userContactNumber.text!) {
             userContactNumber.text = nil
-            userContactNumber.attributedPlaceholder = NSAttributedString(string:"Please enter Valid Phone no",attributes: [NSForegroundColorAttributeName: UIColor.red])
+            userContactNumber.attributedPlaceholder = NSAttributedString(string:"Contact no should be valid",attributes: [NSForegroundColorAttributeName: UIColor.red])
             return
+            
         }
         
         if(userImage.image == nil) {
-            self.alert(content: "Please upload profile picture")
+            self.alert(content: "Your image is required")
             return
         }
         self.showSpinner(view: self.view)
@@ -155,7 +154,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
         self.ref.child("User").child(currentUser).child("phone").setValue(userContactNumber.text!)
         self.ref.child("User").child(currentUser).child("address").setValue(address.text!)
         
-        let alert:UIAlertController=UIAlertController(title: "Profile updated successfully", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+        let alert:UIAlertController=UIAlertController(title: "You updated profile successfully", message: nil, preferredStyle: UIAlertControllerStyle.alert)
         let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default) {
             UIAlertAction in
             _ = self.navigationController?.popViewController(animated: true)
@@ -180,7 +179,10 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     }
     
     //Changes profile picture of user
-    @IBAction func changeProfilePic(_ sender: Any) {
+    func imageTapped(tapGestureRecognizer: UITapGestureRecognizer)
+    {
+        //let tappedImage = tapGestureRecognizer.view as! UIImageView
+        
         let alert:UIAlertController=UIAlertController(title: "Choose Image", message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
         let cameraAction = UIAlertAction(title: "Camera", style: UIAlertActionStyle.default) {
             UIAlertAction in
@@ -237,18 +239,21 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
     //Null Check validations for the fields
     func validateTextField() -> Bool
     {
-        var valid: Bool = true
+        var valid = true
         if ((userName.text?.isEmpty))! {
-            // change placeholder color to red color for textfield user name
-            userName.attributedPlaceholder = NSAttributedString(string: "Please enter User Name", attributes: [NSForegroundColorAttributeName: UIColor.red])
+            userName.text = nil
+            userName.attributedPlaceholder = NSAttributedString(string:"Name is required",attributes: [NSForegroundColorAttributeName: UIColor.red])
             valid = false
+            
         }
         if ((userContactNumber.text?.isEmpty))!{
-            userContactNumber.attributedPlaceholder = NSAttributedString(string:"Please enter Contact Number",attributes: [NSForegroundColorAttributeName:UIColor.red])
+            userContactNumber.text = nil
+            userContactNumber.attributedPlaceholder = NSAttributedString(string:"Contact no is required",attributes: [NSForegroundColorAttributeName: UIColor.red])
             valid = false
         }
         if ((address.text?.isEmpty))!{
-            address.attributedPlaceholder = NSAttributedString(string: "Please enter Address",attributes: [NSForegroundColorAttributeName: UIColor.red])
+            address.text = nil
+            address.attributedPlaceholder = NSAttributedString(string:"Address is required",attributes: [NSForegroundColorAttributeName: UIColor.red])
             valid = false
         }
         return valid

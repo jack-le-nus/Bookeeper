@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "298FAFFBBA48973C3CE45CF3E5F196876010B746",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "E7D7F11AE12AFD372AFFD4046EB1B9E1493C34B3" : 9223372036854775807,
+    "298FAFFBBA48973C3CE45CF3E5F196876010B746" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4624BC3F-3646-49BE-8400-0DCEC18601F4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "E7D7F11AE12AFD372AFFD4046EB1B9E1493C34B3" : "..\/BookeeperNew\/Bookeeper-master%203.29.54%20PM",
+    "298FAFFBBA48973C3CE45CF3E5F196876010B746" : "Bookeeper\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MTECHProgramme",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MTECHProgramme.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jack-le-nus\/Bookeeper.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "298FAFFBBA48973C3CE45CF3E5F196876010B746"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jack-le-nus\/Bookeeper\/tree\/riteshnus",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E7D7F11AE12AFD372AFFD4046EB1B9E1493C34B3"
+    }
+  ]
+}
