@@ -17,7 +17,7 @@ class GetStartedViewController: UIViewController,UICollectionViewDataSource, UIC
     @IBOutlet weak var Label: UITextField!
     @IBOutlet weak var pageControl: UIPageControl!
     
-    var logoImage: [String] = ["Image_1", "Image_2", "Image_3"]
+    var logoImage: [String] = ["Image1", "Image2", "Image3"]
     
     override var nibName: String?
         {
@@ -48,8 +48,6 @@ class GetStartedViewController: UIViewController,UICollectionViewDataSource, UIC
         let layout = self.imagecollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
-        
-        
         
         self.imagecollectionView.reloadData()
         
