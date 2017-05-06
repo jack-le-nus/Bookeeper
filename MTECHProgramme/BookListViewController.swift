@@ -228,6 +228,9 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! BookCell
         self.performSegue(withIdentifier: "showBookDetail", sender: cell)
+        flag = false
+        leadingConstraint.constant = -250
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

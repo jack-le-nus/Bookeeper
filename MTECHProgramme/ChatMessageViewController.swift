@@ -16,10 +16,13 @@ import Photos
 class ChatMessageViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     // Instance Variable
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var imagebutton: UIButton!
-    
+    @IBOutlet weak var imageDisplay: UIImageView!
+    @IBOutlet weak var backgroundBlur: UIVisualEffectView!
+    @IBOutlet var dismissImageRecognizer: UITapGestureRecognizer!
+    @IBOutlet var dismissKeyboardRecognizer: UITapGestureRecognizer!
     
     var ref: FIRDatabaseReference!
     var messages: [FIRDataSnapshot]! = []
@@ -81,7 +84,7 @@ class ChatMessageViewController: UIViewController,UITableViewDataSource,UITableV
     }
     
     @IBAction func didSendMessage(_ sender: UIButton) {
-        _ = textFieldShouldReturn(textField)
+        _ = textFieldShouldReturn(messageTextField)
     }
     
     
@@ -163,8 +166,7 @@ class ChatMessageViewController: UIViewController,UITableViewDataSource,UITableV
     // Mark: Image Picker
     
     
-    func didTapAddPhoto(_ sender: AnyObject){
-        
+    @IBAction func didTapAddPhoto(_ sender: AnyObject) {
         let picker = UIImagePickerController()
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera){
             picker.sourceType = .camera
@@ -173,52 +175,62 @@ class ChatMessageViewController: UIViewController,UITableViewDataSource,UITableV
             picker.sourceType = .photoLibrary
         }
         present(picker, animated: true, completion: nil)
-    }
+   }
     
-    func imagePickerController(_ picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [String : Any]) {
-        picker.dismiss(animated: true, completion:nil)
-        guard let uid = FIRAuth.auth()?.currentUser?.uid else { return }
-        
-        // if it's a photo from the library, not an image from the camera
-        if #available(iOS 8.0, *), let referenceURL = info[UIImagePickerControllerReferenceURL] as? URL {
-            let assets = PHAsset.fetchAssets(withALAssetURLs: [referenceURL], options: nil)
-            let asset = assets.firstObject
-            asset?.requestContentEditingInput(with: nil, completionHandler: { [weak self] (contentEditingInput, info) in
-                let imageFile = contentEditingInput?.fullSizeImageURL
-                let filePath = "\(uid)/\(Int(Date.timeIntervalSinceReferenceDate * 1000))/\((referenceURL as AnyObject).lastPathComponent!)"
-                guard let strongSelf = self else { return }
-                strongSelf.storageRef.child(filePath)
-                    .putFile(imageFile!, metadata: nil) { (metadata, error) in
-                        if let error = error {
-                            let nsError = error as NSError
-                            print("Error uploading: \(nsError.localizedDescription)")
-                            return
-                        }
-                        strongSelf.sendMessage(withData: [Constants.MessageFields.imageURL: strongSelf.storageRef.child((metadata?.path)!).description])
-                }
-            })
-        } else {
-            guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
-            let imageData = UIImageJPEGRepresentation(image, 0.8)
-            let imagePath = "\(uid)/\(Int(Date.timeIntervalSinceReferenceDate * 1000)).jpg"
-            let metadata = FIRStorageMetadata()
-            metadata.contentType = "image/jpeg"
-            self.storageRef.child(imagePath)
-                .put(imageData!, metadata: metadata) { [weak self] (metadata, error) in
-                    if let error = error {
-                        print("Error uploading: \(error)")
-                        return
-                    }
-                    guard let strongSelf = self else { return }
-                    strongSelf.sendMessage(withData: [Constants.MessageFields.imageURL: strongSelf.storageRef.child((metadata?.path)!).description])
+    
+    @IBAction func dismissImageDisplay(_ sender: AnyObject) {
+        // if touch detected when image is displayed
+        if imageDisplay.alpha == 1.0 {
+            UIView.animate(withDuration: 0.25) {
+                self.backgroundBlur.effect = nil
+                self.imageDisplay.alpha = 0.0
             }
+            dismissImageRecognizer.isEnabled = false
+            messageTextField.isEnabled = true
         }
     }
     
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion:nil)
+    // MARK: Show Image Display
+    
+    func showImageDisplay(_ image: UIImage) {
+        dismissImageRecognizer.isEnabled = true
+        dismissKeyboardRecognizer.isEnabled = false
+        messageTextField.isEnabled = false
+        UIView.animate(withDuration: 0.25) {
+            self.backgroundBlur.effect = UIBlurEffect(style: .light)
+            self.imageDisplay.alpha = 1.0
+            self.imageDisplay.image = image
+        }
     }
+  
+    func sendPhotoMessage(photoData: Data) {
+        // build a path using the user’s ID and a timestamp
+        let imagePath = "chat_photos/" + FIRAuth.auth()!.currentUser!.uid + "/\(Double(Date.timeIntervalSinceReferenceDate * 1000)).jpg"
+        // set content type to “image/jpeg” in firebase storage metadata
+        let metadata = FIRStorageMetadata()
+        metadata.contentType = "image/jpeg"
+        // create a child node at imagePath with imageData and metadata
+        storageRef!.child(imagePath).put(photoData, metadata: metadata) { (metadata, error) in
+            if let error = error {
+                print("Error uploading: \(error)")
+                return
+            }
+            // use sendMessage to add imageURL to database
+            self.sendMessage(withData: [Constants.MessageFields.imageURL: self.storageRef!.child((metadata?.path)!).description])
+        }
+    }
+      func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String:Any]) {
+    // constant to hold the information about the photo
+       if let photo = info[UIImagePickerControllerOriginalImage] as? UIImage, let photoData = UIImageJPEGRepresentation(photo, 0.8) {
+           // call function to upload photo message
+             sendPhotoMessage(photoData: photoData)
+         }
+         picker.dismiss(animated: true, completion: nil)
+        }
+
+     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+         picker.dismiss(animated: true, completion: nil)
+     }
     
     func showAlert(withTitle title: String, message: String) {
         DispatchQueue.main.async {
