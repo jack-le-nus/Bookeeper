@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina3_5" orientation="portrait">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -23,17 +23,17 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n2V-11-oeS">
                     <rect key="frame" x="20" y="85" width="280" height="100"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="100" id="osu-j8-9oU"/>
+                        <constraint firstAttribute="height" constant="100" id="KFB-x0-4w3"/>
                     </constraints>
                 </imageView>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NJo-aC-Fpf" customClass="FUITextField">
-                    <rect key="frame" x="20" y="325" width="280" height="50"/>
+                    <rect key="frame" x="20" y="265" width="280" height="50"/>
                     <accessibility key="accessibilityConfiguration" hint="Name"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="Ahp-WE-EDw"/>
@@ -43,10 +43,10 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MU0-5U-8qB" customClass="FUIButton">
-                    <rect key="frame" x="15" y="605" width="290" height="50"/>
+                    <rect key="frame" x="15" y="495" width="290" height="40"/>
                     <color key="backgroundColor" red="1" green="0.99723686839338399" blue="0.92950674142774692" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="UQM-Mp-WTG"/>
+                        <constraint firstAttribute="height" constant="40" id="UQM-Mp-WTG"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <state key="normal" title="Update"/>
@@ -55,7 +55,7 @@
                     </connections>
                 </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Contact Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M4L-bj-bDk" customClass="FUITextField">
-                    <rect key="frame" x="20" y="395" width="280" height="50"/>
+                    <rect key="frame" x="20" y="325" width="280" height="50"/>
                     <accessibility key="accessibilityConfiguration" hint="Phone no"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="Dhl-ht-4JA"/>
@@ -65,7 +65,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="io3-jd-Aiw" customClass="FUITextField">
-                    <rect key="frame" x="20" y="255" width="280" height="50"/>
+                    <rect key="frame" x="20" y="205" width="280" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="5CZ-pb-3nM"/>
                     </constraints>
@@ -74,7 +74,7 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oWM-3m-YSn" customClass="FUITextField">
-                    <rect key="frame" x="20" y="465" width="280" height="50"/>
+                    <rect key="frame" x="20" y="385" width="280" height="50"/>
                     <accessibility key="accessibilityConfiguration" hint="Address"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="DJy-X4-hhp"/>
@@ -84,9 +84,9 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dov-Ay-uWI" customClass="FUIButton">
-                    <rect key="frame" x="15" y="535" width="290" height="50"/>
+                    <rect key="frame" x="15" y="445" width="290" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="aRb-HH-RUy"/>
+                        <constraint firstAttribute="height" constant="40" id="aRb-HH-RUy"/>
                     </constraints>
                     <state key="normal" title="Search for a place"/>
                     <connections>
@@ -98,26 +98,26 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="oWM-3m-YSn" secondAttribute="trailing" constant="20" id="1NU-Rw-6nA"/>
                 <constraint firstAttribute="trailing" secondItem="M4L-bj-bDk" secondAttribute="trailing" constant="20" id="2gZ-5A-v1i"/>
-                <constraint firstItem="NJo-aC-Fpf" firstAttribute="top" secondItem="io3-jd-Aiw" secondAttribute="bottom" constant="20" id="3kq-EV-Crn"/>
-                <constraint firstItem="Dov-Ay-uWI" firstAttribute="top" secondItem="oWM-3m-YSn" secondAttribute="bottom" constant="20" id="7rc-ch-KXI"/>
+                <constraint firstItem="NJo-aC-Fpf" firstAttribute="top" secondItem="io3-jd-Aiw" secondAttribute="bottom" constant="10" id="3kq-EV-Crn"/>
+                <constraint firstItem="Dov-Ay-uWI" firstAttribute="top" secondItem="oWM-3m-YSn" secondAttribute="bottom" constant="10" id="7rc-ch-KXI"/>
                 <constraint firstItem="M4L-bj-bDk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="8b7-lZ-GHz"/>
                 <constraint firstItem="n2V-11-oeS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="8jx-c0-MpJ"/>
                 <constraint firstItem="n2V-11-oeS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="85" id="9Qa-Av-PSG"/>
                 <constraint firstItem="io3-jd-Aiw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="B8k-T6-B6o"/>
                 <constraint firstAttribute="trailing" secondItem="n2V-11-oeS" secondAttribute="trailing" constant="20" id="Dhw-II-uom"/>
-                <constraint firstItem="Dov-Ay-uWI" firstAttribute="top" secondItem="oWM-3m-YSn" secondAttribute="bottom" constant="20" id="JlX-QF-gmW"/>
+                <constraint firstItem="Dov-Ay-uWI" firstAttribute="top" secondItem="oWM-3m-YSn" secondAttribute="bottom" constant="10" id="JlX-QF-gmW"/>
                 <constraint firstItem="NJo-aC-Fpf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="MpC-C2-q8H"/>
-                <constraint firstItem="io3-jd-Aiw" firstAttribute="top" secondItem="n2V-11-oeS" secondAttribute="bottom" constant="70" id="QqG-i5-CYp"/>
-                <constraint firstItem="MU0-5U-8qB" firstAttribute="top" secondItem="Dov-Ay-uWI" secondAttribute="bottom" constant="20" id="S5Q-oX-a4R"/>
-                <constraint firstItem="M4L-bj-bDk" firstAttribute="top" secondItem="NJo-aC-Fpf" secondAttribute="bottom" constant="20" id="Syv-Gz-Bq6"/>
+                <constraint firstItem="io3-jd-Aiw" firstAttribute="top" secondItem="n2V-11-oeS" secondAttribute="bottom" constant="20" id="QqG-i5-CYp"/>
+                <constraint firstItem="MU0-5U-8qB" firstAttribute="top" secondItem="Dov-Ay-uWI" secondAttribute="bottom" constant="10" id="S5Q-oX-a4R"/>
+                <constraint firstItem="M4L-bj-bDk" firstAttribute="top" secondItem="NJo-aC-Fpf" secondAttribute="bottom" constant="10" id="Syv-Gz-Bq6"/>
                 <constraint firstItem="oWM-3m-YSn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="TVB-5U-62l"/>
-                <constraint firstItem="oWM-3m-YSn" firstAttribute="top" secondItem="M4L-bj-bDk" secondAttribute="bottom" constant="20" id="Xyo-IH-FhD"/>
+                <constraint firstItem="oWM-3m-YSn" firstAttribute="top" secondItem="M4L-bj-bDk" secondAttribute="bottom" constant="10" id="Xyo-IH-FhD"/>
                 <constraint firstAttribute="trailing" secondItem="MU0-5U-8qB" secondAttribute="trailing" constant="15" id="ZKs-X0-w9u"/>
                 <constraint firstAttribute="trailing" secondItem="NJo-aC-Fpf" secondAttribute="trailing" constant="20" id="dqv-Wd-bLN"/>
-                <constraint firstItem="M4L-bj-bDk" firstAttribute="top" secondItem="NJo-aC-Fpf" secondAttribute="bottom" constant="20" id="f3R-qa-hrf"/>
-                <constraint firstItem="oWM-3m-YSn" firstAttribute="top" secondItem="M4L-bj-bDk" secondAttribute="bottom" constant="20" id="fgz-Hh-1Ou"/>
+                <constraint firstItem="M4L-bj-bDk" firstAttribute="top" secondItem="NJo-aC-Fpf" secondAttribute="bottom" constant="10" id="f3R-qa-hrf"/>
+                <constraint firstItem="oWM-3m-YSn" firstAttribute="top" secondItem="M4L-bj-bDk" secondAttribute="bottom" constant="10" id="fgz-Hh-1Ou"/>
                 <constraint firstAttribute="trailing" secondItem="io3-jd-Aiw" secondAttribute="trailing" constant="20" id="gek-Za-H5a"/>
-                <constraint firstItem="NJo-aC-Fpf" firstAttribute="top" secondItem="io3-jd-Aiw" secondAttribute="bottom" constant="20" id="hZF-Vo-fU8"/>
+                <constraint firstItem="NJo-aC-Fpf" firstAttribute="top" secondItem="io3-jd-Aiw" secondAttribute="bottom" constant="10" id="hZF-Vo-fU8"/>
                 <constraint firstItem="Dov-Ay-uWI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="rOh-ip-CfZ"/>
                 <constraint firstItem="MU0-5U-8qB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="yDF-7F-LnF"/>
                 <constraint firstAttribute="trailing" secondItem="Dov-Ay-uWI" secondAttribute="trailing" constant="15" id="zYB-si-Gcy"/>

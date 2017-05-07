@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -27,26 +27,44 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yBK-uH-nfu" customClass="FUIButton">
-                    <rect key="frame" x="20" y="682" width="374" height="34"/>
+                    <rect key="frame" x="20" y="666" width="374" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="d7w-Ye-DYN"/>
+                    </constraints>
                     <state key="normal" title="Create"/>
                     <connections>
                         <action selector="saveBook:" destination="-1" eventType="touchUpInside" id="mtL-gX-NFS"/>
                     </connections>
                 </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="754" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Book Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6B3-nN-eP4" customClass="FUITextField">
-                    <rect key="frame" x="0.0" y="292" width="414" height="30"/>
+                    <rect key="frame" x="20" y="285" width="374" height="30"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="255" verticalCompressionResistancePriority="753" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Author" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0JE-cY-dPe" customClass="FUITextField">
-                    <rect key="frame" x="0.0" y="342" width="414" height="30"/>
+                    <rect key="frame" x="20" y="335" width="374" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                </textField>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="248" showsHorizontalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hLV-5N-J4g">
+                    <rect key="frame" x="20" y="435" width="374" height="211"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                </textView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Categary" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xyw-lF-Lbz" customClass="FUITextField">
+                    <rect key="frame" x="20" y="385" width="374" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="3XQ-6Z-ac2"/>
+                    </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                 </textField>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3cA-Ip-R63">
-                    <rect key="frame" x="20" y="67" width="374" height="205"/>
+                    <rect key="frame" x="20" y="72" width="374" height="205"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cK3-G7-HaC">
                             <rect key="frame" x="310" y="8" width="56" height="34"/>
@@ -58,48 +76,33 @@
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="73n-GC-bcK"/>
+                    </constraints>
                 </scrollView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="248" showsHorizontalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hLV-5N-J4g">
-                    <rect key="frame" x="20" y="442" width="374" height="220"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="220" id="e38-xg-Z5z"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
-                </textView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Categary" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xyw-lF-Lbz" customClass="FUITextField">
-                    <rect key="frame" x="0.0" y="392" width="414" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="3XQ-6Z-ac2"/>
-                    </constraints>
-                    <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                </textField>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Xyw-lF-Lbz" firstAttribute="leading" secondItem="0JE-cY-dPe" secondAttribute="leading" id="0SV-EH-LBT"/>
                 <constraint firstItem="hLV-5N-J4g" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="0hr-1Y-q38"/>
+                <constraint firstAttribute="trailing" secondItem="Xyw-lF-Lbz" secondAttribute="trailing" constant="20" id="3sm-BM-WhL"/>
+                <constraint firstItem="0JE-cY-dPe" firstAttribute="top" secondItem="6B3-nN-eP4" secondAttribute="bottom" constant="20" id="5Wh-qd-2zV"/>
                 <constraint firstItem="yBK-uH-nfu" firstAttribute="top" secondItem="hLV-5N-J4g" secondAttribute="bottom" constant="20" id="761-qB-HaQ"/>
-                <constraint firstItem="0JE-cY-dPe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="78t-e9-5VO"/>
-                <constraint firstItem="Xyw-lF-Lbz" firstAttribute="top" secondItem="0JE-cY-dPe" secondAttribute="bottom" constant="20" id="BAD-pk-lks"/>
-                <constraint firstAttribute="bottom" secondItem="3cA-Ip-R63" secondAttribute="bottom" constant="464" id="DiV-BR-0NC"/>
+                <constraint firstItem="Xyw-lF-Lbz" firstAttribute="top" secondItem="0JE-cY-dPe" secondAttribute="bottom" constant="20" id="A4m-y6-5sg"/>
+                <constraint firstAttribute="trailing" secondItem="3cA-Ip-R63" secondAttribute="trailing" constant="20" id="FrG-wb-dR6"/>
                 <constraint firstItem="yBK-uH-nfu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="J7z-G8-9xw"/>
-                <constraint firstItem="3cA-Ip-R63" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="PlR-xd-66o"/>
+                <constraint firstAttribute="trailing" secondItem="0JE-cY-dPe" secondAttribute="trailing" constant="20" id="Rw8-WY-gx0"/>
                 <constraint firstAttribute="trailing" secondItem="yBK-uH-nfu" secondAttribute="trailing" constant="20" id="SAy-5g-3as"/>
                 <constraint firstItem="hLV-5N-J4g" firstAttribute="top" secondItem="Xyw-lF-Lbz" secondAttribute="bottom" constant="20" id="W06-bS-iL3"/>
-                <constraint firstAttribute="trailing" secondItem="3cA-Ip-R63" secondAttribute="trailing" constant="20" id="Wze-B2-JsJ"/>
-                <constraint firstItem="0JE-cY-dPe" firstAttribute="top" secondItem="6B3-nN-eP4" secondAttribute="bottom" constant="20" id="aW2-Kg-yZq"/>
+                <constraint firstItem="6B3-nN-eP4" firstAttribute="top" secondItem="3cA-Ip-R63" secondAttribute="bottom" constant="20" id="WBA-i6-ACr"/>
+                <constraint firstItem="3cA-Ip-R63" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="a6I-A9-EzD"/>
+                <constraint firstItem="6B3-nN-eP4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="aVA-rh-gS7"/>
+                <constraint firstItem="3cA-Ip-R63" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="bGV-nY-GD9"/>
                 <constraint firstAttribute="bottom" secondItem="yBK-uH-nfu" secondAttribute="bottom" constant="20" id="cHJ-5D-fTx"/>
-                <constraint firstAttribute="trailing" secondItem="6B3-nN-eP4" secondAttribute="trailing" id="d1m-wD-mO9"/>
-                <constraint firstItem="6B3-nN-eP4" firstAttribute="top" secondItem="3cA-Ip-R63" secondAttribute="bottom" constant="20" id="mN0-Vl-mg6"/>
-                <constraint firstItem="3cA-Ip-R63" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="67" id="nd6-H1-LO0"/>
-                <constraint firstItem="6B3-nN-eP4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="pXb-g9-h2s"/>
+                <constraint firstItem="0JE-cY-dPe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="cby-6I-oqm"/>
+                <constraint firstItem="Xyw-lF-Lbz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="gEA-g9-AdD"/>
+                <constraint firstItem="3cA-Ip-R63" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="65" id="iUW-CE-j7q"/>
+                <constraint firstAttribute="trailing" secondItem="6B3-nN-eP4" secondAttribute="trailing" constant="20" id="lB3-IL-vA2"/>
                 <constraint firstAttribute="trailing" secondItem="hLV-5N-J4g" secondAttribute="trailing" constant="20" id="xuE-hd-wmA"/>
-                <constraint firstItem="Xyw-lF-Lbz" firstAttribute="trailing" secondItem="0JE-cY-dPe" secondAttribute="trailing" id="yDC-Cg-fsC"/>
-                <constraint firstAttribute="trailing" secondItem="0JE-cY-dPe" secondAttribute="trailing" id="yYJ-u7-mfS"/>
             </constraints>
             <point key="canvasLocation" x="26" y="52"/>
         </view>
