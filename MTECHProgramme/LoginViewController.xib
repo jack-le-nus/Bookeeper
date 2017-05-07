@@ -14,6 +14,7 @@
                 <outlet property="btnForgotPassword" destination="g2Z-b3-7lp" id="hLy-pz-UCi"/>
                 <outlet property="btnLogin" destination="vRp-vB-ChL" id="QGX-dE-ViN"/>
                 <outlet property="createAccount" destination="NJz-u0-zTV" id="7ly-pc-LBB"/>
+                <outlet property="google_signIn" destination="Xbv-Xq-2Uf" id="h89-uR-ZZQ"/>
                 <outlet property="lblSignup" destination="Pfh-VJ-6Rj" id="dt4-oj-gOl"/>
                 <outlet property="password" destination="dhV-mh-DcI" id="A7R-dw-Ovs"/>
                 <outlet property="userID" destination="d0v-EU-NCe" id="e87-Q5-L5b"/>
@@ -83,16 +84,23 @@
                         <action selector="forgotPassword:" destination="-1" eventType="touchUpInside" id="soP-V1-OJ0"/>
                     </connections>
                 </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xbv-Xq-2Uf" customClass="GIDSignInButton">
+                    <rect key="frame" x="20" y="406" width="335" height="53"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="vRp-vB-ChL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="1mu-c1-ezh"/>
+                <constraint firstItem="Xbv-Xq-2Uf" firstAttribute="trailing" secondItem="g2Z-b3-7lp" secondAttribute="trailing" id="4lk-7K-Gtf"/>
                 <constraint firstItem="NJz-u0-zTV" firstAttribute="top" secondItem="Pfh-VJ-6Rj" secondAttribute="bottom" constant="20" id="6mz-Fn-DX3"/>
                 <constraint firstItem="vRp-vB-ChL" firstAttribute="top" secondItem="dhV-mh-DcI" secondAttribute="bottom" constant="20" id="9wU-Dj-JRA"/>
+                <constraint firstItem="Xbv-Xq-2Uf" firstAttribute="top" secondItem="g2Z-b3-7lp" secondAttribute="bottom" constant="26" id="AGo-Ya-8oH"/>
                 <constraint firstItem="drW-ou-C5q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="AKV-bx-m8z"/>
                 <constraint firstItem="NJz-u0-zTV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="ERh-pc-c1A"/>
                 <constraint firstItem="d0v-EU-NCe" firstAttribute="top" secondItem="drW-ou-C5q" secondAttribute="bottom" constant="20" id="Ecd-mZ-CbA"/>
                 <constraint firstItem="d0v-EU-NCe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="GM4-wI-Xcn"/>
+                <constraint firstItem="Xbv-Xq-2Uf" firstAttribute="leading" secondItem="g2Z-b3-7lp" secondAttribute="leading" id="MpX-WZ-2T0"/>
                 <constraint firstAttribute="trailing" secondItem="dhV-mh-DcI" secondAttribute="trailing" constant="20" id="OfY-24-GJl"/>
                 <constraint firstAttribute="trailing" secondItem="NJz-u0-zTV" secondAttribute="trailing" constant="20" id="QSZ-Hk-S2Q"/>
                 <constraint firstItem="g2Z-b3-7lp" firstAttribute="top" secondItem="vRp-vB-ChL" secondAttribute="bottom" constant="20" id="RTs-KV-8vh"/>
@@ -108,6 +116,7 @@
                 <constraint firstItem="g2Z-b3-7lp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="kAg-3y-13r"/>
                 <constraint firstItem="NJz-u0-zTV" firstAttribute="top" secondItem="Pfh-VJ-6Rj" secondAttribute="bottom" constant="20" id="lx0-s3-Gh6"/>
                 <constraint firstAttribute="trailing" secondItem="g2Z-b3-7lp" secondAttribute="trailing" constant="20" id="oNT-V5-sEA"/>
+                <constraint firstItem="Pfh-VJ-6Rj" firstAttribute="top" secondItem="Xbv-Xq-2Uf" secondAttribute="bottom" constant="97" id="p24-n3-J3H"/>
                 <constraint firstItem="vRp-vB-ChL" firstAttribute="top" secondItem="dhV-mh-DcI" secondAttribute="bottom" constant="20" id="ygd-Aq-1fs"/>
             </constraints>
             <point key="canvasLocation" x="33.5" y="54.5"/>

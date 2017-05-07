@@ -13,7 +13,7 @@ import FirebaseAuthUI
 import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
     
     var window: UIWindow?
     
@@ -22,7 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         // Override point for customization after application launch.
         FIRApp.configure()
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
-        GIDSignIn.sharedInstance().delegate = self
         
         return true
     }
@@ -34,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                                                      sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
                                                      annotation: [:])
     }
+    
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         // ...
@@ -51,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 print (error?.localizedDescription)
                 return
             }
-            print ("user Signed in with Google")
+            
         })
     }
     
@@ -63,6 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         }
         try! FIRAuth.auth()!.signOut()
     }
+    
     
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
