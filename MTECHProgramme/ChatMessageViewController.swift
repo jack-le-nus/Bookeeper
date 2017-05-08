@@ -18,8 +18,6 @@ class ChatMessageViewController: UIViewController,UITableViewDataSource,UITableV
     // Instance Variable
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
-    
-   
     @IBOutlet weak var backgroundBlur: UIVisualEffectView!
     @IBOutlet var dismissImageRecognizer: UITapGestureRecognizer!
     @IBOutlet var dismissKeyboardRecognizer: UITapGestureRecognizer!
@@ -158,7 +156,12 @@ class ChatMessageViewController: UIViewController,UITableViewDataSource,UITableV
     
     func sendMessage(withData data: [String: String]){
         var mdata = data
-        mdata[Constants.MessageFields.name] = FIRAuth.auth()?.currentUser?.displayName
+        let displayname :[String]?  = FIRAuth.auth()?.currentUser?.email?.components(separatedBy: "@")
+        mdata[Constants.MessageFields.name] = displayname?[0]
+        
+        print("User Name \(mdata[Constants.MessageFields.name])")
+        
+        
         if let photoURL = FIRAuth.auth()?.currentUser?.photoURL{
             mdata[Constants.MessageFields.photoURL] = photoURL.absoluteString
         }
