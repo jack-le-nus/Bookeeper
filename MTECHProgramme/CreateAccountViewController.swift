@@ -125,24 +125,26 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate, UINavig
     }
 
     func validateData() -> Bool{
+        
+        var valid = true
         if (nameText.text?.isEmpty)! {
             nameText.attributedPlaceholder = NSAttributedString(string:AppMessage.NameEmpty.rawValue,attributes: [NSForegroundColorAttributeName: UIColor.red])
-            return false
+            valid = false
         }
         if (emailText.text?.isEmpty)! {
             emailText.attributedPlaceholder = NSAttributedString(string:AppMessage.EmailEmpty.rawValue,attributes: [NSForegroundColorAttributeName: UIColor.red])
-            return false
+            valid = false
         }
         if (passwordText.text?.isEmpty)! {
             passwordText.attributedPlaceholder = NSAttributedString(string:AppMessage.PasswordEmpty.rawValue,attributes: [NSForegroundColorAttributeName: UIColor.red])
-            return false
+            valid = false
         }
         if (confirmPasswordText.text?.isEmpty)! {
             confirmPasswordText.attributedPlaceholder = NSAttributedString(string:AppMessage.ConfirmPasswordEmpty.rawValue,attributes: [NSForegroundColorAttributeName: UIColor.red])
-            return false
+            valid = false
         }
         
-        return true
+        return valid
     }
     
     func validateName() ->Bool {
