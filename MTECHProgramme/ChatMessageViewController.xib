@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,7 +12,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatMessageViewController" customModule="MTECHProgramme" customModuleProvider="target">
             <connections>
                 <outlet property="clientTable" destination="CVp-dN-Pjo" id="Ghu-Sp-p2d"/>
-                <outlet property="imagebutton" destination="y92-Qr-XTj" id="0Hk-hc-dyd"/>
                 <outlet property="messageTextField" destination="GA8-bj-1Qr" id="4m6-cZ-Qeh"/>
                 <outlet property="sendButton" destination="KCb-c8-UJV" id="i6o-xO-ths"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -23,54 +22,46 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CVp-dN-Pjo">
-                    <rect key="frame" x="0.0" y="65" width="375" height="572"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y92-Qr-XTj">
-                    <rect key="frame" x="0.0" y="637" width="50" height="29"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="50" id="c0L-TC-dBT"/>
-                    </constraints>
-                    <state key="normal" image="UploadImage"/>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCb-c8-UJV">
-                    <rect key="frame" x="295" y="637" width="80" height="30"/>
+                    <rect key="frame" x="262" y="617" width="113" height="50"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="80" id="7ph-tn-UWk"/>
+                        <constraint firstAttribute="width" constant="113" id="Zdc-U7-0GG"/>
+                        <constraint firstAttribute="height" constant="50" id="u3S-V9-Udg"/>
                     </constraints>
-                    <state key="normal" title="Send"/>
+                    <state key="normal" title="Message"/>
                     <connections>
                         <action selector="didSendMessage:" destination="-1" eventType="touchUpInside" id="dNJ-VW-fak"/>
                     </connections>
                 </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GA8-bj-1Qr">
-                    <rect key="frame" x="50" y="637" width="245" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GA8-bj-1Qr">
+                    <rect key="frame" x="2" y="617" width="260" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="260" id="fNT-Pk-tZm"/>
+                        <constraint firstAttribute="height" constant="50" id="wUI-EK-JAD"/>
+                    </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CVp-dN-Pjo">
+                    <rect key="frame" x="0.0" y="65" width="375" height="552"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="GA8-bj-1Qr" firstAttribute="leading" secondItem="y92-Qr-XTj" secondAttribute="trailing" id="6V0-fZ-eN4"/>
-                <constraint firstItem="CVp-dN-Pjo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="77u-6Z-6Bu"/>
-                <constraint firstAttribute="trailing" secondItem="KCb-c8-UJV" secondAttribute="trailing" id="C94-d3-RNC"/>
-                <constraint firstItem="KCb-c8-UJV" firstAttribute="leading" secondItem="GA8-bj-1Qr" secondAttribute="trailing" id="DRv-mx-Fpj"/>
-                <constraint firstItem="y92-Qr-XTj" firstAttribute="top" secondItem="GA8-bj-1Qr" secondAttribute="top" id="ETT-O1-zaf"/>
-                <constraint firstItem="CVp-dN-Pjo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="65" id="EjM-GA-Yxh"/>
-                <constraint firstAttribute="trailing" secondItem="CVp-dN-Pjo" secondAttribute="trailing" id="KgA-n1-aVb"/>
-                <constraint firstAttribute="bottom" secondItem="KCb-c8-UJV" secondAttribute="bottom" id="LqE-mX-SLn"/>
-                <constraint firstItem="y92-Qr-XTj" firstAttribute="centerY" secondItem="GA8-bj-1Qr" secondAttribute="centerY" id="PMp-Nv-L4a"/>
-                <constraint firstItem="y92-Qr-XTj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZQB-NL-Xcu"/>
-                <constraint firstItem="CVp-dN-Pjo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bCS-C9-SVW"/>
-                <constraint firstItem="KCb-c8-UJV" firstAttribute="centerY" secondItem="GA8-bj-1Qr" secondAttribute="centerY" id="e9T-iC-W5A"/>
-                <constraint firstItem="KCb-c8-UJV" firstAttribute="top" secondItem="CVp-dN-Pjo" secondAttribute="bottom" id="lmx-rp-haj"/>
+                <constraint firstItem="GA8-bj-1Qr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="2" id="0Uz-C5-19C"/>
+                <constraint firstItem="KCb-c8-UJV" firstAttribute="leading" secondItem="GA8-bj-1Qr" secondAttribute="trailing" id="2G7-wn-Ald"/>
+                <constraint firstAttribute="trailing" secondItem="CVp-dN-Pjo" secondAttribute="trailing" id="51U-8Z-uL4"/>
+                <constraint firstAttribute="trailing" secondItem="KCb-c8-UJV" secondAttribute="trailing" id="C0B-lH-QCR"/>
+                <constraint firstAttribute="bottom" secondItem="GA8-bj-1Qr" secondAttribute="bottom" id="Uku-pf-kuA"/>
+                <constraint firstItem="CVp-dN-Pjo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="65" id="Zs8-r8-5pH"/>
+                <constraint firstAttribute="bottom" secondItem="KCb-c8-UJV" secondAttribute="bottom" id="bNd-Wy-eK9"/>
+                <constraint firstItem="CVp-dN-Pjo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="glJ-cb-Zha"/>
+                <constraint firstItem="KCb-c8-UJV" firstAttribute="top" secondItem="CVp-dN-Pjo" secondAttribute="bottom" id="nzb-Zq-nVA"/>
+                <constraint firstItem="GA8-bj-1Qr" firstAttribute="top" secondItem="CVp-dN-Pjo" secondAttribute="bottom" id="uZh-7P-cIa"/>
             </constraints>
             <point key="canvasLocation" x="24.5" y="51.5"/>
         </view>
     </objects>
-    <resources>
-        <image name="UploadImage" width="24" height="24"/>
-    </resources>
 </document>

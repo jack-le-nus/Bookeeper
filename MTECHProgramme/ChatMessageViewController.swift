@@ -18,8 +18,8 @@ class ChatMessageViewController: UIViewController,UITableViewDataSource,UITableV
     // Instance Variable
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
-    @IBOutlet weak var imagebutton: UIButton!
-    @IBOutlet weak var imageDisplay: UIImageView!
+    
+   
     @IBOutlet weak var backgroundBlur: UIVisualEffectView!
     @IBOutlet var dismissImageRecognizer: UITapGestureRecognizer!
     @IBOutlet var dismissKeyboardRecognizer: UITapGestureRecognizer!
@@ -133,6 +133,9 @@ class ChatMessageViewController: UIViewController,UITableViewDataSource,UITableV
                 let data = try? Data(contentsOf: URL) {
                 cell.imageView?.image = UIImage(data: data)
             }
+            
+            cell.contentView.backgroundColor = UIColor.alizarin()
+            cell.textLabel?.backgroundColor = UIColor.alizarin()
         }
         return cell
     }
@@ -178,30 +181,10 @@ class ChatMessageViewController: UIViewController,UITableViewDataSource,UITableV
    }
     
     
-    @IBAction func dismissImageDisplay(_ sender: AnyObject) {
-        // if touch detected when image is displayed
-        if imageDisplay.alpha == 1.0 {
-            UIView.animate(withDuration: 0.25) {
-                self.backgroundBlur.effect = nil
-                self.imageDisplay.alpha = 0.0
-            }
-            dismissImageRecognizer.isEnabled = false
-            messageTextField.isEnabled = true
-        }
-    }
-    
+  
     // MARK: Show Image Display
     
-    func showImageDisplay(_ image: UIImage) {
-        dismissImageRecognizer.isEnabled = true
-        dismissKeyboardRecognizer.isEnabled = false
-        messageTextField.isEnabled = false
-        UIView.animate(withDuration: 0.25) {
-            self.backgroundBlur.effect = UIBlurEffect(style: .light)
-            self.imageDisplay.alpha = 1.0
-            self.imageDisplay.image = image
-        }
-    }
+   
   
     func sendPhotoMessage(photoData: Data) {
         // build a path using the user’s ID and a timestamp

@@ -9,16 +9,19 @@
 import UIKit
 import FlatUIKit
 
-class GetStartedViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class GetStartedViewController: UIViewController,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout,UITextViewDelegate, UICollectionViewDelegate {
 
     @IBOutlet weak var imagecollectionView: UICollectionView!
     @IBOutlet weak var GetStarted: FUIButton!
-    @IBOutlet var TextView: [UITextView]!
+    @IBOutlet var TextView: UITextView!
     @IBOutlet weak var Label: UITextField!
     @IBOutlet weak var pageControl: UIPageControl!
     
-    var logoImage: [String] = ["Image1", "Image2", "Image3"]
+    var logoImage: [String] = ["Head","chat_image","book-image"]
     
+    var logoLabel:[String] = ["Book Catalog", "Start Chat","Add books"]
+    
+    var logoText: [String] = ["Let's Begin The Journey","Ask to get if book available","My added books"]
     override var nibName: String?
         {
         get
@@ -34,10 +37,12 @@ class GetStartedViewController: UIViewController,UICollectionViewDataSource, UIC
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
+        TextView.delegate = self
         
         self.imagecollectionView.register(UINib(nibName: "GetStartedCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "GetStartedCollectionViewCell")
-        
+
         self.imagecollectionView.delegate = self
         self.imagecollectionView.dataSource = self
         self.imagecollectionView.isPagingEnabled = true
@@ -55,7 +60,12 @@ class GetStartedViewController: UIViewController,UICollectionViewDataSource, UIC
         let buttonTheme: ButtonTheme = ButtonTheme()
         buttonThemer.applyTheme(view: GetStarted, theme: buttonTheme)
         
+        TextView.text = logoText[0]
+        Label.text = logoLabel[0]
     }
+    
+ 
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3;
@@ -69,6 +79,19 @@ class GetStartedViewController: UIViewController,UICollectionViewDataSource, UIC
         
         return cell
     }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+                for cell in imagecollectionView.visibleCells  as [UICollectionViewCell]    {
+                    let indexPath = imagecollectionView.indexPath(for: cell as UICollectionViewCell)
+        
+                    TextView.text = logoText[indexPath!.row]
+                    Label.text = logoLabel[indexPath!.row]
+                }
+    }
+    
+//    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+
+//    }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let width : CGFloat = scrollView.frame.size.width;
