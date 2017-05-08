@@ -17,7 +17,6 @@ class NewBookViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var bookName: FUITextField!
     
     @IBOutlet weak var createButton: FUIButton!
-    @IBOutlet weak var pickImageButton: UIButton!
     @IBOutlet weak var descriptionOfBook: UITextField!
     
     @IBOutlet weak var selectCategory: FUITextField!
@@ -68,7 +67,14 @@ class NewBookViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         
         imgScrollView.backgroundColor = UIColor.alizarin()
         imgScrollView.layer.borderWidth=1
-        imgScrollView.addSubview(pickImageButton)
+        
+        let button = UIButton.init(type: .custom)
+        button.setImage(#imageLiteral(resourceName: "UploadImage"), for: .normal)
+        button.frame = CGRect.init(x: 0, y: 0, width: 30, height: 30)
+        button.addTarget(self, action: #selector(self.pickImages), for: .touchUpInside)
+        let barButton = UIBarButtonItem.init(customView: button)
+        self.navigationItem.rightBarButtonItem = barButton
+        self.navigationItem.title = "Add Book"
         
         selectCategory.inputView = categoryPickerView
         
@@ -93,7 +99,7 @@ class NewBookViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         configureDatabase()
         configureStorage()
     }
-    
+
     //cofig with firebase
     func configureDatabase() {
         ref = FIRDatabase.database().reference()
@@ -152,11 +158,7 @@ class NewBookViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         }
     }
     
-    @IBAction func selectImage(_ sender: Any) {
-        self.pickImages()
-    }
-    
-    func pickImages() {
+    func pickImages(button: UIButton) {
         let picker = ELCImagePickerController()
         picker.maximumImagesCount = 3
         picker.imagePickerDelegate = self
@@ -200,7 +202,6 @@ class NewBookViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             myImageView.frame.origin.x = xPosition
             
             imgScrollView.addSubview(myImageView)
-            imgScrollView.addSubview(pickImageButton)
             let spacer:CGFloat = 5
             xPosition+=imageWidth + spacer
             scrollViewContentSize+=imageWidth + spacer
