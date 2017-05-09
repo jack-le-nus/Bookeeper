@@ -66,7 +66,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate,GIDSignInUIDele
         //  labelThemer.applyTheme(view: lblForgotPassword, theme: labelTheme)
         labelThemer.applyTheme(view: lblSignup, theme: labelTheme)
         
-        self.userID.text = "test1@gmail.com"
+        self.userID.text = "test8@gmail.com"
         self.password.text = "123456"
         
         self.title = "Login"
