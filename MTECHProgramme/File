@@ -1,0 +1,103 @@
+{
+"Book" : [ {
+"author" : "Gary Chapman",
+"category" : "Arts & Photography",
+"description" : "Between busy schedules and long days, expressing love can fall by the wayside. We forget to compliment, to give gifts “just because,” to linger in an embrace. The things that say “I love you” seem to either not get said or not get through. This is an audio book about saying it — and hearing it — clearly. No gimmicks. No psychoanalyzing. Just learing to express love in your spouse’s language.  With over 10 million copies sold, The 5 Love Languages® has transformed countless relationships. Its ideas are simple and conveyed with clarity and humor, making this audio book as practical as it is personable. You’ll be inspired by real-life stories and encouraged by its commonsense approach. Listening to this audio feels like taking a walk with a wise friend. Applying it will forever change your relationship — starting today.",
+"id" : "1",
+"imageUrl" : "https://images-na.ssl-images-amazon.com/images/I/51rV-3xwEJL.jpg",
+"isAvailable" : "true",
+"isFeatured" : "true",
+"bookname" : "The 5 Love Languages: The Secret to Love that Lasts",
+"owner" : ""
+}, {
+"author" : "Carolyn Jourdan",
+"category" : "Biographies & Memoirs",
+"description" : "Carolyn Jourdan, an attorney on Capitol Hill, thought she had it made. But when her mother has a heart attack, she returns home—to the Tennessee mountains, where her father is a country doctor and her mother works as his receptionist. Jourdan offers to fill in for her mother until she gets better. But days turn into weeks as she trades her suits for scrubs and finds herself following hazmat regulations for cleaning up bodily fluids; maintaining composure when confronted with a splinter the size of a steak knife; and tending to the loquacious Miss Hiawatha, whose daily doctor visits are never billed. Most important, though, she comes to understand what her caring and patient father means to her close-knit community.",
+"id" : "2",
+"imageUrl" : "https://images-na.ssl-images-amazon.com/images/I/51r7QCME-OL.jpg",
+"isAvailable" : "true",
+"isFeatured" : "true",
+"bookname" : "Heart in the Right Place: A Memoir",
+"owner" : ""
+}, {
+"author" : "Tom Rath",
+"category" : "Business & Money",
+"description" : "Do you have the opportunity to do what you do best every day?   Chances are, you don't. All too often, our natural talents go untapped. From the cradle to the cubicle, we devote more time to fixing our shortcomings than to developing our strengths.   To help people uncover their talents, Gallup introduced the first version of its online assessment, StrengthsFinder, in 2001 which ignited a global conversation and helped millions to discover their top five talents. ",
+"id" : "3",
+"imageUrl" : "https://images-na.ssl-images-amazon.com/images/I/71NS9G1wtZL.jpg",
+"isAvailable" : "true",
+"isFeatured" : "true",
+"bookname" : "StrengthsFinder 2.0",
+"owner" : ""
+}, {
+"author" : "R.J. Palacio",
+"category" : "Calendars",
+"description" : "Choose kind, every day. The official Wonder Calendar captures the generous spirit of R. J. Palacio’s bestselling Wonder, with 17 months of inspiring quotes and words of wisdom, all illustrated in gorgeous full color. Each quote relates to the monthly theme, from Altruism to Self-reliance, and there is a corresponding activity that will spur action and conversation. The Wonder Calendar is a motivating meditation on kindness for the family or the classroom. This 17-month calendar starts in August 2017, in time for the new school year.",
+"id" : "4",
+"imageUrl" : "https://images-na.ssl-images-amazon.com/images/I/61Xv52Mem%2BL._SY498_BO1,204,203,200_.jpg",
+"isAvailable" : "true",
+"isFeatured" : "false",
+"bookname" : "Wonder Wall Calendar 2018",
+"owner" : ""
+}, {
+"author" : "Golden Books",
+"category" : "Children's Books",
+"description" : "Can the puppies from Nickelodeon’s PAW Patrol throw Chase a surprise birthday party AND save Adventure Bay? This action-packed Little Golden Book is sure to thrill boys and girls ages 2 to 5.",
+"id" : "5",
+"imageUrl" : "https://images-na.ssl-images-amazon.com/images/I/61f9XW6Ul1L._SX417_BO1,204,203,200_.jpg",
+"isAvailable" : "true",
+"isFeatured" : "false",
+"bookname" : "Puppy Birthday to You! (Paw Patrol) (Little Golden Book)",
+"owner" : ""
+}, {
+"author" : "Mike Berenstain",
+"category" : "Christian Books & Bibles",
+"description" : "The Bear cubs are candy-crazy this Easter! But Missus Ursula and some Sunday school students tell the cubs about Jesus’s resurrection and show them that salvation is much sweeter than candy! Includes a sheet of colorful stickers!",
+"id" : "6",
+"imageUrl" : "https://images-na.ssl-images-amazon.com/images/I/61nDhMxhXTL._SX496_BO1,204,203,200_.jpg",
+"isAvailable" : "true",
+"isFeatured" : "false",
+"bookname" : "The Berenstain Bears and the Easter Story: Stickers Included! (Berenstain Bears/Living Lights)",
+"owner" : ""
+}, {
+"author" : "Piggyback",
+"category" : "Computers and Technology",
+"description" : "COLLECTOR’S EDITION BONUS: Premium hardcover,extra-large map poster and dedicated 16-page art section  AT-A-GLANCE WALKTHROUGHS: Annotated maps and screenshots show you the way through every quest and dungeon.  TOTALLY COMPREHENSIVE: All side quests, all  Shrines of Trials and all information about collectable items – each mapped out and ready for you to discover and complete! Also includes optional challenges, mini-games, unlockables, Easter eggs, and more.  PUZZLE MASTER: Every single puzzle and riddle unraveled with clear, visual solutions.  EXPERT COMBAT STRATEGY: Practical, reproducible tactics to crush your enemies, even the toughest bosses.  COMPREHENSIVE REFERENCE: Exhaustive appraisals of all items and monsters – including key parameters that are hidden in the game.  EXTRA LARGE MAP POSTER: covering the entire game world.  QUALITY CONTROL: carefully designed to avoid unnecessary story spoilers.",
+"id" : "7",
+"imageUrl" : "https://images-na.ssl-images-amazon.com/images/I/51L2dL5T%2BSL._SX444_BO1,204,203,200_.jpg",
+"isAvailable" : "true",
+"isFeatured" : "false",
+"bookname" : "The Legend of Zelda: Breath of the Wild: The Complete Official Guide Collector's Edition",
+"owner" : ""
+}, {
+"author" : "Clark Weber",
+"category" : "Cookbooks",
+"description" : "Slow Cooker Recipes Cookbook. My bookname is Clark Weber. I am a Chef in New York. These are the Slow Cooker recipes that I like most. I learned some of the recipes in this cookbook from different friends and relatives. I tried all of them myself and the results were fabulous. I would also like to mention that I included in this cookbook only those slow cooker recipes which are fairly easy to cook, even though I have to admit that most of them will be ready in more than a couple of hours. This is because slow cooked meals need more cooking time compared to classic meals. But, the advantage comes from the fact that the slow cooking process is healthier and adds a great flavor to your meal. Furthermore, I selected in this cookbook only the healthiest Slow Cooker recipes that will provide you with a balanced diet. The number of calories rarely goes beyond 500/ serving (2000-2500 calories/ day intake is recommended for a sedentary adult that needs to maintain his/ her current weight), therefore these are some recipes that will help you maintain or even lose some weight. I also tried to collect here only the low carb recipes, because low carbs meals are great for dieting. Another goal of mine was to include in this cookbook only the most popular slow cooker recipes. Slow Cooker Recipes Cookbook My bookname is Clark Weber. I am a Chef in New York. These are the Slow Cooker recipes that I like most. I learned some of the recipes in this cookbook from different friends and relatives. I tried all of them myself and the results were fabulous.   I would also like to mention that I included in this cookbook only those slow cooker recipes which are fairly easy to cook, even though I have to admit that most  of them will be ready in more than a couple of hours. This is because slow cooked meals need more cooking time compared to classic meals. But, the advantage comes from the fact that the slow cooking process is healthier and adds a great flavor to your meal.   Furthermore, I selected in this cookbook only the healthiest Slow Cooker recipes that will provide you with a balanced diet. The number of calories rarely goes beyond 500/ serving (2000-2500 calories/ day intake is recommended for a sedentary adult that needs to maintain his/ her current weight), therefore these are some recipes that will help you maintain or even lose some weight. I also tried to collect here only the low carb recipes, because low carbs meals are great for dieting.  Another goal of mine was to include in this cookbook only the most popular slow cooker recipes.",
+"id" : "8",
+"imageUrl" : "https://images-na.ssl-images-amazon.com/images/I/51VXv18wlYL.jpg",
+"isAvailable" : "true",
+"isFeatured" : "false",
+"bookname" : "Slow Cooker Recipes Cookbook: Easy, Healthy and Delicious Recipes",
+"owner" : ""
+}, {
+"author" : "Edward C. Smith",
+"category" : "Crafts, Hobbies & Home",
+"description" : "The invaluable resource for home food gardeners! Ed Smith's W-O-R-D system has helped countless gardeners grow an abundance of vegetables and herbs. And those tomatoes and zucchini and basil and cucumbers have nourished countless families, neighbors, and friends with delicious, fresh produce. The Vegetable Gardener's Bible is essential reading for locavores in every corner of North America!",
+"id" : "9",
+"imageUrl" : "https://images-na.ssl-images-amazon.com/images/I/61hOSva1-QL._SX388_BO1,204,203,200_.jpg",
+"isAvailable" : "true",
+"isFeatured" : "false",
+"bookname" : "The Vegetable Gardener's Bible, 2nd Edition: Discover Ed's High-Yield W-O-R-D System for All North American Gardening Regions: Wide Rows, Organic Methods, Raised Beds, Deep Soil",
+"owner" : ""
+}, {
+"author" : "Mike Berenstain",
+"category" : "Education & Teaching",
+"description" : "The Bear cubs are candy-crazy this Easter! But Missus Ursula and some Sunday school students tell the cubs about Jesus’s resurrection and show them that salvation is much sweeter than candy! Includes a sheet of colorful stickers!",
+"id" : "10",
+"imageUrl" : "https://images-na.ssl-images-amazon.com/images/I/61nDhMxhXTL._SX496_BO1,204,203,200_.jpg",
+"isAvailable" : "true",
+"isFeatured" : "false",
+"bookname" : "The Berenstain Bears and the Easter Story: Stickers Included! (Berenstain Bears/Living Lights)",
+"owner" : ""
+} ]
+}

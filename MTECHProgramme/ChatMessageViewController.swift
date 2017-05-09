@@ -11,13 +11,14 @@ import Firebase
 import FirebaseGoogleAuthUI
 import GoogleSignIn
 import Photos
-
+import FlatUIKit
 
 class ChatMessageViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
     // Instance Variable
     @IBOutlet weak var messageTextField: UITextField!
-    @IBOutlet weak var sendButton: UIButton!
+
+    @IBOutlet weak var btnSend: FUIButton!
     @IBOutlet weak var backgroundBlur: UIVisualEffectView!
     @IBOutlet var dismissImageRecognizer: UITapGestureRecognizer!
     @IBOutlet var dismissKeyboardRecognizer: UITapGestureRecognizer!
@@ -26,6 +27,7 @@ class ChatMessageViewController: UIViewController,UITableViewDataSource,UITableV
     var messages: [FIRDataSnapshot]! = []
     var msglength: NSNumber = 10
     fileprivate var _refHandle: FIRDatabaseHandle?
+    var bookSenderId : String? = ""
     
     var storageRef: FIRStorageReference!
     
@@ -50,6 +52,10 @@ class ChatMessageViewController: UIViewController,UITableViewDataSource,UITableV
         configureDatabase()
         configureStorage()
         
+        let buttonThemer:ButtonThemer = ButtonThemer()
+        buttonThemer.applyTheme(view: btnSend, theme: ButtonTheme())
+        
+        self.title = "Chat Message"
     }
     
     deinit {
@@ -61,15 +67,21 @@ class ChatMessageViewController: UIViewController,UITableViewDataSource,UITableV
     func configureDatabase(){
         
         ref = FIRDatabase.database().reference()
+        var currentUser : FIRUser? = FIRAuth.auth()?.currentUser
         
         //Listen for the new Messages  in the firebase database
         
         _refHandle = self.ref.child("messages").observe(.childAdded, with: { [weak self] (snapshot) -> Void in
-            guard let strongSelf = self else {return}
-            strongSelf.messages.append(snapshot)
-            self?.clientTable.beginUpdates();
-            strongSelf.clientTable.insertRows(at: [IndexPath(row: strongSelf.messages.count-1, section: 0)], with: .automatic)
-            self?.clientTable.endUpdates();
+            let postDict = snapshot.value as? [String : AnyObject] ?? [:]
+            let senderId = postDict["senderId"] as? String ?? ""
+            let receiverId = postDict["receiverId"] as? String ?? ""
+            if(senderId == currentUser?.uid || senderId == self?.bookSenderId || receiverId == currentUser?.uid) {
+                guard let strongSelf = self else {return}
+                strongSelf.messages.append(snapshot)
+                self?.clientTable.beginUpdates();
+                strongSelf.clientTable.insertRows(at: [IndexPath(row: strongSelf.messages.count-1, section: 0)], with: .automatic)
+                self?.clientTable.endUpdates();
+            }
             
         })
     }
@@ -131,15 +143,20 @@ class ChatMessageViewController: UIViewController,UITableViewDataSource,UITableV
                 let data = try? Data(contentsOf: URL) {
                 cell.imageView?.image = UIImage(data: data)
             }
-            
+        }
+        
+        let names :[String]?  = FIRAuth.auth()?.currentUser?.email?.components(separatedBy: "@")
+        let displayName : String? = names?[0]
+        
+        if(message["name"] == displayName) {
+            cell.contentView.backgroundColor = UIColor.white
+            cell.textLabel?.backgroundColor = UIColor.white
+        } else {
             cell.contentView.backgroundColor = UIColor.alizarin()
             cell.textLabel?.backgroundColor = UIColor.alizarin()
         }
         return cell
     }
-    
-    
-    
     
     // UITextViewDelegateProtocols methos
     
@@ -156,8 +173,11 @@ class ChatMessageViewController: UIViewController,UITableViewDataSource,UITableV
     
     func sendMessage(withData data: [String: String]){
         var mdata = data
-        let displayname :[String]?  = FIRAuth.auth()?.currentUser?.email?.components(separatedBy: "@")
+        var currentUser : FIRUser? = FIRAuth.auth()?.currentUser
+        let displayname :[String]?  = currentUser?.email?.components(separatedBy: "@")
         mdata[Constants.MessageFields.name] = displayname?[0]
+        mdata[Constants.MessageFields.senderId] = currentUser?.uid
+        mdata[Constants.MessageFields.receiverId] = bookSenderId
         
         print("User Name \(mdata[Constants.MessageFields.name])")
         
@@ -167,6 +187,7 @@ class ChatMessageViewController: UIViewController,UITableViewDataSource,UITableV
         }
         // push data to Firebase Database
         self.ref.child("messages").childByAutoId().setValue(mdata)
+        self.clientTable.scrollToNearestSelectedRow(at: .bottom, animated: true)
     }
     
     // Mark: Image Picker

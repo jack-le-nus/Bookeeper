@@ -21,6 +21,8 @@ class BookCell: UICollectionViewCell {
     var bookDescription: String = ""
     var images: [String]! = []
     var bookId: String = ""
+    var borrowerUid: String = ""
+    var userUid: String = ""
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

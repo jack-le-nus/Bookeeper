@@ -80,72 +80,7 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         layout1.minimumLineSpacing = 10
         layout1.minimumInteritemSpacing = 10
         
-        let refFeaturedQuery : FIRDatabaseQuery = self.ref.child("Book").queryOrdered(byChild: "isFeatured").queryEqual(toValue: "true")
         
-        self.featuredDataSource = self.bookCollectionView?.bind(to: refFeaturedQuery) { bookCollectionView, indexPath, snap in
-            let cell = bookCollectionView.dequeueReusableCell(withReuseIdentifier: "BookCell", for: indexPath) as! BookCell
-            let postDict = snap.value as? [String : AnyObject] ?? [:]
-            cell.contentView.backgroundColor = UIColor.alizarin()
-            cell.contentView.layer.borderWidth=1
-            cell.lblName.text = postDict["name"] as? String ?? ""
-            cell.lblDescription.text = postDict["description"] as? String ?? ""
-            cell.author = postDict["author"] as? String ?? ""
-            cell.category = postDict["categary"] as? String ?? ""
-            cell.bookId = snap.key
-            cell.bookDescription = postDict["description"] as? String ?? ""
-            cell.imgBook.contentMode = UIViewContentMode.scaleAspectFit
-            let imagesUrls = postDict["imageUrl"] as! NSArray
-            let castArray = imagesUrls as? Array<Any>
-            cell.images = castArray as! [String]!
-            let tImage = imagesUrls[0] as! String
-            if(tImage == ""){
-                cell.imgBook.image = #imageLiteral(resourceName: "bookImage")
-            }else{
-                FIRStorage.storage().reference(forURL : imagesUrls[0] as! String).data(withMaxSize: INT64_MAX ) {( data,error)
-                    in
-                    let messageImageTop = UIImage.init(data: data!, scale: 50)
-                    cell.imgBook.image = messageImageTop
-                    
-                }
-            }
-            cell.contentView.frame = bookCollectionView.bounds;
-            return cell
-        }
-        
-        self.generalDataSource = self.generalBookCollectionView?.bind(to: self.ref.child("Book")) { generalBookCollectionView, indexPath, snap in
-            let cell = generalBookCollectionView.dequeueReusableCell(withReuseIdentifier: "BookCell", for: indexPath) as! BookCell
-            let postDict = snap.value as? [String : AnyObject] ?? [:]
-            cell.contentView.backgroundColor = UIColor.alizarin()
-            cell.contentView.layer.borderWidth=1
-            cell.lblName.text = postDict["bookname"] as? String ?? ""
-            cell.lblDescription.text = postDict["author"] as? String ?? ""
-            cell.imgBook.contentMode = UIViewContentMode.scaleAspectFit
-            cell.bookDescription = postDict["description"] as? String ?? ""
-            cell.author = postDict["author"] as? String ?? ""
-            cell.category = postDict["categary"] as? String ?? ""
-            cell.bookId = snap.key
-            cell.imgBook.contentMode = UIViewContentMode.scaleAspectFit
-            let imagesUrls = postDict["imageUrl"] as! NSArray
-            let castArray = imagesUrls as? Array<Any>
-            cell.images = castArray as! [String]!
-            let firstImage = imagesUrls[0] as! String
-            if(firstImage == ""){
-                cell.imgBook.image = #imageLiteral(resourceName: "bookImage")
-            }else{
-                FIRStorage.storage().reference(forURL : imagesUrls[0] as! String).data(withMaxSize: INT64_MAX ) {( data,error)
-                    in
-                    let messageImage = UIImage.init(data: data!, scale: 50)
-                    cell.imgBook.image = messageImage
-                    
-                }
-            }
-            return cell
-        }
-        
-        self.ref.child("Book").queryOrdered(byChild: "isFeatured").queryEqual(toValue: true)
-            .observe(.childAdded, with: { snapshot in
-                self.pageControl.numberOfPages = Int(snapshot.childrenCount)
-            })
         
         self.title = "Books"
         
@@ -185,10 +120,78 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        let refFeaturedQuery : FIRDatabaseQuery = self.ref.child("Book").queryOrdered(byChild: "isFeatured").queryEqual(toValue: "true")
         
+        self.featuredDataSource = self.bookCollectionView?.bind(to: refFeaturedQuery) { bookCollectionView, indexPath, snap in
+            let cell = bookCollectionView.dequeueReusableCell(withReuseIdentifier: "BookCell", for: indexPath) as! BookCell
+            let postDict = snap.value as? [String : AnyObject] ?? [:]
+            cell.contentView.backgroundColor = UIColor.alizarin()
+            cell.contentView.layer.borderWidth=1
+            cell.lblName.text = postDict["bookname"] as? String ?? ""
+            cell.lblDescription.text = postDict["description"] as? String ?? ""
+            cell.author = postDict["author"] as? String ?? ""
+            cell.category = postDict["categary"] as? String ?? ""
+            cell.bookId = snap.key
+            cell.bookDescription = postDict["description"] as? String ?? ""
+            cell.userUid = postDict["userId"] as? String ?? ""
+            cell.imgBook.contentMode = UIViewContentMode.scaleAspectFit
+            let imagesUrls = postDict["imageUrl"] as! NSArray
+            let castArray = imagesUrls as? Array<Any>
+            cell.images = castArray as! [String]!
+            let tImage = imagesUrls[0] as! String
+            if(tImage == ""){
+                cell.imgBook.image = #imageLiteral(resourceName: "bookImage")
+            }else{
+                FIRStorage.storage().reference(forURL : imagesUrls[0] as! String).data(withMaxSize: INT64_MAX ) {( data,error)
+                    in
+                    let messageImageTop = UIImage.init(data: data!, scale: 50)
+                    cell.imgBook.image = messageImageTop
+                    
+                }
+            }
+            cell.contentView.frame = bookCollectionView.bounds;
+            return cell
+        }
+        
+        self.generalDataSource = self.generalBookCollectionView?.bind(to: self.ref.child("Book")) { generalBookCollectionView, indexPath, snap in
+            let cell = generalBookCollectionView.dequeueReusableCell(withReuseIdentifier: "BookCell", for: indexPath) as! BookCell
+            let postDict = snap.value as? [String : AnyObject] ?? [:]
+            cell.contentView.backgroundColor = UIColor.alizarin()
+            cell.contentView.layer.borderWidth=1
+            cell.lblName.text = postDict["bookname"] as? String ?? ""
+            cell.lblDescription.text = postDict["author"] as? String ?? ""
+            cell.imgBook.contentMode = UIViewContentMode.scaleAspectFit
+            cell.bookDescription = postDict["description"] as? String ?? ""
+            cell.userUid = postDict["userId"] as? String ?? ""
+            cell.author = postDict["author"] as? String ?? ""
+            cell.category = postDict["categary"] as? String ?? ""
+            cell.bookId = snap.key
+            cell.imgBook.contentMode = UIViewContentMode.scaleAspectFit
+            let imagesUrls = postDict["imageUrl"] as! NSArray
+            let castArray = imagesUrls as? Array<Any>
+            cell.images = castArray as! [String]!
+            let firstImage = imagesUrls[0] as! String
+            if(firstImage == ""){
+                cell.imgBook.image = #imageLiteral(resourceName: "bookImage")
+            }else{
+                FIRStorage.storage().reference(forURL : imagesUrls[0] as! String).data(withMaxSize: INT64_MAX ) {( data,error)
+                    in
+                    let messageImage = UIImage.init(data: data!, scale: 50)
+                    cell.imgBook.image = messageImage
+                    
+                }
+            }
+            return cell
+        }
+        
+        self.ref.child("Book").queryOrdered(byChild: "isFeatured").queryEqual(toValue: "true")
+            .observe(.childAdded, with: { snapshot in
+                self.pageControl.numberOfPages = Int(snapshot.childrenCount)
+            })
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         if(flag)
         {
             let currentUser = getUid()

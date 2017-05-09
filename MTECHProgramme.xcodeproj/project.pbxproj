@@ -40,6 +40,7 @@
 		BC1973181EA0ACA7009D410B /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1973161EA0ACA7009D410B /* BookListViewController.swift */; };
 		BC1973191EA0ACA7009D410B /* BookListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC1973171EA0ACA7009D410B /* BookListViewController.xib */; };
 		BC2ED0DB1EC0CD3000EE0A68 /* BookListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2ED0DA1EC0CD3000EE0A68 /* BookListTests.swift */; };
+		BC2ED0DD1EC174AC00EE0A68 /* File in Resources */ = {isa = PBXBuildFile; fileRef = BC2ED0DC1EC174AC00EE0A68 /* File */; };
 		BC51D50B1E92A077000D9249 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC51D50A1E92A077000D9249 /* AppDelegate.swift */; };
 		BC51D5121E92A077000D9249 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC51D5101E92A077000D9249 /* Main.storyboard */; };
 		BC51D5141E92A077000D9249 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC51D5131E92A077000D9249 /* Assets.xcassets */; };
@@ -126,6 +127,7 @@
 		BC1973161EA0ACA7009D410B /* BookListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
 		BC1973171EA0ACA7009D410B /* BookListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookListViewController.xib; sourceTree = "<group>"; };
 		BC2ED0DA1EC0CD3000EE0A68 /* BookListTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListTests.swift; sourceTree = "<group>"; };
+		BC2ED0DC1EC174AC00EE0A68 /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
 		BC51D5071E92A077000D9249 /* MTECHProgramme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTECHProgramme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC51D50A1E92A077000D9249 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC51D5111E92A077000D9249 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 				9EFF52CA1EB3357B006DC43B /* ProfileViewController.xib */,
 				9EFF52CB1EB3357B006DC43B /* SideMenuTableViewCell.swift */,
 				9EFF52CC1EB3357B006DC43B /* SideMenuTableViewCell.xib */,
+				BC2ED0DC1EC174AC00EE0A68 /* File */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC2ED0DD1EC174AC00EE0A68 /* File in Resources */,
 				9EFF52D21EB3357B006DC43B /* ProfileViewController.xib in Resources */,
 				BC51D53F1E92AECC000D9249 /* LoginViewController.xib in Resources */,
 				BC51D5171E92A077000D9249 /* LaunchScreen.storyboard in Resources */,

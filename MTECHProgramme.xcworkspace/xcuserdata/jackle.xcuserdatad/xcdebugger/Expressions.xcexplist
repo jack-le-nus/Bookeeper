@@ -3,10 +3,24 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "BookListViewController.collectionView(UICollectionView, layout : UICollectionViewLayout, sizeForItemAt : IndexPath) -&gt; CGSize:BookListViewController.swift">
+         contextName = "ChatMessageViewController.(configureDatabase() -&gt; ()).(closure #1):ChatMessageViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "collectionViewLayout.collectionViewContentSize&#10;collectionViewLayout.collectionViewContentSize.height">
+               value = "senderId">
+            </PersistentString>
+            <PersistentString
+               value = "currentUser?.uid">
+            </PersistentString>
+            <PersistentString
+               value = "self?.bookSenderId">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BookListViewController.(viewDidAppear(Bool) -&gt; ()).(closure #1):BookListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "postDict[&quot;userId&quot;]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -19,10 +33,29 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "BookListViewController.(viewDidLoad() -&gt; ()).(closure #1):BookListViewController.swift">
+         contextName = "BookDetailViewController.viewDidLoad() -&gt; ():BookDetailViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "postDict[&quot;imageUrl&quot;] as? String ?? &quot;&quot;">
+               value = "bookCell?.userUid">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BookListViewController.viewDidLoad() -&gt; ():BookListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.bookCollectionView.bounds.size&#10;">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ChatMessageViewController.tableView(UITableView, cellForRowAt : IndexPath) -&gt; UITableViewCell:ChatMessageViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "FIRAuth.auth()?.currentUser?.email">
+            </PersistentString>
+            <PersistentString
+               value = "message[&quot;name&quot;]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -35,10 +68,45 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "BookListViewController.viewDidLoad() -&gt; ():BookListViewController.swift">
+         contextName = "ChatMessageViewController.configureDatabase() -&gt; ():ChatMessageViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.bookCollectionView.bounds.size&#10;">
+               value = "currentUser?.uid">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BookDetailViewController.prepare(for : UIStoryboardSegue, sender : Any?) -&gt; ():BookDetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "userUid">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BookDetailViewController.(getOwnerDetail() -&gt; ()).(closure #1).(closure #1):BookDetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "userSnapshot.value ">
+            </PersistentString>
+            <PersistentString
+               value = "userSnapshot.value as! String">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BookListViewController.(viewDidLoad() -&gt; ()).(closure #1):BookListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "postDict[&quot;imageUrl&quot;] as? String ?? &quot;&quot;">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BookListViewController.collectionView(UICollectionView, layout : UICollectionViewLayout, sizeForItemAt : IndexPath) -&gt; CGSize:BookListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "collectionViewLayout.collectionViewContentSize&#10;collectionViewLayout.collectionViewContentSize.height">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
