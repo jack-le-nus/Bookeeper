@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="G9a-Fl-MXK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="G9a-Fl-MXK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -195,7 +195,7 @@
         <scene sceneID="AUC-QG-9ck">
             <objects>
                 <navigationController id="zvF-Vc-bFk" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="sHG-dO-wv4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sHG-dO-wv4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -269,7 +269,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mHO-SL-yYB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1775.2" y="-9.4452773613193415"/>
+            <point key="canvasLocation" x="2102" y="-58"/>
         </scene>
         <!--Book Detail View Controller-->
         <scene sceneID="cgp-yA-XDg">
@@ -297,7 +297,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KIz-6a-kIF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2616.8000000000002" y="-2.2488755622188905"/>
+            <point key="canvasLocation" x="3905" y="3"/>
         </scene>
         <!--Borrowed Book List View Controller-->
         <scene sceneID="1gw-iV-lnk">
@@ -361,14 +361,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l2G-vo-2L0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3472.8000000000002" y="-9.4452773613193415"/>
+            <point key="canvasLocation" x="4974" y="3"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AS9-uG-q9i">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b89-hH-ipX" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="CW5-yL-JEw">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CW5-yL-JEw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -386,7 +386,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bod-yh-hmK" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Y6F-6H-UuZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y6F-6H-UuZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -405,7 +405,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ApD-58-YYv"/>
-        <segue reference="4wA-kQ-4r0"/>
-        <segue reference="g1g-UP-TKs"/>
+        <segue reference="uHv-2Z-94h"/>
+        <segue reference="L9y-Qh-jxI"/>
     </inferredMetricsTieBreakers>
 </document>

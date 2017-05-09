@@ -219,6 +219,7 @@ class NewBookViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     func sendBookDetail(fieldCheck : Bool) {
         if(fieldCheck == true){
+            LoadingView.sharedInstance.show(view: self.view)
             var newKey: String = ""
             
             var b = [String:String]()
@@ -259,10 +260,7 @@ class NewBookViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             
             
         }
-        self.alert(content: AppMessage.booksaved.rawValue, onCancel: {
-            action -> Void in
-            self.navigationController?.popViewController(animated: true)
-        })
+        
     }
     
     func sendImageDeatil(newkey : String, data: [String:Any]){
@@ -293,6 +291,15 @@ class NewBookViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             imageUrls.append("")
             sdata[AppMessage.imageUrl.rawValue] = imageUrls
             self.ref.child("Book").child(newkey).setValue(sdata)
+        }
+        
+        let when = DispatchTime.now() + 2
+        DispatchQueue.main.asyncAfter(deadline: when) {
+             LoadingView.sharedInstance.hide()
+            self.alert(content: AppMessage.booksaved.rawValue, onCancel: {
+                action -> Void in
+                self.navigationController?.popViewController(animated: true)
+            })
         }
     }
     

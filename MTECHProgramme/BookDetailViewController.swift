@@ -24,6 +24,7 @@ class BookDetailViewController: UIViewController, MFMessageComposeViewController
     var _refHandle: FIRDatabaseHandle!
     var bookCell: BookCell?
     var bookId : String!
+    var userUid : String!
     @IBOutlet weak var messageBtn: FUIButton!
     @IBOutlet weak var bookDescription: UITextView!
     @IBOutlet weak var checkOutBtn: FUIButton!
@@ -78,6 +79,7 @@ class BookDetailViewController: UIViewController, MFMessageComposeViewController
         bookAuthor.text = bookCell?.author
         bookDescription.text = bookCell?.bookDescription
         bookId = bookCell?.bookId
+        userUid = bookCell?.userUid
         getOwnerDetail()
         hideShowChatButton()
         self.hideSpinner()
@@ -85,6 +87,7 @@ class BookDetailViewController: UIViewController, MFMessageComposeViewController
         buttonThemer.applyTheme(view: checkOutBtn, theme: ButtonTheme())
         buttonThemer.applyTheme(view: messageBtn, theme: ButtonTheme())
 
+        self.title = "Book Details"
     }
     
     override func didReceiveMemoryWarning() {
@@ -208,18 +211,18 @@ extension BookDetailViewController: UICollectionViewDataSource, UICollectionView
     func getOwnerDetail() {
         
         print("Book id of the selected Book",bookId)
-        let query = ref.child(Constants.UserTables.bookTable).child(bookId).child("userId")
-        query.observeSingleEvent(of: .value, with: { snapshot in
-            self.userId = snapshot.value as! String
-            print("userID is", self.userId)
-            
-            let userQuery = self.ref.child(Constants.UserTables.userTable).child(self.userId).child("phone")
-            userQuery.observeSingleEvent(of: .value, with: { userSnapshot in
-               // TODO remove comment once Medha fixes Phone number
-                self.ownerContactDetails = userSnapshot.value as! String
-                print("contactNo is", self.ownerContactDetails)
-            })
-        })
+//        let query = ref.child(Constants.UserTables.bookTable).child(bookId).child("userId")
+//        query.observeSingleEvent(of: .value, with: { snapshot in
+//            self.userId = snapshot.value as! String
+//            print("userID is", self.userId)
+//            
+//            let userQuery = self.ref.child(Constants.UserTables.userTable).child(self.userId).child("phone")
+//            userQuery.observeSingleEvent(of: .value, with: { userSnapshot in
+//               // TODO remove comment once Medha fixes Phone number
+//                self.ownerContactDetails = userSnapshot.value as! String
+//                print("contactNo is", self.ownerContactDetails)
+//            })
+//        })
         
     }
     
@@ -245,5 +248,8 @@ extension BookDetailViewController: UICollectionViewDataSource, UICollectionView
         print("chat button clicked")
     }
 
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let chatVC: ChatMessageViewController = segue.destination as! ChatMessageViewController
+        chatVC.bookSenderId = userUid
+    }
 }
