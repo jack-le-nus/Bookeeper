@@ -37,6 +37,10 @@ class BookDetailViewController: UIViewController, MFMessageComposeViewController
         }
     }
     
+    init() {
+        super.init(nibName: "BookDetailViewController", bundle: nil)
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         

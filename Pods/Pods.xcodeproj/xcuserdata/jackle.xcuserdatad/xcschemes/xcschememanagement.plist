@@ -39,27 +39,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>GoogleToolboxForMac-Defines-NSData+zlib.xcscheme</key>
+		<key>GoogleToolboxForMac.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>GoogleToolboxForMac-f0850809.xcscheme</key>
+		<key>Pods-MTECHProgramme-MTECHProgrammeTests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-MTECHProgramme-MTECHProgrammeUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-MTECHProgramme.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-MTECHProgrammeTests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-MTECHProgrammeUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -77,17 +72,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>19A242FA6CC93E5305F1ED4E19AF3E61</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4091EF059B6AD39A78A754A1D7FDCEE7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>433E90BF6136E433A0FEA61CD4159E56</key>
+		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,17 +87,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7D9CFF251FAC5F34401C69DB041A0B8B</key>
+		<key>7E879D98C478F182F2D43D2F465FA9FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8159F94E49D9B443DE18F0F8B38078B8</key>
+		<key>7FD2E2885066D188D744A7BD3367D501</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8B4CAF9065C943841A9D9560DDA29F42</key>
+		<key>8C6DE05268C9AF1BB3E8B62C5B10F705</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>91D10ECD8BA0B1FCC8A65F16BC78EB81</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -142,7 +132,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DA30AF9FF2EF62494ECDFE752DECB0A8</key>
+		<key>F08D3D22CD71D3696AF09236B951A27B</key>
 		<dict>
 			<key>primary</key>
 			<true/>

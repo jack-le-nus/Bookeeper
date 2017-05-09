@@ -36,8 +36,10 @@
 		9EFF52D41EB3357B006DC43B /* SideMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EFF52CC1EB3357B006DC43B /* SideMenuTableViewCell.xib */; };
 		9EFF52D91EB3472D006DC43B /* NewBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EFF52D71EB3472D006DC43B /* NewBookViewController.swift */; };
 		9EFF52DA1EB3472D006DC43B /* NewBookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EFF52D81EB3472D006DC43B /* NewBookViewController.xib */; };
+		BB51D32BC07C05E10D2C9A01 /* Pods_MTECHProgramme_MTECHProgrammeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 225BBD69BF0A548B99B0C620 /* Pods_MTECHProgramme_MTECHProgrammeUITests.framework */; };
 		BC1973181EA0ACA7009D410B /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1973161EA0ACA7009D410B /* BookListViewController.swift */; };
 		BC1973191EA0ACA7009D410B /* BookListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC1973171EA0ACA7009D410B /* BookListViewController.xib */; };
+		BC2ED0DB1EC0CD3000EE0A68 /* BookListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2ED0DA1EC0CD3000EE0A68 /* BookListTests.swift */; };
 		BC51D50B1E92A077000D9249 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC51D50A1E92A077000D9249 /* AppDelegate.swift */; };
 		BC51D5121E92A077000D9249 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC51D5101E92A077000D9249 /* Main.storyboard */; };
 		BC51D5141E92A077000D9249 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC51D5131E92A077000D9249 /* Assets.xcassets */; };
@@ -64,6 +66,7 @@
 		BCEE2EC91E9CB7F700D469FD /* ButtonThemer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEE2EC81E9CB7F700D469FD /* ButtonThemer.swift */; };
 		BCEE2ECB1E9CB80F00D469FD /* TextFieldThemer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEE2ECA1E9CB80F00D469FD /* TextFieldThemer.swift */; };
 		BCEE2ECD1E9CB82400D469FD /* TextFieldTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEE2ECC1E9CB82400D469FD /* TextFieldTheme.swift */; };
+		F207FBCC600B9EF937B8A3B5 /* Pods_MTECHProgramme_MTECHProgrammeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 713C571BB78CDEEFA5CB6940 /* Pods_MTECHProgramme_MTECHProgrammeTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,12 +88,18 @@
 
 /* Begin PBXFileReference section */
 		1CF658CD344D360EAA1EE76B /* Pods_MTECHProgramme.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MTECHProgramme.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		225BBD69BF0A548B99B0C620 /* Pods_MTECHProgramme_MTECHProgrammeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MTECHProgramme_MTECHProgrammeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		266588B814F62C691C054B47 /* Pods-MTECHProgramme.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTECHProgramme.release.xcconfig"; path = "Pods/Target Support Files/Pods-MTECHProgramme/Pods-MTECHProgramme.release.xcconfig"; sourceTree = "<group>"; };
+		3C2869F4EB47CE1F58FFE9F2 /* Pods-MTECHProgramme-MTECHProgrammeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTECHProgramme-MTECHProgrammeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MTECHProgramme-MTECHProgrammeTests/Pods-MTECHProgramme-MTECHProgrammeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		40436CD6FDB11B1B04E4EC21 /* Pods-MTECHProgramme-MTECHProgrammeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTECHProgramme-MTECHProgrammeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MTECHProgramme-MTECHProgrammeUITests/Pods-MTECHProgramme-MTECHProgrammeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6D3EBD8F437B0D28D1EC5890 /* Pods_MTECHProgrammeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MTECHProgrammeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		713C571BB78CDEEFA5CB6940 /* Pods_MTECHProgramme_MTECHProgrammeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MTECHProgramme_MTECHProgrammeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		768962B81EA9007800A73A9B /* ProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		76F3B96F1EB9BAB70064D502 /* AboutUsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutUsViewController.xib; sourceTree = "<group>"; };
 		76F3B9731EB9DAC40064D502 /* AboutUsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
+		8AF336EE3F1104D96B0F43E7 /* Pods-MTECHProgramme-MTECHProgrammeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTECHProgramme-MTECHProgrammeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MTECHProgramme-MTECHProgrammeTests/Pods-MTECHProgramme-MTECHProgrammeTests.release.xcconfig"; sourceTree = "<group>"; };
 		926E61E3741649F9115B710F /* Pods-MTECHProgrammeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTECHProgrammeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MTECHProgrammeTests/Pods-MTECHProgrammeTests.release.xcconfig"; sourceTree = "<group>"; };
+		96DC793551587CBD26EB7489 /* Pods-MTECHProgramme-MTECHProgrammeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MTECHProgramme-MTECHProgrammeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MTECHProgramme-MTECHProgrammeUITests/Pods-MTECHProgramme-MTECHProgrammeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9E016A491EAF3EE50025BEF3 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9E016A4B1EAFA4360025BEF3 /* BorrowedBookListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BorrowedBookListViewController.swift; sourceTree = "<group>"; };
 		9E016A4C1EAFA4360025BEF3 /* BorrowedBookListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BorrowedBookListViewController.xib; sourceTree = "<group>"; };
@@ -116,6 +125,7 @@
 		9EFF52D81EB3472D006DC43B /* NewBookViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewBookViewController.xib; sourceTree = "<group>"; };
 		BC1973161EA0ACA7009D410B /* BookListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
 		BC1973171EA0ACA7009D410B /* BookListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookListViewController.xib; sourceTree = "<group>"; };
+		BC2ED0DA1EC0CD3000EE0A68 /* BookListTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookListTests.swift; sourceTree = "<group>"; };
 		BC51D5071E92A077000D9249 /* MTECHProgramme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MTECHProgramme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC51D50A1E92A077000D9249 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC51D5111E92A077000D9249 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -171,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				93EAEE0B842FB46BF7D18AB9 /* Pods_MTECHProgrammeTests.framework in Frameworks */,
+				F207FBCC600B9EF937B8A3B5 /* Pods_MTECHProgramme_MTECHProgrammeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BA00E9D599613F5FE5687B2 /* Pods_MTECHProgrammeUITests.framework in Frameworks */,
+				BB51D32BC07C05E10D2C9A01 /* Pods_MTECHProgramme_MTECHProgrammeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +206,10 @@
 				926E61E3741649F9115B710F /* Pods-MTECHProgrammeTests.release.xcconfig */,
 				CDCEC561C3D53CDCC74424D4 /* Pods-MTECHProgrammeUITests.debug.xcconfig */,
 				CEC06AD2C079274CE4883279 /* Pods-MTECHProgrammeUITests.release.xcconfig */,
+				3C2869F4EB47CE1F58FFE9F2 /* Pods-MTECHProgramme-MTECHProgrammeTests.debug.xcconfig */,
+				8AF336EE3F1104D96B0F43E7 /* Pods-MTECHProgramme-MTECHProgrammeTests.release.xcconfig */,
+				40436CD6FDB11B1B04E4EC21 /* Pods-MTECHProgramme-MTECHProgrammeUITests.debug.xcconfig */,
+				96DC793551587CBD26EB7489 /* Pods-MTECHProgramme-MTECHProgrammeUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -243,6 +259,7 @@
 				BC51D5211E92A078000D9249 /* MTECHProgrammeTests.swift */,
 				BC51D5231E92A078000D9249 /* Info.plist */,
 				BCD4577A1E9CD1BC00F4F844 /* LoginModelTests.swift */,
+				BC2ED0DA1EC0CD3000EE0A68 /* BookListTests.swift */,
 			);
 			path = MTECHProgrammeTests;
 			sourceTree = "<group>";
@@ -264,6 +281,8 @@
 				1CF658CD344D360EAA1EE76B /* Pods_MTECHProgramme.framework */,
 				D98E9CC37AC8951F9B298EF1 /* Pods_MTECHProgrammeTests.framework */,
 				6D3EBD8F437B0D28D1EC5890 /* Pods_MTECHProgrammeUITests.framework */,
+				713C571BB78CDEEFA5CB6940 /* Pods_MTECHProgramme_MTECHProgrammeTests.framework */,
+				225BBD69BF0A548B99B0C620 /* Pods_MTECHProgramme_MTECHProgrammeUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -544,7 +563,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MTECHProgrammeTests/Pods-MTECHProgrammeTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MTECHProgramme-MTECHProgrammeTests/Pods-MTECHProgramme-MTECHProgrammeTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		925534D42B72A77AC14E969F /* [CP] Copy Pods Resources */ = {
@@ -574,7 +593,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MTECHProgrammeTests/Pods-MTECHProgrammeTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MTECHProgramme-MTECHProgrammeTests/Pods-MTECHProgramme-MTECHProgrammeTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D643DA4A568756D7EA4F54F7 /* [CP] Check Pods Manifest.lock */ = {
@@ -604,7 +623,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MTECHProgrammeUITests/Pods-MTECHProgrammeUITests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MTECHProgramme-MTECHProgrammeUITests/Pods-MTECHProgramme-MTECHProgrammeUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E1DA8F75D7430E48DEDAE405 /* [CP] Embed Pods Frameworks */ = {
@@ -619,7 +638,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MTECHProgrammeUITests/Pods-MTECHProgrammeUITests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MTECHProgramme-MTECHProgrammeUITests/Pods-MTECHProgramme-MTECHProgrammeUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F6336448E4E5215B6ABDEF0E /* [CP] Check Pods Manifest.lock */ = {
@@ -683,6 +702,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC51D5221E92A078000D9249 /* MTECHProgrammeTests.swift in Sources */,
+				BC2ED0DB1EC0CD3000EE0A68 /* BookListTests.swift in Sources */,
 				BCD4577B1E9CD1BC00F4F844 /* LoginModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -857,7 +877,7 @@
 		};
 		BC51D5351E92A078000D9249 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA82376FB91D2723425A4212 /* Pods-MTECHProgrammeTests.debug.xcconfig */;
+			baseConfigurationReference = 3C2869F4EB47CE1F58FFE9F2 /* Pods-MTECHProgramme-MTECHProgrammeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -872,7 +892,7 @@
 		};
 		BC51D5361E92A078000D9249 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 926E61E3741649F9115B710F /* Pods-MTECHProgrammeTests.release.xcconfig */;
+			baseConfigurationReference = 8AF336EE3F1104D96B0F43E7 /* Pods-MTECHProgramme-MTECHProgrammeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -887,7 +907,7 @@
 		};
 		BC51D5381E92A078000D9249 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CDCEC561C3D53CDCC74424D4 /* Pods-MTECHProgrammeUITests.debug.xcconfig */;
+			baseConfigurationReference = 40436CD6FDB11B1B04E4EC21 /* Pods-MTECHProgramme-MTECHProgrammeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = MTECHProgrammeUITests/Info.plist;
@@ -901,7 +921,7 @@
 		};
 		BC51D5391E92A078000D9249 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CEC06AD2C079274CE4883279 /* Pods-MTECHProgrammeUITests.release.xcconfig */;
+			baseConfigurationReference = 96DC793551587CBD26EB7489 /* Pods-MTECHProgramme-MTECHProgrammeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = MTECHProgrammeUITests/Info.plist;

@@ -8,14 +8,23 @@ target 'MTECHProgramme' do
   # Pods for MTECHProgramme
 
   target 'MTECHProgrammeTests' do
-    inherit! :search_paths
-    # Pods for testing
-    pod 'Firebase'
+    use_frameworks!
+    pod 'FirebaseUI’
+  pod 'Firebase/Auth'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
+  pod 'Firebase/RemoteConfig'
   end
 
   target 'MTECHProgrammeUITests' do
-    inherit! :search_paths
-    # Pods for testing
+    use_frameworks!
+    pod 'FirebaseUI’
+  pod 'Firebase/Auth'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
+  pod 'Firebase/Storage'
+  pod 'Firebase/RemoteConfig'
   end
 
   pod 'FlatUIKit'
