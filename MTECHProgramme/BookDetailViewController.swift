@@ -87,7 +87,7 @@ class BookDetailViewController: UIViewController, MFMessageComposeViewController
         buttonThemer.applyTheme(view: checkOutBtn, theme: ButtonTheme())
         buttonThemer.applyTheme(view: messageBtn, theme: ButtonTheme())
 
-        self.title = "Book Details"
+        self.title = "Book Detail"
     }
     
     override func didReceiveMemoryWarning() {

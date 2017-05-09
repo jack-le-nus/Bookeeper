@@ -74,7 +74,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgC-MA-Gyj" customClass="FUIButton">
-                    <rect key="frame" x="20" y="628" width="374" height="40"/>
+                    <rect key="frame" x="16" y="628" width="378" height="40"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Var-nk-TE4"/>
@@ -108,7 +108,7 @@
                 <constraint firstItem="PtI-6N-uhc" firstAttribute="top" secondItem="ynP-2p-ECU" secondAttribute="bottom" constant="20" id="DO4-Zz-Sna"/>
                 <constraint firstItem="gzO-as-J02" firstAttribute="trailing" secondItem="ynP-2p-ECU" secondAttribute="trailing" constant="-2" id="Dsl-qG-y1Q"/>
                 <constraint firstItem="gzO-as-J02" firstAttribute="trailing" secondItem="hgC-MA-Gyj" secondAttribute="trailing" constant="-4" id="Lfy-St-w7C"/>
-                <constraint firstItem="hgC-MA-Gyj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Mlt-gJ-Nzp"/>
+                <constraint firstItem="hgC-MA-Gyj" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="Mlt-gJ-Nzp"/>
                 <constraint firstItem="nhd-VH-V0d" firstAttribute="centerX" secondItem="PtI-6N-uhc" secondAttribute="centerX" constant="2" id="MoE-S4-13R"/>
                 <constraint firstItem="gzO-as-J02" firstAttribute="leading" secondItem="ynP-2p-ECU" secondAttribute="leading" constant="-2" id="Qav-Qf-gTh"/>
                 <constraint firstItem="nhd-VH-V0d" firstAttribute="top" secondItem="PtI-6N-uhc" secondAttribute="bottom" constant="20" id="Qmv-bc-7S1"/>
@@ -118,7 +118,7 @@
                 <constraint firstItem="ynP-2p-ECU" firstAttribute="leading" secondItem="PtI-6N-uhc" secondAttribute="leading" id="flB-Za-9RG"/>
                 <constraint firstAttribute="trailing" secondItem="hgC-MA-Gyj" secondAttribute="trailing" constant="20" id="geq-IO-qgT"/>
                 <constraint firstItem="jZy-J8-WNm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-1.5" id="hEJ-Yg-Gi9"/>
-                <constraint firstItem="gzO-as-J02" firstAttribute="leading" secondItem="hgC-MA-Gyj" secondAttribute="leading" constant="-4" id="iC1-qo-VcX"/>
+                <constraint firstItem="gzO-as-J02" firstAttribute="leading" secondItem="hgC-MA-Gyj" secondAttribute="leading" id="iC1-qo-VcX"/>
                 <constraint firstItem="4x6-s3-n8y" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="jLK-Eh-qAV"/>
                 <constraint firstItem="0vG-NX-GrJ" firstAttribute="trailing" secondItem="hgC-MA-Gyj" secondAttribute="trailing" id="nqK-Eh-aKt"/>
                 <constraint firstItem="4x6-s3-n8y" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="67" id="odU-u5-w3C"/>
