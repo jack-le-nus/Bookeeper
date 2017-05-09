@@ -211,18 +211,18 @@ extension BookDetailViewController: UICollectionViewDataSource, UICollectionView
     func getOwnerDetail() {
         
         print("Book id of the selected Book",bookId)
-//        let query = ref.child(Constants.UserTables.bookTable).child(bookId).child("userId")
-//        query.observeSingleEvent(of: .value, with: { snapshot in
-//            self.userId = snapshot.value as! String
-//            print("userID is", self.userId)
-//            
-//            let userQuery = self.ref.child(Constants.UserTables.userTable).child(self.userId).child("phone")
-//            userQuery.observeSingleEvent(of: .value, with: { userSnapshot in
-//               // TODO remove comment once Medha fixes Phone number
-//                self.ownerContactDetails = userSnapshot.value as! String
-//                print("contactNo is", self.ownerContactDetails)
-//            })
-//        })
+        let query = ref.child(Constants.UserTables.bookTable).child(bookId).child("userId")
+        query.observeSingleEvent(of: .value, with: { snapshot in
+            self.userId = snapshot.value as! String
+            print("userID is", self.userId)
+            
+            let userQuery = self.ref.child(Constants.UserTables.userTable).child(self.userId).child("phone")
+            userQuery.observeSingleEvent(of: .value, with: { userSnapshot in
+               // TODO remove comment once Medha fixes Phone number
+                self.ownerContactDetails = userSnapshot.value as! String
+                print("contactNo is", self.ownerContactDetails)
+            })
+        })
         
     }
     

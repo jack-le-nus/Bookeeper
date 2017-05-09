@@ -37,4 +37,5 @@ enum AppMessage: String {
     case EmailEmpty = "Email Can not be empty"
     case PasswordEmpty = "Password Can not be empty"
     case ConfirmPasswordEmpty = "Confirm Password Can not be empty"
+    case ContactNoEmpty = "Contact No can be Empty"
 }

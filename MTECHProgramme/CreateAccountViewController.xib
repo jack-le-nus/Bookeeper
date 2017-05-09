@@ -1,17 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateAccountViewController" customModule="MTECHProgramme" customModuleProvider="target">
             <connections>
                 <outlet property="confirmPasswordText" destination="hei-GX-qW3" id="iFX-0E-3PP"/>
+                <outlet property="contactText" destination="BtB-Xd-olH" id="Bdu-9N-oce"/>
                 <outlet property="createButton" destination="bvC-fT-1mw" id="dFc-GI-qga"/>
                 <outlet property="createView" destination="i5M-Pr-FkT" id="Pkb-aW-da8"/>
                 <outlet property="emailText" destination="Pva-yv-avR" id="eKm-tB-igc"/>
@@ -21,88 +22,94 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test@gmail.com" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pva-yv-avR" customClass="FUITextField">
-                    <rect key="frame" x="20" y="155" width="560" height="50"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test@gmail.com" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Pva-yv-avR" customClass="FUITextField">
+                    <rect key="frame" x="20" y="155" width="374" height="50"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="iL5-Tv-nln"/>
+                        <constraint firstAttribute="height" constant="50" id="CQu-Jd-RBr"/>
                     </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bgh-of-1uo" customClass="FUITextField">
-                    <rect key="frame" x="20" y="225" width="560" height="50"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="bgh-of-1uo" customClass="FUITextField">
+                    <rect key="frame" x="20" y="225" width="374" height="50"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="9f4-Pu-Z80"/>
+                        <constraint firstAttribute="height" constant="50" id="KBH-ap-YyE"/>
                     </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hei-GX-qW3" customClass="FUITextField">
-                    <rect key="frame" x="20" y="295" width="560" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="zJI-8e-vRl"/>
-                    </constraints>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hei-GX-qW3" customClass="FUITextField">
+                    <rect key="frame" x="20" y="295" width="374" height="50"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvC-fT-1mw" customClass="FUIButton">
-                    <rect key="frame" x="20" y="365" width="560" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="xNT-up-iNY"/>
-                    </constraints>
+                    <rect key="frame" x="20" y="460" width="374" height="50"/>
                     <state key="normal" title="Sign Up"/>
                     <connections>
                         <action selector="CreateAccountAction:" destination="-1" eventType="touchUpInside" id="9fP-h2-L5g"/>
                     </connections>
                 </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jc3-Za-s3D" customClass="FUITextField">
-                    <rect key="frame" x="20" y="85" width="560" height="50"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="test" placeholder="Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Jc3-Za-s3D" customClass="FUITextField">
+                    <rect key="frame" x="20" y="85" width="374" height="50"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="Z0p-aE-ZpP"/>
+                        <constraint firstAttribute="height" constant="50" id="k6Q-WU-rmB"/>
                     </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By creating an account you agree to the Terms of use" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYj-0X-zrd">
-                    <rect key="frame" x="20" y="435" width="560" height="20.666666666666686"/>
+                    <rect key="frame" x="20" y="530" width="374" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="hZp-iw-mCb"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12345678" placeholder="Contact No" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="BtB-Xd-olH" userLabel="Contact Text" customClass="FUITextField">
+                    <rect key="frame" x="20" y="365" width="374" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="msM-rD-4y4"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" red="0.92143112421035767" green="0.92145270109176636" blue="0.92144101858139038" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Jc3-Za-s3D" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="85" id="6go-Jo-qby"/>
+                <constraint firstItem="Pva-yv-avR" firstAttribute="top" secondItem="Jc3-Za-s3D" secondAttribute="bottom" constant="20" id="2st-jU-jRu"/>
+                <constraint firstItem="Jc3-Za-s3D" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="85" id="3hZ-O4-Ohn"/>
                 <constraint firstAttribute="trailing" secondItem="hei-GX-qW3" secondAttribute="trailing" constant="20" id="A59-V6-Lar"/>
-                <constraint firstItem="Pva-yv-avR" firstAttribute="top" secondItem="Jc3-Za-s3D" secondAttribute="bottom" constant="20" id="AME-WW-bCN"/>
-                <constraint firstAttribute="trailing" secondItem="Pva-yv-avR" secondAttribute="trailing" constant="20" id="BvJ-Qs-Ra8"/>
-                <constraint firstItem="FYj-0X-zrd" firstAttribute="top" secondItem="bvC-fT-1mw" secondAttribute="bottom" constant="20" id="F6d-UZ-Obk"/>
+                <constraint firstItem="bgh-of-1uo" firstAttribute="leading" secondItem="hei-GX-qW3" secondAttribute="leading" id="Edb-Ox-2YP"/>
+                <constraint firstItem="FYj-0X-zrd" firstAttribute="trailing" secondItem="bvC-fT-1mw" secondAttribute="trailing" id="EhD-TJ-ycS"/>
+                <constraint firstItem="Pva-yv-avR" firstAttribute="leading" secondItem="Jc3-Za-s3D" secondAttribute="leading" id="Fd1-of-YKo"/>
                 <constraint firstAttribute="trailing" secondItem="bvC-fT-1mw" secondAttribute="trailing" constant="20" id="JF0-e3-fMr"/>
-                <constraint firstItem="bvC-fT-1mw" firstAttribute="top" secondItem="hei-GX-qW3" secondAttribute="bottom" constant="20" id="MUk-rp-sU1"/>
-                <constraint firstItem="Pva-yv-avR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Mgw-Ik-jTF"/>
-                <constraint firstItem="bgh-of-1uo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Opm-bI-NJX"/>
-                <constraint firstItem="bgh-of-1uo" firstAttribute="top" secondItem="Pva-yv-avR" secondAttribute="bottom" constant="20" id="Tje-RW-ekB"/>
+                <constraint firstItem="bgh-of-1uo" firstAttribute="top" secondItem="Pva-yv-avR" secondAttribute="bottom" constant="20" id="LNu-Vk-tor"/>
+                <constraint firstItem="BtB-Xd-olH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="365" id="Qsk-fk-fdv"/>
                 <constraint firstItem="hei-GX-qW3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Vah-44-Zya"/>
-                <constraint firstItem="Pva-yv-avR" firstAttribute="top" secondItem="Jc3-Za-s3D" secondAttribute="bottom" constant="20" id="Vbo-3s-urt"/>
-                <constraint firstItem="Jc3-Za-s3D" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="bcz-8r-fE3"/>
-                <constraint firstAttribute="trailing" secondItem="Jc3-Za-s3D" secondAttribute="trailing" constant="20" id="cyA-fa-N3g"/>
+                <constraint firstItem="BtB-Xd-olH" firstAttribute="leading" secondItem="hei-GX-qW3" secondAttribute="leading" id="bQ6-97-aeB"/>
+                <constraint firstAttribute="bottom" secondItem="FYj-0X-zrd" secondAttribute="bottom" constant="185" id="c2f-vu-ymz"/>
+                <constraint firstItem="hei-GX-qW3" firstAttribute="top" secondItem="bgh-of-1uo" secondAttribute="bottom" constant="20" id="fRa-7m-oIZ"/>
                 <constraint firstItem="bvC-fT-1mw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="g96-bx-vEw"/>
-                <constraint firstAttribute="trailing" secondItem="bgh-of-1uo" secondAttribute="trailing" constant="20" id="lsn-aE-xcV"/>
-                <constraint firstItem="FYj-0X-zrd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="m7Z-ed-Xlb"/>
-                <constraint firstItem="hei-GX-qW3" firstAttribute="top" secondItem="bgh-of-1uo" secondAttribute="bottom" constant="20" id="nGI-bR-60w"/>
-                <constraint firstItem="hei-GX-qW3" firstAttribute="top" secondItem="bgh-of-1uo" secondAttribute="bottom" constant="20" id="nLX-xD-eAs"/>
-                <constraint firstAttribute="trailing" secondItem="FYj-0X-zrd" secondAttribute="trailing" constant="20" id="o6N-x4-GnA"/>
-                <constraint firstItem="bgh-of-1uo" firstAttribute="top" secondItem="Pva-yv-avR" secondAttribute="bottom" constant="20" id="sBx-9P-glL"/>
-                <constraint firstItem="bvC-fT-1mw" firstAttribute="top" secondItem="hei-GX-qW3" secondAttribute="bottom" constant="20" id="tPz-0j-9ll"/>
-                <constraint firstItem="FYj-0X-zrd" firstAttribute="top" secondItem="bvC-fT-1mw" secondAttribute="bottom" constant="20" id="ury-fK-OHO"/>
+                <constraint firstItem="bvC-fT-1mw" firstAttribute="top" secondItem="BtB-Xd-olH" secondAttribute="bottom" constant="45" id="gX7-bw-Nj0"/>
+                <constraint firstItem="FYj-0X-zrd" firstAttribute="top" secondItem="bvC-fT-1mw" secondAttribute="bottom" constant="20" id="iQV-kV-eby"/>
+                <constraint firstItem="bgh-of-1uo" firstAttribute="trailing" secondItem="hei-GX-qW3" secondAttribute="trailing" id="mKF-8W-xad"/>
+                <constraint firstItem="BtB-Xd-olH" firstAttribute="trailing" secondItem="hei-GX-qW3" secondAttribute="trailing" id="nE5-V1-4VN"/>
+                <constraint firstItem="Pva-yv-avR" firstAttribute="trailing" secondItem="Jc3-Za-s3D" secondAttribute="trailing" id="p7v-Mh-7gN"/>
+                <constraint firstItem="bgh-of-1uo" firstAttribute="leading" secondItem="Pva-yv-avR" secondAttribute="leading" id="s5n-0r-MUl"/>
+                <constraint firstItem="FYj-0X-zrd" firstAttribute="leading" secondItem="bvC-fT-1mw" secondAttribute="leading" id="tFU-R9-xcK"/>
+                <constraint firstItem="BtB-Xd-olH" firstAttribute="top" secondItem="hei-GX-qW3" secondAttribute="bottom" constant="20" id="vA7-1H-rom"/>
+                <constraint firstItem="bgh-of-1uo" firstAttribute="trailing" secondItem="Pva-yv-avR" secondAttribute="trailing" id="xhI-Fk-A0a"/>
             </constraints>
             <point key="canvasLocation" x="32" y="87"/>
         </view>
