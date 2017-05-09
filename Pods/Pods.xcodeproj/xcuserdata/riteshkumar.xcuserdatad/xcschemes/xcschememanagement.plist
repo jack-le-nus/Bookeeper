@@ -49,6 +49,21 @@
 			<key>orderHint</key>
 			<integer>6</integer>
 		</dict>
+		<key>GoogleToolboxForMac.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>Pods-MTECHProgramme-MTECHProgrammeTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
+		<key>Pods-MTECHProgramme-MTECHProgrammeUITests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>Pods-MTECHProgramme.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -77,6 +92,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>19A242FA6CC93E5305F1ED4E19AF3E61</key>
 		<dict>
 			<key>primary</key>
@@ -117,12 +137,32 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>7E879D98C478F182F2D43D2F465FA9FC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7FD2E2885066D188D744A7BD3367D501</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8159F94E49D9B443DE18F0F8B38078B8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>8B4CAF9065C943841A9D9560DDA29F42</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8C6DE05268C9AF1BB3E8B62C5B10F705</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>91D10ECD8BA0B1FCC8A65F16BC78EB81</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -158,6 +198,11 @@
 			<true/>
 		</dict>
 		<key>DA30AF9FF2EF62494ECDFE752DECB0A8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F08D3D22CD71D3696AF09236B951A27B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
