@@ -56,7 +56,7 @@ class BorrowedBookListViewController: UIViewController, UICollectionViewDelegate
         
         currentUserUid = (FIRAuth.auth()?.currentUser?.uid)!
         
-       let borrowedBookQuery = self.ref.child("Book").queryOrdered(byChild: "borrowerUid").queryEqual(toValue: currentUserUid)
+       let borrowedBookQuery = self.ref.child("Book").queryOrdered(byChild: "isAvailable").queryEqual(toValue: "false")
         
         self.generalDataSource = self.borrowedBookCollectionView?.bind(to: borrowedBookQuery) { borrowedBookCollectionView, indexPath, snap in
             
@@ -66,13 +66,14 @@ class BorrowedBookListViewController: UIViewController, UICollectionViewDelegate
             cell.contentView.backgroundColor = UIColor.alizarin()
             cell.contentView.layer.borderWidth=1
             cell.lblName.text = postDict["bookname"] as? String ?? ""
-            cell.lblDescription.text = postDict["author"] as? String ?? ""
-            cell.imgBook.contentMode = UIViewContentMode.scaleAspectFit
-            cell.bookDescription = postDict["description"] as? String ?? ""
+            cell.lblDescription.text = postDict["description"] as? String ?? ""
             cell.author = postDict["author"] as? String ?? ""
             cell.category = postDict["categary"] as? String ?? ""
             cell.bookId = snap.key
+            cell.bookDescription = postDict["description"] as? String ?? ""
+            cell.userUid = postDict["userId"] as? String ?? ""
             cell.imgBook.contentMode = UIViewContentMode.scaleAspectFit
+            cell.isAvailable = postDict["isAvailable"] as? String ?? ""
             let imagesUrls = postDict["imageUrl"] as! NSArray
             let castArray = imagesUrls as? Array<Any>
             cell.images = castArray as! [String]!

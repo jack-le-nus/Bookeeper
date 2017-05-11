@@ -49,6 +49,8 @@ class ChatMessageViewController: UIViewController,UITableViewDataSource,UITableV
         self.clientTable.dataSource = self
         self.clientTable.delegate = self
         
+        self.messageTextField.delegate = self
+        
         configureDatabase()
         configureStorage()
         
@@ -161,14 +163,19 @@ class ChatMessageViewController: UIViewController,UITableViewDataSource,UITableV
     // UITextViewDelegateProtocols methos
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        guard let text = textField.text else {
-            return true
-        }
-        textField.text = ""
-        view.endEditing(true)
-        let data = [Constants.MessageFields.text: text]
-        sendMessage(withData: data)
+        
+        self.messageTextField.resignFirstResponder()
         return true
+
+        
+//        guard let text = textField.text else {
+//            return true
+//        }
+//        textField.text = ""
+//        view.endEditing(true)
+//        let data = [Constants.MessageFields.text: text]
+//        sendMessage(withData: data)
+//        return true
     }
     
     func sendMessage(withData data: [String: String]){
@@ -248,7 +255,6 @@ class ChatMessageViewController: UIViewController,UITableViewDataSource,UITableV
             self.present(alert, animated: true, completion: nil)
         }
     }
-    
 }
 
 

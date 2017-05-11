@@ -23,8 +23,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate{
         FIRApp.configure()
         GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
         
+        if (FIRAuth.auth()?.currentUser != nil)
+        {
+            self.window?.rootViewController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateInitialViewController()
+        }
+        else
+        {
+            let rootController : UIViewController = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "getStartedViewController");
+//            UINavigationController* navigation = [[UINavigationController alloc] initWithRootViewController:rootController];
+            
+//            let navigation : UINavigationController = UINavigationController.init(rootViewController: rootController)
+//            self.window?.rootViewController?.present(navigation, animated: true, completion: nil)// = navigation;
+            self.window?.rootViewController = rootController
+        }
         return true
     }
+    
+    
     
     @available(iOS 9.0, *)
     func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any])

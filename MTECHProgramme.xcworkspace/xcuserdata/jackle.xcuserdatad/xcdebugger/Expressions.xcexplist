@@ -41,10 +41,46 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "BookListViewController.getUid() -&gt; String:BookListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.window?.rootViewController">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "AppDelegate.application(UIApplication, didFinishLaunchingWithOptions : [UIApplicationLaunchOptionsKey : Any]?) -&gt; Bool:AppDelegate.swift">
+      </ContextState>
+      <ContextState
          contextName = "BookListViewController.viewDidLoad() -&gt; ():BookListViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "self.bookCollectionView.bounds.size&#10;">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BookDetailViewController.(hideShowChatButton() -&gt; ()).(closure #1):BookDetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "FIRAuth.auth()?.currentUser?.uid">
+            </PersistentString>
+            <PersistentString
+               value = "self.userUid">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "BookDetailViewController.hideShowChatButton() -&gt; ():BookDetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "FIRAuth.auth()?.currentUser?.uid">
+            </PersistentString>
+            <PersistentString
+               value = "bookAvailable">
+            </PersistentString>
+            <PersistentString
+               value = "self.userUid">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -84,6 +120,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "BookListViewController.(viewDidLoad() -&gt; ()).(closure #1):BookListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "postDict[&quot;imageUrl&quot;] as? String ?? &quot;&quot;">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "BookDetailViewController.(getOwnerDetail() -&gt; ()).(closure #1).(closure #1):BookDetailViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -91,14 +135,6 @@
             </PersistentString>
             <PersistentString
                value = "userSnapshot.value as! String">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "BookListViewController.(viewDidLoad() -&gt; ()).(closure #1):BookListViewController.swift">
-         <PersistentStrings>
-            <PersistentString
-               value = "postDict[&quot;imageUrl&quot;] as? String ?? &quot;&quot;">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

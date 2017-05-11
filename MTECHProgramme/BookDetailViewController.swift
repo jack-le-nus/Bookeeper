@@ -25,6 +25,7 @@ class BookDetailViewController: UIViewController, MFMessageComposeViewController
     var bookCell: BookCell?
     var bookId : String!
     var userUid : String!
+    var bookAvailable : String!
     @IBOutlet weak var messageBtn: FUIButton!
     @IBOutlet weak var bookDescription: UITextView!
     @IBOutlet weak var checkOutBtn: FUIButton!
@@ -80,6 +81,7 @@ class BookDetailViewController: UIViewController, MFMessageComposeViewController
         bookDescription.text = bookCell?.bookDescription
         bookId = bookCell?.bookId
         userUid = bookCell?.userUid
+        bookAvailable = bookCell?.isAvailable
         getOwnerDetail()
         hideShowChatButton()
         self.hideSpinner()
@@ -172,18 +174,18 @@ extension BookDetailViewController: UICollectionViewDataSource, UICollectionView
         
         //TODO remove before installing on Device
         updateData()
-        if (MFMessageComposeViewController.canSendText()) {
-            updateData()
-            let messageViewController:MFMessageComposeViewController = MFMessageComposeViewController()
-            messageViewController.messageComposeDelegate=self
-            messageViewController.recipients = [self.ownerContactDetails]
-            messageViewController.body = "Hi,I want to borrow your Book."
-            
-            self.present(messageViewController, animated: true, completion: nil)
-        } else {
-            print("Message services are not available")
-           // print("UserID is \(self.userId!) and contact number is \(self.ownerContactDetails.stringValue)")
-        }
+//        if (MFMessageComposeViewController.canSendText()) {
+//            updateData()
+//            let messageViewController:MFMessageComposeViewController = MFMessageComposeViewController()
+//            messageViewController.messageComposeDelegate=self
+//            messageViewController.recipients = [bookCell!.author]
+//            messageViewController.body = "Hi,I want to borrow your Book."
+//            
+//            self.present(messageViewController, animated: true, completion: nil)
+//        } else {
+//            print("Message services are not available")
+//           // print("UserID is \(self.userId!) and contact number is \(self.ownerContactDetails.stringValue)")
+//        }
         self.alert(content: AppMessage.checkoutSuccessful.rawValue, onCancel: {
             action -> Void in
             self.navigationController?.popViewController(animated: true)
@@ -201,7 +203,18 @@ extension BookDetailViewController: UICollectionViewDataSource, UICollectionView
     
     func updateData() {
          let currentUserID = FIRAuth.auth()?.currentUser?.uid
-        let data = ["borrowerUid" : currentUserID, "isAvailable" : "false"]
+        var data : [String : String] = [:]
+        if(bookAvailable == "true")
+        {
+            data = ["borrowerUid" : currentUserID!,
+                    "isAvailable" : "false",
+                    "isFeatured" : "false"]
+        }
+        else {
+            data = ["borrowerUid" : currentUserID!,
+                    "isAvailable" : "true",
+                    "isFeatured" : "true"]
+        }
         let updateRef = ref.child("Book").child(self.bookId)
         updateRef.updateChildValues(data)
         
@@ -228,17 +241,10 @@ extension BookDetailViewController: UICollectionViewDataSource, UICollectionView
     
     func hideShowChatButton() {
         
-        let query = ref.child(Constants.UserTables.bookTable).child(bookId).child(AppMessage.isAvailable.rawValue)
-        query.observeSingleEvent(of: .value, with: { bookSnapshot in
-            // TODO remove comment once Medha fixes Phone number
-             let bookAvailable = bookSnapshot.value as! String
-            print("Is book available", bookAvailable)
-            if bookAvailable == "false" {
-            self.checkOutBtn.isHidden = true
-            }else {
-              self.checkOutBtn.isHidden = false
-            }
-        })
+        print("Is book available", bookAvailable)
+        self.checkOutBtn.isHidden = FIRAuth.auth()?.currentUser?.uid != self.userUid
+        self.checkOutBtn.setTitle(bookAvailable == "false" ? "Check in" : "Check out", for: .normal)
+        
     }
     
     @IBAction func btnclicked(_ sender: Any){

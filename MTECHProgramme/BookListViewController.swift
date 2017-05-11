@@ -135,6 +135,7 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
             cell.bookDescription = postDict["description"] as? String ?? ""
             cell.userUid = postDict["userId"] as? String ?? ""
             cell.imgBook.contentMode = UIViewContentMode.scaleAspectFit
+            cell.isAvailable = postDict["isAvailable"] as? String ?? ""
             let imagesUrls = postDict["imageUrl"] as! NSArray
             let castArray = imagesUrls as? Array<Any>
             cell.images = castArray as! [String]!
@@ -153,7 +154,8 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
             return cell
         }
         
-        self.generalDataSource = self.generalBookCollectionView?.bind(to: self.ref.child("Book")) { generalBookCollectionView, indexPath, snap in
+        let refGeneralQuery : FIRDatabaseQuery = self.ref.child("Book").queryOrdered(byChild: "isAvailable").queryEqual(toValue: "true")
+        self.generalDataSource = self.generalBookCollectionView?.bind(to: refGeneralQuery) { generalBookCollectionView, indexPath, snap in
             let cell = generalBookCollectionView.dequeueReusableCell(withReuseIdentifier: "BookCell", for: indexPath) as! BookCell
             let postDict = snap.value as? [String : AnyObject] ?? [:]
             cell.contentView.backgroundColor = UIColor.alizarin()
@@ -165,6 +167,7 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
             cell.userUid = postDict["userId"] as? String ?? ""
             cell.author = postDict["author"] as? String ?? ""
             cell.category = postDict["categary"] as? String ?? ""
+            cell.isAvailable = postDict["isAvailable"] as? String ?? ""
             cell.bookId = snap.key
             cell.imgBook.contentMode = UIViewContentMode.scaleAspectFit
             let imagesUrls = postDict["imageUrl"] as! NSArray
