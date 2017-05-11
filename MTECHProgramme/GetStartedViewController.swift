@@ -23,16 +23,13 @@ class GetStartedViewController: UIViewController,UICollectionViewDataSource, UIC
     
     var logoText: [String] = ["Let's Begin The Journey","Ask to get if book available","My added books"]
     override var nibName: String?
-        {
+    {
         get
         {
             return "GetStartedViewController";
         }
     }
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        super.init(nibName: "GetStartedViewController", bundle: nibBundleOrNil)
-    }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         

@@ -12,7 +12,7 @@
         <!--Get Started View Controller-->
         <scene sceneID="AJP-98-23f">
             <objects>
-                <viewController storyboardIdentifier="getStartedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="G9a-Fl-MXK" customClass="GetStartedViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="getStartedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="G9a-Fl-MXK" customClass="GetStartedViewController" customModule="MTECHProgramme" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Eek-M3-qK5"/>
                         <viewControllerLayoutGuide type="bottom" id="LOg-IB-dVj"/>
@@ -151,7 +151,7 @@
         <scene sceneID="AUC-QG-9ck">
             <objects>
                 <navigationController id="zvF-Vc-bFk" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sHG-dO-wv4">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="sHG-dO-wv4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -324,7 +324,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b89-hH-ipX" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CW5-yL-JEw">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="CW5-yL-JEw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -342,7 +342,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bod-yh-hmK" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Y6F-6H-UuZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Y6F-6H-UuZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -361,7 +361,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="4wA-kQ-4r0"/>
-        <segue reference="HTS-Vm-cRk"/>
+        <segue reference="ApD-58-YYv"/>
         <segue reference="g1g-UP-TKs"/>
     </inferredMetricsTieBreakers>
 </document>
