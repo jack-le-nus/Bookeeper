@@ -96,7 +96,7 @@ class ProfileViewController: UIViewController, UITextFieldDelegate, UITextViewDe
             }
             
             self.userName.text = values["name"] as? String ?? ""
-            self.userEmailId.text = values["email"] as? String ?? ""
+            self.userEmailId.text = FIRAuth.auth()?.currentUser?.email ?? ""
             self.address.text = values["address"] as? String ?? ""
             self.userContactNumber.text  = values["phone"] as? String ?? ""
             
