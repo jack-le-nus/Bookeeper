@@ -117,6 +117,17 @@ class BookListViewController: UIViewController, UICollectionViewDelegateFlowLayo
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(UINib(nibName: "SideMenuTableViewCell", bundle: nil), forCellReuseIdentifier: "SideMenuTableViewCell")
+        
+        let userQuery = self.ref.child(Constants.UserTables.userTable).child(getUid()).child("phone")
+        userQuery.observeSingleEvent(of: .value, with: { userSnapshot in
+            guard userSnapshot.exists() else{
+                self.alert(content: AppMessage.phoneNoAlert.rawValue, onCancel: {
+                    action -> Void in
+                    self.performSegue(withIdentifier: "openProfileView", sender: nil)
+                })
+                return
+            }
+        })
     }
     
     override func viewDidAppear(_ animated: Bool) {

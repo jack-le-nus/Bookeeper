@@ -27,6 +27,7 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate, UINavig
     fileprivate var _refHandle: FIRDatabaseHandle!
     fileprivate var _authHandle: FIRAuthStateDidChangeListenerHandle!
    
+    @IBOutlet weak var contactText: FUITextField!
     
     
     override var nibName: String?
@@ -56,6 +57,7 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate, UINavig
         textFieldThemer.applyTheme(view: emailText, theme: TextFieldTheme())
         textFieldThemer.applyTheme(view: passwordText, theme: TextFieldTheme())
         textFieldThemer.applyTheme(view: confirmPasswordText, theme: TextFieldTheme())
+        textFieldThemer.applyTheme(view: contactText, theme: TextFieldTheme())
         self.applyTheme()
         self.title = "Create Account"
         configureDatabase()
@@ -118,7 +120,7 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate, UINavig
     func saveData() {
         //var newKey: String = ""
         let userID = FIRAuth.auth()?.currentUser?.uid
-        let data = [Constants.UserTableField.name : nameText.text! as String,Constants.UserTableField.email: emailText.text! as String]
+        let data = [Constants.UserTableField.name : nameText.text! as String,Constants.UserTableField.email: emailText.text! as String, Constants.UserTableField.phone:contactText.text! as String]
         self.ref.child("User").child(userID!).setValue(data)
 
         
@@ -141,6 +143,10 @@ class CreateAccountViewController: UIViewController,UITextFieldDelegate, UINavig
         }
         if (confirmPasswordText.text?.isEmpty)! {
             confirmPasswordText.attributedPlaceholder = NSAttributedString(string:AppMessage.ConfirmPasswordEmpty.rawValue,attributes: [NSForegroundColorAttributeName: UIColor.red])
+            valid = false
+        }
+        if (contactText.text?.isEmpty)! {
+            contactText.attributedPlaceholder = NSAttributedString(string:AppMessage.ContactNoEmpty.rawValue,attributes: [NSForegroundColorAttributeName: UIColor.red])
             valid = false
         }
         
