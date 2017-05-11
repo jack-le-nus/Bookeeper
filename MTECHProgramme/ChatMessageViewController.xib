@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -23,43 +23,41 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCb-c8-UJV" customClass="FUIButton">
-                    <rect key="frame" x="262" y="607" width="113" height="50"/>
+                    <rect key="frame" x="305" y="617" width="70" height="50"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="QmB-Dg-oDp"/>
-                        <constraint firstAttribute="width" constant="113" id="Zdc-U7-0GG"/>
+                        <constraint firstAttribute="width" constant="70" id="ewl-CS-S5W"/>
+                        <constraint firstAttribute="height" constant="50" id="uSN-LN-HrH"/>
                     </constraints>
                     <state key="normal" title="Message"/>
                     <connections>
                         <action selector="didSendMessage:" destination="-1" eventType="touchUpInside" id="BmY-aE-ogG"/>
                     </connections>
                 </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GA8-bj-1Qr">
-                    <rect key="frame" x="2" y="607" width="260" height="50"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GA8-bj-1Qr">
+                    <rect key="frame" x="0.0" y="617" width="305" height="50"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="260" id="fNT-Pk-tZm"/>
-                    </constraints>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CVp-dN-Pjo">
-                    <rect key="frame" x="0.0" y="65" width="375" height="542"/>
+                    <rect key="frame" x="0.0" y="65" width="375" height="552"/>
                     <color key="backgroundColor" red="0.94509803920000002" green="0.95686274510000002" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="GA8-bj-1Qr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="2" id="0Uz-C5-19C"/>
-                <constraint firstItem="KCb-c8-UJV" firstAttribute="leading" secondItem="GA8-bj-1Qr" secondAttribute="trailing" id="2G7-wn-Ald"/>
+                <constraint firstItem="GA8-bj-1Qr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4m3-XY-vc1"/>
                 <constraint firstAttribute="trailing" secondItem="CVp-dN-Pjo" secondAttribute="trailing" id="51U-8Z-uL4"/>
-                <constraint firstAttribute="trailing" secondItem="KCb-c8-UJV" secondAttribute="trailing" id="C0B-lH-QCR"/>
-                <constraint firstItem="KCb-c8-UJV" firstAttribute="top" secondItem="GA8-bj-1Qr" secondAttribute="top" id="DKb-mt-er0"/>
-                <constraint firstItem="KCb-c8-UJV" firstAttribute="top" secondItem="CVp-dN-Pjo" secondAttribute="bottom" id="XGh-qA-Jat"/>
+                <constraint firstAttribute="bottom" secondItem="KCb-c8-UJV" secondAttribute="bottom" id="5UU-jz-gCo"/>
+                <constraint firstItem="GA8-bj-1Qr" firstAttribute="top" secondItem="CVp-dN-Pjo" secondAttribute="bottom" id="689-Kp-Nje"/>
+                <constraint firstItem="KCb-c8-UJV" firstAttribute="leading" secondItem="GA8-bj-1Qr" secondAttribute="trailing" id="BGu-Ik-L7i"/>
+                <constraint firstAttribute="bottom" secondItem="GA8-bj-1Qr" secondAttribute="bottom" id="YfH-B2-OxM"/>
                 <constraint firstItem="CVp-dN-Pjo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="65" id="Zs8-r8-5pH"/>
-                <constraint firstAttribute="bottom" secondItem="KCb-c8-UJV" secondAttribute="bottom" constant="10" id="egl-hh-1ef"/>
-                <constraint firstItem="KCb-c8-UJV" firstAttribute="bottom" secondItem="GA8-bj-1Qr" secondAttribute="bottom" id="fvc-82-7Vg"/>
+                <constraint firstItem="KCb-c8-UJV" firstAttribute="leading" secondItem="GA8-bj-1Qr" secondAttribute="trailing" id="bk6-oi-yQ4"/>
                 <constraint firstItem="CVp-dN-Pjo" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="glJ-cb-Zha"/>
+                <constraint firstItem="KCb-c8-UJV" firstAttribute="height" secondItem="GA8-bj-1Qr" secondAttribute="height" id="omo-Gh-R5J"/>
+                <constraint firstAttribute="trailing" secondItem="KCb-c8-UJV" secondAttribute="trailing" id="pTg-vI-Qzr"/>
             </constraints>
             <point key="canvasLocation" x="24.5" y="51.5"/>
         </view>

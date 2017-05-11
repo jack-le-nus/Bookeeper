@@ -96,7 +96,13 @@ class ChatMessageViewController: UIViewController,UITableViewDataSource,UITableV
     }
     
     @IBAction func didSendMessage(_ sender: UIButton) {
-        _ = textFieldShouldReturn(messageTextField)
+        guard let text = self.messageTextField.text else {
+            return
+        }
+        self.messageTextField.text = ""
+        
+        let data = [Constants.MessageFields.text: text]
+        sendMessage(withData: data)
     }
     
     
@@ -141,10 +147,10 @@ class ChatMessageViewController: UIViewController,UITableViewDataSource,UITableV
             let text = message[Constants.MessageFields.text] ?? ""
             cell.textLabel?.text = name + ": " + text
             cell.imageView?.image = UIImage(named: "ic_account_circle")
-            if let photoURL = message[Constants.MessageFields.photoURL], let URL = URL(string: photoURL),
-                let data = try? Data(contentsOf: URL) {
-                cell.imageView?.image = UIImage(data: data)
-            }
+//            if let photoURL = message[Constants.MessageFields.photoURL], let URL = URL(string: photoURL),
+//                let data = try? Data(contentsOf: URL) {
+//                cell.imageView?.image = UIImage(data: data)
+//            }
         }
         
         let names :[String]?  = FIRAuth.auth()?.currentUser?.email?.components(separatedBy: "@")
@@ -166,16 +172,6 @@ class ChatMessageViewController: UIViewController,UITableViewDataSource,UITableV
         
         self.messageTextField.resignFirstResponder()
         return true
-
-        
-//        guard let text = textField.text else {
-//            return true
-//        }
-//        textField.text = ""
-//        view.endEditing(true)
-//        let data = [Constants.MessageFields.text: text]
-//        sendMessage(withData: data)
-//        return true
     }
     
     func sendMessage(withData data: [String: String]){
